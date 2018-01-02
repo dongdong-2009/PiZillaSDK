@@ -1,0 +1,76 @@
+platform(macOS),configuration(Release),sdk(macosx),arch(all)
+64-bit x86-64	workspace/lib/Xcode/macOS/Release/libpiziot_core_cms.a
+
+platform(macOS),configuration(Release),sdk(macosx),arch(all)
+64-bit x86-64	workspace/lib/Xcode/macOS/Release/libpiziot_p2p_common.a
+
+platform(macOS),configuration(Release),sdk(macosx),arch(all)
+64-bit x86-64	workspace/lib/Xcode/macOS/Release/libpiziot_os.a
+
+platform(macOS),configuration(Release),sdk(macosx),arch(all)
+64-bit x86-64	workspace/lib/Xcode/macOS/Release/libpiziot_p2p_client.a
+
+platform(macOS),configuration(Debug),sdk(macosx),arch(all)
+64-bit x86-64	workspace/lib/Xcode/macOS/Debug/libpiziot_core_cms.a
+
+platform(macOS),configuration(Debug),sdk(macosx),arch(all)
+64-bit x86-64	workspace/lib/Xcode/macOS/Debug/libpiziot_p2p_common.a
+
+platform(macOS),configuration(Debug),sdk(macosx),arch(all)
+64-bit x86-64	workspace/lib/Xcode/macOS/Debug/libpiziot_os.a
+
+platform(macOS),configuration(Debug),sdk(macosx),arch(all)
+64-bit x86-64	workspace/lib/Xcode/macOS/Debug/libpiziot_p2p_client.a
+
+platform(iOS),configuration(Debug),sdk(iphonesimulator),arch(x86_64)
+64-bit x86-64	workspace/lib/Xcode/iOS/Debug-iphonesimulator-x86_64/libpiziot_core_cms.a
+
+platform(iOS),configuration(Debug),sdk(iphonesimulator),arch(x86_64)
+64-bit x86-64	workspace/lib/Xcode/iOS/Debug-iphonesimulator-x86_64/libpiziot_p2p_common.a
+
+platform(iOS),configuration(Debug),sdk(iphonesimulator),arch(x86_64)
+64-bit x86-64	workspace/lib/Xcode/iOS/Debug-iphonesimulator-x86_64/libpiziot_os.a
+
+platform(iOS),configuration(Debug),sdk(iphonesimulator),arch(x86_64)
+64-bit x86-64	workspace/lib/Xcode/iOS/Debug-iphonesimulator-x86_64/libpiziot_p2p_client.a
+
+platform(iOS),configuration(Release),sdk(iphoneos),arch(all)
+armv7
+arm64	workspace/lib/Xcode/iOS/Release-iphoneos/libpiziot_core_cms.a
+
+platform(iOS),configuration(Release),sdk(iphoneos),arch(all)
+armv7
+arm64	workspace/lib/Xcode/iOS/Release-iphoneos/libpiziot_p2p_common.a
+
+platform(iOS),configuration(Release),sdk(iphoneos),arch(all)
+armv7
+arm64	workspace/lib/Xcode/iOS/Release-iphoneos/libpiziot_os.a
+
+platform(iOS),configuration(Release),sdk(iphoneos),arch(all)
+armv7
+arm64	workspace/lib/Xcode/iOS/Release-iphoneos/libpiziot_p2p_client.a
+
+platform(tvOS),configuration(Release),sdk(appletvos),arch(all)
+arm64	workspace/lib/Xcode/tvOS/Release-appletvos/libpiziot_core_cms.a
+
+platform(tvOS),configuration(Release),sdk(appletvos),arch(all)
+arm64	workspace/lib/Xcode/tvOS/Release-appletvos/libpiziot_p2p_common.a
+
+platform(tvOS),configuration(Release),sdk(appletvos),arch(all)
+arm64	workspace/lib/Xcode/tvOS/Release-appletvos/libpiziot_os.a
+
+platform(tvOS),configuration(Release),sdk(appletvos),arch(all)
+arm64	workspace/lib/Xcode/tvOS/Release-appletvos/libpiziot_p2p_client.a
+
+platform(tvOS),configuration(Debug),sdk(appletvsimulator),arch(x86_64)
+64-bit x86-64	workspace/lib/Xcode/tvOS/Debug-appletvsimulator-x86_64/libpiziot_core_cms.a
+
+platform(tvOS),configuration(Debug),sdk(appletvsimulator),arch(x86_64)
+64-bit x86-64	workspace/lib/Xcode/tvOS/Debug-appletvsimulator-x86_64/libpiziot_p2p_common.a
+
+platform(tvOS),configuration(Debug),sdk(appletvsimulator),arch(x86_64)
+64-bit x86-64	workspace/lib/Xcode/tvOS/Debug-appletvsimulator-x86_64/libpiziot_os.a
+
+platform(tvOS),configuration(Debug),sdk(appletvsimulator),arch(x86_64)
+64-bit x86-64	workspace/lib/Xcode/tvOS/Debug-appletvsimulator-x86_64/libpiziot_p2p_client.a
+

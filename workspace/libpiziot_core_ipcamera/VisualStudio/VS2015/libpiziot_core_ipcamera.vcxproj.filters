@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="libpiziot_core_ipcamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\piziot_core_ipcamera\piziot_core_ipcamera.c">
+      <Filter>libpiziot\src\piziot_core_ipcamera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\misc\misc_setting.c">
+      <Filter>libpiziot\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\stream_in\stream_in_emulator.c">
+      <Filter>libpiziot\src\stream_in</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\stream_in\stream_in_main.c">
+      <Filter>libpiziot\src\stream_in</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\stream_out\stream_out_main.c">
+      <Filter>libpiziot\src\stream_out</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_func.c">
+      <Filter>libpiziot\src\p2p</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_func_client.c">
+      <Filter>libpiziot\src\p2p</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_protocol_ipcamera.c">
+      <Filter>libpiziot\src\p2p</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_ipcamera_main\p2p_ipcamera_main.c">
+      <Filter>libpiziot\src\p2p\p2p_ipcamera_main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\p2p_ipcamera_device_command.c">
+      <Filter>libpiziot\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\p2p_ipcamera_device_main.c">
+      <Filter>libpiziot\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\p2p_ipcamera_device_other.c">
+      <Filter>libpiziot\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_ipcamera_main\p2p_ipcamera_main_device.c">
+      <Filter>libpiziot\src\p2p\p2p_ipcamera_main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\command\p2p_ipcamera_device_command_common.c">
+      <Filter>libpiziot\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\command</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="libpiziot_core_ipcamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\piziot_core_ipcamera\piziot_core_ipcamera.h">
+      <Filter>libpiziot\src\piziot_core_ipcamera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\misc\misc_setting.h">
+      <Filter>libpiziot\src\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\stream_in\stream_in_emulator.h">
+      <Filter>libpiziot\src\stream_in</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\stream_in\stream_in_main.h">
+      <Filter>libpiziot\src\stream_in</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\stream_out\stream_out_main.h">
+      <Filter>libpiziot\src\stream_out</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_func.h">
+      <Filter>libpiziot\src\p2p</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_func_client.h">
+      <Filter>libpiziot\src\p2p</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_protocol_ipcamera.h">
+      <Filter>libpiziot\src\p2p</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_ipcamera_main\p2p_ipcamera_main.h">
+      <Filter>libpiziot\src\p2p\p2p_ipcamera_main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\p2p_ipcamera_device_command.h">
+      <Filter>libpiziot\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\p2p_ipcamera_device_main.h">
+      <Filter>libpiziot\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\p2p_ipcamera_device_other.h">
+      <Filter>libpiziot\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_ipcamera_main\p2p_ipcamera_main_device.h">
+      <Filter>libpiziot\src\p2p\p2p_ipcamera_main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\command\p2p_ipcamera_device_command_common.h">
+      <Filter>libpiziot\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_android.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_bcm28xx.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_hi3518e.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_hi3518ev2.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_hi3520d.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_mfc_gui.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_mt7688.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_rk3328.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_rtl8196.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_rtl8197.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_rtl8881.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_x86.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_xcode.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\menu_config.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\libpiziot_core_ipcamera.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="libpiziot_core_ipcamera.def">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{429a7a1a-83e8-4aef-91a5-f8158721ea87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{3041f6fc-4ea1-4bdc-bea8-6105bacb6d88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9b47cce2-d25a-45cc-8a5a-25270e0f277a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot">
+      <UniqueIdentifier>{a5c74f52-df26-46df-8b0d-9f9b26ced7f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src">
+      <UniqueIdentifier>{900e24aa-c4fb-4675-9403-e384b7eee19b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src\misc">
+      <UniqueIdentifier>{76cc1bd6-9138-4305-a5d5-8f0bebde6dce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src\p2p">
+      <UniqueIdentifier>{77a3cfde-85c9-4048-9cac-71bf2a1d1c05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src\stream_in">
+      <UniqueIdentifier>{1fcac0ac-2674-4cc4-861f-ee782a24c107}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src\stream_out">
+      <UniqueIdentifier>{266ea0ec-6f36-4a8d-b044-feb6cd2e72da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\include">
+      <UniqueIdentifier>{0a89ca01-d99f-4042-ad1b-9623a074bcce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src\piziot_core_ipcamera">
+      <UniqueIdentifier>{335d0f86-c2a0-44da-aba6-ef968e95bd08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src\p2p\p2p_ipcamera_channel_server_main">
+      <UniqueIdentifier>{1e0afcd7-a95e-4d5d-821b-7e6306cdb322}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data">
+      <UniqueIdentifier>{5569f967-a50e-4d4d-b22a-2e190785dc51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src\p2p\p2p_ipcamera_main">
+      <UniqueIdentifier>{aca0a257-1b3f-463c-abde-627c9849af3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\command">
+      <UniqueIdentifier>{040b4afe-ba46-4442-9acf-28f2c0b09116}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="libpiziot_core_ipcamera.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

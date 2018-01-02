@@ -1,0 +1,1 @@
+platform(macOS),configuration(Release),sdk(macosx),arch(all)

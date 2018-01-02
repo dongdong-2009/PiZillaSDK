@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="libpiziot">
+      <UniqueIdentifier>{bb240ead-1a25-4c2e-824d-98f49465cbcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src">
+      <UniqueIdentifier>{0e0f8ef8-8183-43a0-91b4-090194016349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src\misc">
+      <UniqueIdentifier>{e6d83dcd-4dc7-4443-a71f-3d8ddb6afb9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src\p2p">
+      <UniqueIdentifier>{cddddff3-fdce-4871-924d-06335e03b28e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\include">
+      <UniqueIdentifier>{ac20bdd2-d00b-4c7e-8055-9855db0802f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src\piziot_core_cms">
+      <UniqueIdentifier>{7061af5c-c2b9-4d31-9de3-61859bad806a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src\p2p\p2p_cms_channel_client_main">
+      <UniqueIdentifier>{5d70246a-fd44-4bfc-8c59-5adf4cf960cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src\p2p\p2p_cms_channel_client_main\ipcamera_data">
+      <UniqueIdentifier>{c28d4bbd-54f9-41d8-a108-a859f18fad71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src\p2p\p2p_cms_channel_client_main\nas_data">
+      <UniqueIdentifier>{4179b6ce-5aaf-4a8a-9fc9-dd67776af327}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src\p2p\p2p_cms_main">
+      <UniqueIdentifier>{dc878428-c556-4f86-b50f-6d6aeffb72e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src\p2p\p2p_cms_channel_client_main\nas_data\command">
+      <UniqueIdentifier>{d5c295bb-57ba-45cb-8787-3d911aaa241b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src\p2p\p2p_cms_channel_client_main\ipcamera_data\command">
+      <UniqueIdentifier>{abb3d2e9-6910-47d1-8150-6c1678004e27}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="libpiziot_core_cms.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\piziot_core_cms\piziot_core_cms.c">
+      <Filter>libpiziot\src\piziot_core_cms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\misc\misc_setting.c">
+      <Filter>libpiziot\src\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_func.c">
+      <Filter>libpiziot\src\p2p</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_func_client.c">
+      <Filter>libpiziot\src\p2p</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_protocol_ipcamera.c">
+      <Filter>libpiziot\src\p2p</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_cms_main\p2p_cms_main.c">
+      <Filter>libpiziot\src\p2p\p2p_cms_main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_cms_main\p2p_cms_main_ipcamera.c">
+      <Filter>libpiziot\src\p2p\p2p_cms_main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_cms_main\p2p_cms_main_nas.c">
+      <Filter>libpiziot\src\p2p\p2p_cms_main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\p2p_cms_ipcamera_command.c">
+      <Filter>libpiziot\src\p2p\p2p_cms_channel_client_main\ipcamera_data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\p2p_cms_ipcamera_main.c">
+      <Filter>libpiziot\src\p2p\p2p_cms_channel_client_main\ipcamera_data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\p2p_cms_ipcamera_other.c">
+      <Filter>libpiziot\src\p2p\p2p_cms_channel_client_main\ipcamera_data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\p2p_cms_nas_command.c">
+      <Filter>libpiziot\src\p2p\p2p_cms_channel_client_main\nas_data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\p2p_cms_nas_main.c">
+      <Filter>libpiziot\src\p2p\p2p_cms_channel_client_main\nas_data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\p2p_cms_nas_other.c">
+      <Filter>libpiziot\src\p2p\p2p_cms_channel_client_main\nas_data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\command\p2p_cms_nas_command_security_system.c">
+      <Filter>libpiziot\src\p2p\p2p_cms_channel_client_main\nas_data\command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\command\p2p_cms_ipcamera_command_common.c">
+      <Filter>libpiziot\src\p2p\p2p_cms_channel_client_main\ipcamera_data\command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_protocol_nas.c">
+      <Filter>libpiziot\src\p2p</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\command\p2p_cms_nas_command_common.c">
+      <Filter>libpiziot\src\p2p\p2p_cms_channel_client_main\nas_data\command</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="libpiziot_core_cms.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\piziot_core_cms\piziot_core_cms.h">
+      <Filter>libpiziot\src\piziot_core_cms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\misc\misc_setting.h">
+      <Filter>libpiziot\src\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_func.h">
+      <Filter>libpiziot\src\p2p</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_func_client.h">
+      <Filter>libpiziot\src\p2p</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_protocol_ipcamera.h">
+      <Filter>libpiziot\src\p2p</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_cms_main\p2p_cms_main.h">
+      <Filter>libpiziot\src\p2p\p2p_cms_main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_cms_main\p2p_cms_main_nas.h">
+      <Filter>libpiziot\src\p2p\p2p_cms_main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_cms_main\p2p_cms_main_ipcamera.h">
+      <Filter>libpiziot\src\p2p\p2p_cms_main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\p2p_cms_ipcamera_command.h">
+      <Filter>libpiziot\src\p2p\p2p_cms_channel_client_main\ipcamera_data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\p2p_cms_ipcamera_main.h">
+      <Filter>libpiziot\src\p2p\p2p_cms_channel_client_main\ipcamera_data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\p2p_cms_ipcamera_other.h">
+      <Filter>libpiziot\src\p2p\p2p_cms_channel_client_main\ipcamera_data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\p2p_cms_nas_command.h">
+      <Filter>libpiziot\src\p2p\p2p_cms_channel_client_main\nas_data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\p2p_cms_nas_main.h">
+      <Filter>libpiziot\src\p2p\p2p_cms_channel_client_main\nas_data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\p2p_cms_nas_other.h">
+      <Filter>libpiziot\src\p2p\p2p_cms_channel_client_main\nas_data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\command\p2p_cms_nas_command_security_system.h">
+      <Filter>libpiziot\src\p2p\p2p_cms_channel_client_main\nas_data\command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\command\p2p_cms_ipcamera_command_common.h">
+      <Filter>libpiziot\src\p2p\p2p_cms_channel_client_main\ipcamera_data\command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_protocol_nas.h">
+      <Filter>libpiziot\src\p2p</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\command\p2p_cms_nas_command_common.h">
+      <Filter>libpiziot\src\p2p\p2p_cms_channel_client_main\nas_data\command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_android.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_hi3518e.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_hi3518ev2.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_hi3520d.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_mfc_gui.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_mt7688.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_bcm28xx.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_rk3328.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_rtl8196.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_rtl8197.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_rtl8881.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_x86.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\config_xcode.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Linux\include\menu_config.h">
+      <Filter>libpiziot\include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libpiziot_core_cms.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="res\libpiziot_core_cms.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="libpiziot_core_cms.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

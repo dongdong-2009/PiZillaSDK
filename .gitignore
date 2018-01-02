@@ -1,0 +1,3 @@
+workspace/exe/Linux/*/piz*
+*.o
+*.d

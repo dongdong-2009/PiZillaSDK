@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PIZCms", "PIZCms.vcxproj", "{6249262A-49ED-4151-9C29-192A93906F70}"
+	ProjectSection(ProjectDependencies) = postProject
+		{36E99344-4177-42A4-9F81-FAAC344EB583} = {36E99344-4177-42A4-9F81-FAAC344EB583}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libpiziot_core_cms", "..\..\..\..\libpiziot_core_cms\VisualStudio\VS2017\libpiziot_core_cms.vcxproj", "{36E99344-4177-42A4-9F81-FAAC344EB583}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6249262A-49ED-4151-9C29-192A93906F70}.Debug|x64.ActiveCfg = Debug|x64
+		{6249262A-49ED-4151-9C29-192A93906F70}.Debug|x64.Build.0 = Debug|x64
+		{6249262A-49ED-4151-9C29-192A93906F70}.Debug|x86.ActiveCfg = Debug|Win32
+		{6249262A-49ED-4151-9C29-192A93906F70}.Debug|x86.Build.0 = Debug|Win32
+		{6249262A-49ED-4151-9C29-192A93906F70}.Release|x64.ActiveCfg = Release|x64
+		{6249262A-49ED-4151-9C29-192A93906F70}.Release|x64.Build.0 = Release|x64
+		{6249262A-49ED-4151-9C29-192A93906F70}.Release|x86.ActiveCfg = Release|Win32
+		{6249262A-49ED-4151-9C29-192A93906F70}.Release|x86.Build.0 = Release|Win32
+		{36E99344-4177-42A4-9F81-FAAC344EB583}.Debug|x64.ActiveCfg = Debug|x64
+		{36E99344-4177-42A4-9F81-FAAC344EB583}.Debug|x64.Build.0 = Debug|x64
+		{36E99344-4177-42A4-9F81-FAAC344EB583}.Debug|x86.ActiveCfg = Debug|Win32
+		{36E99344-4177-42A4-9F81-FAAC344EB583}.Debug|x86.Build.0 = Debug|Win32
+		{36E99344-4177-42A4-9F81-FAAC344EB583}.Release|x64.ActiveCfg = Release|x64
+		{36E99344-4177-42A4-9F81-FAAC344EB583}.Release|x64.Build.0 = Release|x64
+		{36E99344-4177-42A4-9F81-FAAC344EB583}.Release|x86.ActiveCfg = Release|Win32
+		{36E99344-4177-42A4-9F81-FAAC344EB583}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A30A15571FB16CEA004FCF91 /* p2p_cms_nas_command_security_system.c in Sources */ = {isa = PBXBuildFile; fileRef = A30A15551FB16CEA004FCF91 /* p2p_cms_nas_command_security_system.c */; };
+		A30A15581FB16CEA004FCF91 /* p2p_cms_nas_command_security_system.h in Headers */ = {isa = PBXBuildFile; fileRef = A30A15561FB16CEA004FCF91 /* p2p_cms_nas_command_security_system.h */; };
+		A3A112DE1F9DB91E00ED0E1C /* menu_config.h in Headers */ = {isa = PBXBuildFile; fileRef = A3A112DC1F9DB91D00ED0E1C /* menu_config.h */; };
+		A3A112DF1F9DB91E00ED0E1C /* config_xcode.h in Headers */ = {isa = PBXBuildFile; fileRef = A3A112DD1F9DB91E00ED0E1C /* config_xcode.h */; };
+		A3A112E51F9DBBB100ED0E1C /* piziot_core_cms.c in Sources */ = {isa = PBXBuildFile; fileRef = A3A112E31F9DBBB100ED0E1C /* piziot_core_cms.c */; };
+		A3A112E61F9DBBB100ED0E1C /* piziot_core_cms.h in Headers */ = {isa = PBXBuildFile; fileRef = A3A112E41F9DBBB100ED0E1C /* piziot_core_cms.h */; };
+		A3A112E91F9DBBC200ED0E1C /* misc_setting.c in Sources */ = {isa = PBXBuildFile; fileRef = A3A112E71F9DBBC200ED0E1C /* misc_setting.c */; };
+		A3A112EA1F9DBBC200ED0E1C /* misc_setting.h in Headers */ = {isa = PBXBuildFile; fileRef = A3A112E81F9DBBC200ED0E1C /* misc_setting.h */; };
+		A3A112F31F9DBBD300ED0E1C /* p2p_protocol_nas.c in Sources */ = {isa = PBXBuildFile; fileRef = A3A112EB1F9DBBD300ED0E1C /* p2p_protocol_nas.c */; };
+		A3A112F41F9DBBD300ED0E1C /* p2p_func_client.h in Headers */ = {isa = PBXBuildFile; fileRef = A3A112EC1F9DBBD300ED0E1C /* p2p_func_client.h */; };
+		A3A112F51F9DBBD300ED0E1C /* p2p_protocol_ipcamera.h in Headers */ = {isa = PBXBuildFile; fileRef = A3A112ED1F9DBBD300ED0E1C /* p2p_protocol_ipcamera.h */; };
+		A3A112F61F9DBBD300ED0E1C /* p2p_func_client.c in Sources */ = {isa = PBXBuildFile; fileRef = A3A112EE1F9DBBD300ED0E1C /* p2p_func_client.c */; };
+		A3A112F71F9DBBD300ED0E1C /* p2p_protocol_ipcamera.c in Sources */ = {isa = PBXBuildFile; fileRef = A3A112EF1F9DBBD300ED0E1C /* p2p_protocol_ipcamera.c */; };
+		A3A112F81F9DBBD300ED0E1C /* p2p_func.c in Sources */ = {isa = PBXBuildFile; fileRef = A3A112F01F9DBBD300ED0E1C /* p2p_func.c */; };
+		A3A112F91F9DBBD300ED0E1C /* p2p_func.h in Headers */ = {isa = PBXBuildFile; fileRef = A3A112F11F9DBBD300ED0E1C /* p2p_func.h */; };
+		A3A112FA1F9DBBD300ED0E1C /* p2p_protocol_nas.h in Headers */ = {isa = PBXBuildFile; fileRef = A3A112F21F9DBBD300ED0E1C /* p2p_protocol_nas.h */; };
+		A3A113021F9DBBF800ED0E1C /* p2p_cms_main_ipcamera.c in Sources */ = {isa = PBXBuildFile; fileRef = A3A112FC1F9DBBF800ED0E1C /* p2p_cms_main_ipcamera.c */; };
+		A3A113031F9DBBF800ED0E1C /* p2p_cms_main.c in Sources */ = {isa = PBXBuildFile; fileRef = A3A112FD1F9DBBF800ED0E1C /* p2p_cms_main.c */; };
+		A3A113041F9DBBF800ED0E1C /* p2p_cms_main.h in Headers */ = {isa = PBXBuildFile; fileRef = A3A112FE1F9DBBF800ED0E1C /* p2p_cms_main.h */; };
+		A3A113051F9DBBF800ED0E1C /* p2p_cms_main_ipcamera.h in Headers */ = {isa = PBXBuildFile; fileRef = A3A112FF1F9DBBF800ED0E1C /* p2p_cms_main_ipcamera.h */; };
+		A3A113061F9DBBF800ED0E1C /* p2p_cms_main_nas.h in Headers */ = {isa = PBXBuildFile; fileRef = A3A113001F9DBBF800ED0E1C /* p2p_cms_main_nas.h */; };
+		A3A113071F9DBBF800ED0E1C /* p2p_cms_main_nas.c in Sources */ = {isa = PBXBuildFile; fileRef = A3A113011F9DBBF800ED0E1C /* p2p_cms_main_nas.c */; };
+		A3A1130C1F9DBC2D00ED0E1C /* p2p_cms_nas_main.c in Sources */ = {isa = PBXBuildFile; fileRef = A3A1130A1F9DBC2D00ED0E1C /* p2p_cms_nas_main.c */; };
+		A3A1130D1F9DBC2D00ED0E1C /* p2p_cms_nas_main.h in Headers */ = {isa = PBXBuildFile; fileRef = A3A1130B1F9DBC2D00ED0E1C /* p2p_cms_nas_main.h */; };
+		A3A113111F9DBC5C00ED0E1C /* p2p_cms_ipcamera_main.h in Headers */ = {isa = PBXBuildFile; fileRef = A3A1130F1F9DBC5C00ED0E1C /* p2p_cms_ipcamera_main.h */; };
+		A3A113121F9DBC5C00ED0E1C /* p2p_cms_ipcamera_main.c in Sources */ = {isa = PBXBuildFile; fileRef = A3A113101F9DBC5C00ED0E1C /* p2p_cms_ipcamera_main.c */; };
+		A3DDD5D51FA4E6BA00E47725 /* p2p_cms_ipcamera_other.c in Sources */ = {isa = PBXBuildFile; fileRef = A3DDD5D11FA4E6BA00E47725 /* p2p_cms_ipcamera_other.c */; };
+		A3DDD5D61FA4E6BA00E47725 /* p2p_cms_ipcamera_other.h in Headers */ = {isa = PBXBuildFile; fileRef = A3DDD5D21FA4E6BA00E47725 /* p2p_cms_ipcamera_other.h */; };
+		A3DDD5D71FA4E6BA00E47725 /* p2p_cms_ipcamera_command.c in Sources */ = {isa = PBXBuildFile; fileRef = A3DDD5D31FA4E6BA00E47725 /* p2p_cms_ipcamera_command.c */; };
+		A3DDD5D81FA4E6BA00E47725 /* p2p_cms_ipcamera_command.h in Headers */ = {isa = PBXBuildFile; fileRef = A3DDD5D41FA4E6BA00E47725 /* p2p_cms_ipcamera_command.h */; };
+		A3DDD5DD1FA4E6CE00E47725 /* p2p_cms_nas_command.c in Sources */ = {isa = PBXBuildFile; fileRef = A3DDD5D91FA4E6CE00E47725 /* p2p_cms_nas_command.c */; };
+		A3DDD5DE1FA4E6CE00E47725 /* p2p_cms_nas_other.c in Sources */ = {isa = PBXBuildFile; fileRef = A3DDD5DA1FA4E6CE00E47725 /* p2p_cms_nas_other.c */; };
+		A3DDD5DF1FA4E6CE00E47725 /* p2p_cms_nas_command.h in Headers */ = {isa = PBXBuildFile; fileRef = A3DDD5DB1FA4E6CE00E47725 /* p2p_cms_nas_command.h */; };
+		A3DDD5E01FA4E6CE00E47725 /* p2p_cms_nas_other.h in Headers */ = {isa = PBXBuildFile; fileRef = A3DDD5DC1FA4E6CE00E47725 /* p2p_cms_nas_other.h */; };
+		A3F510F81FB2D394006C22BD /* p2p_cms_ipcamera_command_common.c in Sources */ = {isa = PBXBuildFile; fileRef = A3F510F61FB2D394006C22BD /* p2p_cms_ipcamera_command_common.c */; };
+		A3F510F91FB2D394006C22BD /* p2p_cms_ipcamera_command_common.h in Headers */ = {isa = PBXBuildFile; fileRef = A3F510F71FB2D394006C22BD /* p2p_cms_ipcamera_command_common.h */; };
+		A3F510FC1FB2D3BD006C22BD /* p2p_cms_nas_command_common.c in Sources */ = {isa = PBXBuildFile; fileRef = A3F510FA1FB2D3BD006C22BD /* p2p_cms_nas_command_common.c */; };
+		A3F510FD1FB2D3BD006C22BD /* p2p_cms_nas_command_common.h in Headers */ = {isa = PBXBuildFile; fileRef = A3F510FB1FB2D3BD006C22BD /* p2p_cms_nas_command_common.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A30A15551FB16CEA004FCF91 /* p2p_cms_nas_command_security_system.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_nas_command_security_system.c; path = ../../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/command/p2p_cms_nas_command_security_system.c; sourceTree = "<group>"; };
+		A30A15561FB16CEA004FCF91 /* p2p_cms_nas_command_security_system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_nas_command_security_system.h; path = ../../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/command/p2p_cms_nas_command_security_system.h; sourceTree = "<group>"; };
+		A3A112D11F9DB86800ED0E1C /* libpiziot_core_cms.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpiziot_core_cms.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3A112DC1F9DB91D00ED0E1C /* menu_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = menu_config.h; path = ../../../../../Linux/include/menu_config.h; sourceTree = "<group>"; };
+		A3A112DD1F9DB91E00ED0E1C /* config_xcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config_xcode.h; path = ../../../../../Linux/include/config_xcode.h; sourceTree = "<group>"; };
+		A3A112E31F9DBBB100ED0E1C /* piziot_core_cms.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = piziot_core_cms.c; path = ../../../../../../Linux/src/piziot_core_cms/piziot_core_cms.c; sourceTree = "<group>"; };
+		A3A112E41F9DBBB100ED0E1C /* piziot_core_cms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = piziot_core_cms.h; path = ../../../../../../Linux/src/piziot_core_cms/piziot_core_cms.h; sourceTree = "<group>"; };
+		A3A112E71F9DBBC200ED0E1C /* misc_setting.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = misc_setting.c; path = ../../../../../../Linux/src/misc/misc_setting.c; sourceTree = "<group>"; };
+		A3A112E81F9DBBC200ED0E1C /* misc_setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = misc_setting.h; path = ../../../../../../Linux/src/misc/misc_setting.h; sourceTree = "<group>"; };
+		A3A112EB1F9DBBD300ED0E1C /* p2p_protocol_nas.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_protocol_nas.c; path = ../../../../../../Linux/src/p2p/p2p_protocol_nas.c; sourceTree = "<group>"; };
+		A3A112EC1F9DBBD300ED0E1C /* p2p_func_client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_func_client.h; path = ../../../../../../Linux/src/p2p/p2p_func_client.h; sourceTree = "<group>"; };
+		A3A112ED1F9DBBD300ED0E1C /* p2p_protocol_ipcamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_protocol_ipcamera.h; path = ../../../../../../Linux/src/p2p/p2p_protocol_ipcamera.h; sourceTree = "<group>"; };
+		A3A112EE1F9DBBD300ED0E1C /* p2p_func_client.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_func_client.c; path = ../../../../../../Linux/src/p2p/p2p_func_client.c; sourceTree = "<group>"; };
+		A3A112EF1F9DBBD300ED0E1C /* p2p_protocol_ipcamera.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_protocol_ipcamera.c; path = ../../../../../../Linux/src/p2p/p2p_protocol_ipcamera.c; sourceTree = "<group>"; };
+		A3A112F01F9DBBD300ED0E1C /* p2p_func.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_func.c; path = ../../../../../../Linux/src/p2p/p2p_func.c; sourceTree = "<group>"; };
+		A3A112F11F9DBBD300ED0E1C /* p2p_func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_func.h; path = ../../../../../../Linux/src/p2p/p2p_func.h; sourceTree = "<group>"; };
+		A3A112F21F9DBBD300ED0E1C /* p2p_protocol_nas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_protocol_nas.h; path = ../../../../../../Linux/src/p2p/p2p_protocol_nas.h; sourceTree = "<group>"; };
+		A3A112FC1F9DBBF800ED0E1C /* p2p_cms_main_ipcamera.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_main_ipcamera.c; path = ../../../../../../../Linux/src/p2p/p2p_cms_main/p2p_cms_main_ipcamera.c; sourceTree = "<group>"; };
+		A3A112FD1F9DBBF800ED0E1C /* p2p_cms_main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_main.c; path = ../../../../../../../Linux/src/p2p/p2p_cms_main/p2p_cms_main.c; sourceTree = "<group>"; };
+		A3A112FE1F9DBBF800ED0E1C /* p2p_cms_main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_main.h; path = ../../../../../../../Linux/src/p2p/p2p_cms_main/p2p_cms_main.h; sourceTree = "<group>"; };
+		A3A112FF1F9DBBF800ED0E1C /* p2p_cms_main_ipcamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_main_ipcamera.h; path = ../../../../../../../Linux/src/p2p/p2p_cms_main/p2p_cms_main_ipcamera.h; sourceTree = "<group>"; };
+		A3A113001F9DBBF800ED0E1C /* p2p_cms_main_nas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_main_nas.h; path = ../../../../../../../Linux/src/p2p/p2p_cms_main/p2p_cms_main_nas.h; sourceTree = "<group>"; };
+		A3A113011F9DBBF800ED0E1C /* p2p_cms_main_nas.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_main_nas.c; path = ../../../../../../../Linux/src/p2p/p2p_cms_main/p2p_cms_main_nas.c; sourceTree = "<group>"; };
+		A3A1130A1F9DBC2D00ED0E1C /* p2p_cms_nas_main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_nas_main.c; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_main.c; sourceTree = "<group>"; };
+		A3A1130B1F9DBC2D00ED0E1C /* p2p_cms_nas_main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_nas_main.h; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_main.h; sourceTree = "<group>"; };
+		A3A1130F1F9DBC5C00ED0E1C /* p2p_cms_ipcamera_main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_ipcamera_main.h; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_main.h; sourceTree = "<group>"; };
+		A3A113101F9DBC5C00ED0E1C /* p2p_cms_ipcamera_main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_ipcamera_main.c; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_main.c; sourceTree = "<group>"; };
+		A3DDD5D11FA4E6BA00E47725 /* p2p_cms_ipcamera_other.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_ipcamera_other.c; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_other.c; sourceTree = "<group>"; };
+		A3DDD5D21FA4E6BA00E47725 /* p2p_cms_ipcamera_other.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_ipcamera_other.h; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_other.h; sourceTree = "<group>"; };
+		A3DDD5D31FA4E6BA00E47725 /* p2p_cms_ipcamera_command.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_ipcamera_command.c; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_command.c; sourceTree = "<group>"; };
+		A3DDD5D41FA4E6BA00E47725 /* p2p_cms_ipcamera_command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_ipcamera_command.h; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_command.h; sourceTree = "<group>"; };
+		A3DDD5D91FA4E6CE00E47725 /* p2p_cms_nas_command.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_nas_command.c; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_command.c; sourceTree = "<group>"; };
+		A3DDD5DA1FA4E6CE00E47725 /* p2p_cms_nas_other.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_nas_other.c; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_other.c; sourceTree = "<group>"; };
+		A3DDD5DB1FA4E6CE00E47725 /* p2p_cms_nas_command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_nas_command.h; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_command.h; sourceTree = "<group>"; };
+		A3DDD5DC1FA4E6CE00E47725 /* p2p_cms_nas_other.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_nas_other.h; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_other.h; sourceTree = "<group>"; };
+		A3F510F61FB2D394006C22BD /* p2p_cms_ipcamera_command_common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_ipcamera_command_common.c; path = ../../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/command/p2p_cms_ipcamera_command_common.c; sourceTree = "<group>"; };
+		A3F510F71FB2D394006C22BD /* p2p_cms_ipcamera_command_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_ipcamera_command_common.h; path = ../../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/command/p2p_cms_ipcamera_command_common.h; sourceTree = "<group>"; };
+		A3F510FA1FB2D3BD006C22BD /* p2p_cms_nas_command_common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_nas_command_common.c; path = ../../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/command/p2p_cms_nas_command_common.c; sourceTree = "<group>"; };
+		A3F510FB1FB2D3BD006C22BD /* p2p_cms_nas_command_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_nas_command_common.h; path = ../../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/command/p2p_cms_nas_command_common.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A3A112CE1F9DB86800ED0E1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A30A15541FB16CCC004FCF91 /* command */ = {
+			isa = PBXGroup;
+			children = (
+				A3F510FA1FB2D3BD006C22BD /* p2p_cms_nas_command_common.c */,
+				A3F510FB1FB2D3BD006C22BD /* p2p_cms_nas_command_common.h */,
+				A30A15551FB16CEA004FCF91 /* p2p_cms_nas_command_security_system.c */,
+				A30A15561FB16CEA004FCF91 /* p2p_cms_nas_command_security_system.h */,
+			);
+			path = command;
+			sourceTree = "<group>";
+		};
+		A3A112C81F9DB86800ED0E1C = {
+			isa = PBXGroup;
+			children = (
+				A3A112D81F9DB8CD00ED0E1C /* libpiziot_core_cms */,
+				A3A112D21F9DB86800ED0E1C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A3A112D21F9DB86800ED0E1C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A3A112D11F9DB86800ED0E1C /* libpiziot_core_cms.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A3A112D81F9DB8CD00ED0E1C /* libpiziot_core_cms */ = {
+			isa = PBXGroup;
+			children = (
+				A3A112D91F9DB8DE00ED0E1C /* libpiziot */,
+			);
+			path = libpiziot_core_cms;
+			sourceTree = "<group>";
+		};
+		A3A112D91F9DB8DE00ED0E1C /* libpiziot */ = {
+			isa = PBXGroup;
+			children = (
+				A3A112DA1F9DB8EC00ED0E1C /* include */,
+				A3A112DB1F9DB8FC00ED0E1C /* src */,
+			);
+			path = libpiziot;
+			sourceTree = "<group>";
+		};
+		A3A112DA1F9DB8EC00ED0E1C /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A3A112DD1F9DB91E00ED0E1C /* config_xcode.h */,
+				A3A112DC1F9DB91D00ED0E1C /* menu_config.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		A3A112DB1F9DB8FC00ED0E1C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A3A112E21F9DBBA100ED0E1C /* piziot_core_cms */,
+				A3A112E11F9DBB8400ED0E1C /* misc */,
+				A3A112E01F9DBB7600ED0E1C /* p2p */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		A3A112E01F9DBB7600ED0E1C /* p2p */ = {
+			isa = PBXGroup;
+			children = (
+				A3A113081F9DBC0C00ED0E1C /* p2p_cms_channel_client_main */,
+				A3A112FB1F9DBBE400ED0E1C /* p2p_cms_main */,
+				A3A112F01F9DBBD300ED0E1C /* p2p_func.c */,
+				A3A112F11F9DBBD300ED0E1C /* p2p_func.h */,
+				A3A112EE1F9DBBD300ED0E1C /* p2p_func_client.c */,
+				A3A112EC1F9DBBD300ED0E1C /* p2p_func_client.h */,
+				A3A112EF1F9DBBD300ED0E1C /* p2p_protocol_ipcamera.c */,
+				A3A112ED1F9DBBD300ED0E1C /* p2p_protocol_ipcamera.h */,
+				A3A112EB1F9DBBD300ED0E1C /* p2p_protocol_nas.c */,
+				A3A112F21F9DBBD300ED0E1C /* p2p_protocol_nas.h */,
+			);
+			path = p2p;
+			sourceTree = "<group>";
+		};
+		A3A112E11F9DBB8400ED0E1C /* misc */ = {
+			isa = PBXGroup;
+			children = (
+				A3A112E71F9DBBC200ED0E1C /* misc_setting.c */,
+				A3A112E81F9DBBC200ED0E1C /* misc_setting.h */,
+			);
+			path = misc;
+			sourceTree = "<group>";
+		};
+		A3A112E21F9DBBA100ED0E1C /* piziot_core_cms */ = {
+			isa = PBXGroup;
+			children = (
+				A3A112E31F9DBBB100ED0E1C /* piziot_core_cms.c */,
+				A3A112E41F9DBBB100ED0E1C /* piziot_core_cms.h */,
+			);
+			path = piziot_core_cms;
+			sourceTree = "<group>";
+		};
+		A3A112FB1F9DBBE400ED0E1C /* p2p_cms_main */ = {
+			isa = PBXGroup;
+			children = (
+				A3A112FC1F9DBBF800ED0E1C /* p2p_cms_main_ipcamera.c */,
+				A3A112FF1F9DBBF800ED0E1C /* p2p_cms_main_ipcamera.h */,
+				A3A113011F9DBBF800ED0E1C /* p2p_cms_main_nas.c */,
+				A3A113001F9DBBF800ED0E1C /* p2p_cms_main_nas.h */,
+				A3A112FD1F9DBBF800ED0E1C /* p2p_cms_main.c */,
+				A3A112FE1F9DBBF800ED0E1C /* p2p_cms_main.h */,
+			);
+			path = p2p_cms_main;
+			sourceTree = "<group>";
+		};
+		A3A113081F9DBC0C00ED0E1C /* p2p_cms_channel_client_main */ = {
+			isa = PBXGroup;
+			children = (
+				A3A1130E1F9DBC3C00ED0E1C /* ipcamera_data */,
+				A3A113091F9DBC1B00ED0E1C /* nas_data */,
+			);
+			path = p2p_cms_channel_client_main;
+			sourceTree = "<group>";
+		};
+		A3A113091F9DBC1B00ED0E1C /* nas_data */ = {
+			isa = PBXGroup;
+			children = (
+				A30A15541FB16CCC004FCF91 /* command */,
+				A3DDD5D91FA4E6CE00E47725 /* p2p_cms_nas_command.c */,
+				A3DDD5DB1FA4E6CE00E47725 /* p2p_cms_nas_command.h */,
+				A3DDD5DA1FA4E6CE00E47725 /* p2p_cms_nas_other.c */,
+				A3DDD5DC1FA4E6CE00E47725 /* p2p_cms_nas_other.h */,
+				A3A1130A1F9DBC2D00ED0E1C /* p2p_cms_nas_main.c */,
+				A3A1130B1F9DBC2D00ED0E1C /* p2p_cms_nas_main.h */,
+			);
+			path = nas_data;
+			sourceTree = "<group>";
+		};
+		A3A1130E1F9DBC3C00ED0E1C /* ipcamera_data */ = {
+			isa = PBXGroup;
+			children = (
+				A3F510F51FB2D35C006C22BD /* command */,
+				A3DDD5D31FA4E6BA00E47725 /* p2p_cms_ipcamera_command.c */,
+				A3DDD5D41FA4E6BA00E47725 /* p2p_cms_ipcamera_command.h */,
+				A3DDD5D11FA4E6BA00E47725 /* p2p_cms_ipcamera_other.c */,
+				A3DDD5D21FA4E6BA00E47725 /* p2p_cms_ipcamera_other.h */,
+				A3A113101F9DBC5C00ED0E1C /* p2p_cms_ipcamera_main.c */,
+				A3A1130F1F9DBC5C00ED0E1C /* p2p_cms_ipcamera_main.h */,
+			);
+			path = ipcamera_data;
+			sourceTree = "<group>";
+		};
+		A3F510F51FB2D35C006C22BD /* command */ = {
+			isa = PBXGroup;
+			children = (
+				A3F510F61FB2D394006C22BD /* p2p_cms_ipcamera_command_common.c */,
+				A3F510F71FB2D394006C22BD /* p2p_cms_ipcamera_command_common.h */,
+			);
+			path = command;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A3A112CF1F9DB86800ED0E1C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3A1130D1F9DBC2D00ED0E1C /* p2p_cms_nas_main.h in Headers */,
+				A3DDD5DF1FA4E6CE00E47725 /* p2p_cms_nas_command.h in Headers */,
+				A3DDD5E01FA4E6CE00E47725 /* p2p_cms_nas_other.h in Headers */,
+				A3A113041F9DBBF800ED0E1C /* p2p_cms_main.h in Headers */,
+				A3A113061F9DBBF800ED0E1C /* p2p_cms_main_nas.h in Headers */,
+				A3DDD5D61FA4E6BA00E47725 /* p2p_cms_ipcamera_other.h in Headers */,
+				A3A112FA1F9DBBD300ED0E1C /* p2p_protocol_nas.h in Headers */,
+				A3A113111F9DBC5C00ED0E1C /* p2p_cms_ipcamera_main.h in Headers */,
+				A3A113051F9DBBF800ED0E1C /* p2p_cms_main_ipcamera.h in Headers */,
+				A3A112F41F9DBBD300ED0E1C /* p2p_func_client.h in Headers */,
+				A3F510F91FB2D394006C22BD /* p2p_cms_ipcamera_command_common.h in Headers */,
+				A3A112F51F9DBBD300ED0E1C /* p2p_protocol_ipcamera.h in Headers */,
+				A3A112DF1F9DB91E00ED0E1C /* config_xcode.h in Headers */,
+				A3A112EA1F9DBBC200ED0E1C /* misc_setting.h in Headers */,
+				A30A15581FB16CEA004FCF91 /* p2p_cms_nas_command_security_system.h in Headers */,
+				A3A112E61F9DBBB100ED0E1C /* piziot_core_cms.h in Headers */,
+				A3F510FD1FB2D3BD006C22BD /* p2p_cms_nas_command_common.h in Headers */,
+				A3DDD5D81FA4E6BA00E47725 /* p2p_cms_ipcamera_command.h in Headers */,
+				A3A112F91F9DBBD300ED0E1C /* p2p_func.h in Headers */,
+				A3A112DE1F9DB91E00ED0E1C /* menu_config.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A3A112D01F9DB86800ED0E1C /* libpiziot_core_cms */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3A112D51F9DB86800ED0E1C /* Build configuration list for PBXNativeTarget "libpiziot_core_cms" */;
+			buildPhases = (
+				A3A112CD1F9DB86800ED0E1C /* Sources */,
+				A3A112CE1F9DB86800ED0E1C /* Frameworks */,
+				A3A112CF1F9DB86800ED0E1C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libpiziot_core_cms;
+			productName = libpiziot_core_cms;
+			productReference = A3A112D11F9DB86800ED0E1C /* libpiziot_core_cms.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A3A112C91F9DB86800ED0E1C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = LIBPIZIOT;
+				TargetAttributes = {
+					A3A112D01F9DB86800ED0E1C = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A3A112CC1F9DB86800ED0E1C /* Build configuration list for PBXProject "libpiziot_core_cms" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A3A112C81F9DB86800ED0E1C;
+			productRefGroup = A3A112D21F9DB86800ED0E1C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A3A112D01F9DB86800ED0E1C /* libpiziot_core_cms */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A3A112CD1F9DB86800ED0E1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3A112F71F9DBBD300ED0E1C /* p2p_protocol_ipcamera.c in Sources */,
+				A3A112E91F9DBBC200ED0E1C /* misc_setting.c in Sources */,
+				A3F510F81FB2D394006C22BD /* p2p_cms_ipcamera_command_common.c in Sources */,
+				A3A113121F9DBC5C00ED0E1C /* p2p_cms_ipcamera_main.c in Sources */,
+				A3A113071F9DBBF800ED0E1C /* p2p_cms_main_nas.c in Sources */,
+				A3DDD5DD1FA4E6CE00E47725 /* p2p_cms_nas_command.c in Sources */,
+				A3DDD5DE1FA4E6CE00E47725 /* p2p_cms_nas_other.c in Sources */,
+				A3A112F81F9DBBD300ED0E1C /* p2p_func.c in Sources */,
+				A3A113021F9DBBF800ED0E1C /* p2p_cms_main_ipcamera.c in Sources */,
+				A30A15571FB16CEA004FCF91 /* p2p_cms_nas_command_security_system.c in Sources */,
+				A3DDD5D51FA4E6BA00E47725 /* p2p_cms_ipcamera_other.c in Sources */,
+				A3A1130C1F9DBC2D00ED0E1C /* p2p_cms_nas_main.c in Sources */,
+				A3DDD5D71FA4E6BA00E47725 /* p2p_cms_ipcamera_command.c in Sources */,
+				A3F510FC1FB2D3BD006C22BD /* p2p_cms_nas_command_common.c in Sources */,
+				A3A112F61F9DBBD300ED0E1C /* p2p_func_client.c in Sources */,
+				A3A112E51F9DBBB100ED0E1C /* piziot_core_cms.c in Sources */,
+				A3A112F31F9DBBD300ED0E1C /* p2p_protocol_nas.c in Sources */,
+				A3A113031F9DBBF800ED0E1C /* p2p_cms_main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A3A112D31F9DB86800ED0E1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A3A112D41F9DB86800ED0E1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A3A112D61F9DB86800ED0E1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/../../../lib/Xcode/macOS/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = piziot_core_cms;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../../include";
+			};
+			name = Debug;
+		};
+		A3A112D71F9DB86800ED0E1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/../../../lib/Xcode/macOS/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = piziot_core_cms;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../../include";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A3A112CC1F9DB86800ED0E1C /* Build configuration list for PBXProject "libpiziot_core_cms" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3A112D31F9DB86800ED0E1C /* Debug */,
+				A3A112D41F9DB86800ED0E1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3A112D51F9DB86800ED0E1C /* Build configuration list for PBXNativeTarget "libpiziot_core_cms" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3A112D61F9DB86800ED0E1C /* Debug */,
+				A3A112D71F9DB86800ED0E1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A3A112C91F9DB86800ED0E1C /* Project object */;
+}

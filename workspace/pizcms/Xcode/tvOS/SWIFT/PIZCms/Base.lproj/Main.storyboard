@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="13529" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PIZCms" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fl-ok-Uta">
+                                <rect key="frame" x="132" y="60" width="152" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Quit"/>
+                                <connections>
+                                    <action selector="buttonQuit_OnPrimaryActionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="Cx8-z5-Aya"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2by-ft-Ml3">
+                                <rect key="frame" x="132" y="390" width="179" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="LOCK"/>
+                                <connections>
+                                    <action selector="buttonNAS_AND_CMS_LOCK_OnPrimaryActionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="q7z-Ob-gh7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7In-Le-Ghc">
+                                <rect key="frame" x="533" y="390" width="233" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="UNLOCK"/>
+                                <connections>
+                                    <action selector="buttonNAS_AND_CMS_UNLOCK_OnPrimaryActionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="Psh-tu-d0c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOW-1I-u4n">
+                                <rect key="frame" x="132" y="497" width="185" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="MUTE"/>
+                                <connections>
+                                    <action selector="buttonNAS_AND_CMS_MUTE_OnPrimaryActionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="vRo-5z-wy2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shU-Zw-9sy">
+                                <rect key="frame" x="132" y="170" width="366" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="NAS/CMS Model"/>
+                                <connections>
+                                    <action selector="buttonNAS_AND_CMS_MODEL_OnPrimaryActionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="08O-RO-Flc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiQ-QH-a1A">
+                                <rect key="frame" x="533" y="170" width="229" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="REBOOT"/>
+                                <connections>
+                                    <action selector="buttonNAS_AND_CMS_REBOOT_OnPrimaryActionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="INB-rc-Cxg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZD-jO-PKY">
+                                <rect key="frame" x="533" y="280" width="267" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="TIMEZONE"/>
+                                <connections>
+                                    <action selector="buttonNAS_AND_CMS_TIMEZONE_OnPrimaryActionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="qdh-F7-Uqt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngw-NY-Nhe">
+                                <rect key="frame" x="132" y="607" width="250" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="CALLOUT"/>
+                                <connections>
+                                    <action selector="buttonNAS_AND_CMS_CALLOUT_OnPrimaryActionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="cha-oR-j5T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxB-2W-3Es">
+                                <rect key="frame" x="132" y="280" width="277" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="FWVERP2P"/>
+                                <connections>
+                                    <action selector="buttonNAS_AND_CMS_FWVERP2P_OnPrimaryActionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="RC6-bD-UX0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Irf-zv-W00">
+                                <rect key="frame" x="533" y="500" width="239" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="UNMUTE"/>
+                                <connections>
+                                    <action selector="buttonNAS_AND_CMS_UNMUTE_OnPrimaryActionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="sy5-mV-ecd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6w8-7W-eKo">
+                                <rect key="frame" x="533" y="610" width="304" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="UNCALLOUT"/>
+                                <connections>
+                                    <action selector="buttonNAS_AND_CMS_UNCALLOUT_OnPrimaryActionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="C3W-aA-MmK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonNAS_AND_CMS_CALLOUT" destination="ngw-NY-Nhe" id="yuZ-R1-xrL"/>
+                        <outlet property="buttonNAS_AND_CMS_FWVERP2P" destination="QxB-2W-3Es" id="lCM-Xt-mbP"/>
+                        <outlet property="buttonNAS_AND_CMS_LOCK" destination="2by-ft-Ml3" id="zC8-RQ-zrd"/>
+                        <outlet property="buttonNAS_AND_CMS_MODEL" destination="shU-Zw-9sy" id="vvS-R3-cn7"/>
+                        <outlet property="buttonNAS_AND_CMS_MUTE" destination="UOW-1I-u4n" id="1PZ-BM-vQo"/>
+                        <outlet property="buttonNAS_AND_CMS_REBOOT" destination="OiQ-QH-a1A" id="p7G-cW-tOR"/>
+                        <outlet property="buttonNAS_AND_CMS_TIMEZONE" destination="4ZD-jO-PKY" id="oUk-jE-NNV"/>
+                        <outlet property="buttonNAS_AND_CMS_UNCALLOUT" destination="6w8-7W-eKo" id="KKq-YN-Ve8"/>
+                        <outlet property="buttonNAS_AND_CMS_UNLOCK" destination="7In-Le-Ghc" id="dwX-eG-3ED"/>
+                        <outlet property="buttonNAS_AND_CMS_UNMUTE" destination="Irf-zv-W00" id="ejt-Us-n1I"/>
+                        <outlet property="buttonQuit" destination="7fl-ok-Uta" id="lJ6-sh-6uM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

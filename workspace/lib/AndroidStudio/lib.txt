@@ -1,0 +1,64 @@
+ARM, EABI5 version 1	workspace/lib/AndroidStudio/Release/armeabi-v7a/libpiziot_p2p_common.so
+
+ARM, EABI5 version 1	workspace/lib/AndroidStudio/Release/armeabi-v7a/libpiziot_os.so
+
+ARM, EABI5 version 1	workspace/lib/AndroidStudio/Release/armeabi-v7a/libpiziot_p2p_client.so
+
+ARM, EABI5 version 1	workspace/lib/AndroidStudio/Release/armeabi-v7a/libpiziot_core_cms.so
+
+Intel 80386, version 1	workspace/lib/AndroidStudio/Release/x86/libpiziot_p2p_common.so
+
+Intel 80386, version 1	workspace/lib/AndroidStudio/Release/x86/libpiziot_os.so
+
+Intel 80386, version 1	workspace/lib/AndroidStudio/Release/x86/libpiziot_p2p_client.so
+
+Intel 80386, version 1	workspace/lib/AndroidStudio/Release/x86/libpiziot_core_cms.so
+
+ARM aarch64, version 1	workspace/lib/AndroidStudio/Release/arm64-v8a/libpiziot_p2p_common.so
+
+ARM aarch64, version 1	workspace/lib/AndroidStudio/Release/arm64-v8a/libpiziot_os.so
+
+ARM aarch64, version 1	workspace/lib/AndroidStudio/Release/arm64-v8a/libpiziot_p2p_client.so
+
+ARM aarch64, version 1	workspace/lib/AndroidStudio/Release/arm64-v8a/libpiziot_core_cms.so
+
+x86-64, version 1	workspace/lib/AndroidStudio/Release/x86_64/libpiziot_p2p_common.so
+
+x86-64, version 1	workspace/lib/AndroidStudio/Release/x86_64/libpiziot_os.so
+
+x86-64, version 1	workspace/lib/AndroidStudio/Release/x86_64/libpiziot_p2p_client.so
+
+x86-64, version 1	workspace/lib/AndroidStudio/Release/x86_64/libpiziot_core_cms.so
+
+ARM, EABI5 version 1	workspace/lib/AndroidStudio/Debug/armeabi-v7a/libpiziot_p2p_common.so
+
+ARM, EABI5 version 1	workspace/lib/AndroidStudio/Debug/armeabi-v7a/libpiziot_os.so
+
+ARM, EABI5 version 1	workspace/lib/AndroidStudio/Debug/armeabi-v7a/libpiziot_p2p_client.so
+
+ARM, EABI5 version 1	workspace/lib/AndroidStudio/Debug/armeabi-v7a/libpiziot_core_cms.so
+
+Intel 80386, version 1	workspace/lib/AndroidStudio/Debug/x86/libpiziot_p2p_common.so
+
+Intel 80386, version 1	workspace/lib/AndroidStudio/Debug/x86/libpiziot_os.so
+
+Intel 80386, version 1	workspace/lib/AndroidStudio/Debug/x86/libpiziot_p2p_client.so
+
+Intel 80386, version 1	workspace/lib/AndroidStudio/Debug/x86/libpiziot_core_cms.so
+
+ARM aarch64, version 1	workspace/lib/AndroidStudio/Debug/arm64-v8a/libpiziot_p2p_common.so
+
+ARM aarch64, version 1	workspace/lib/AndroidStudio/Debug/arm64-v8a/libpiziot_os.so
+
+ARM aarch64, version 1	workspace/lib/AndroidStudio/Debug/arm64-v8a/libpiziot_p2p_client.so
+
+ARM aarch64, version 1	workspace/lib/AndroidStudio/Debug/arm64-v8a/libpiziot_core_cms.so
+
+x86-64, version 1	workspace/lib/AndroidStudio/Debug/x86_64/libpiziot_p2p_common.so
+
+x86-64, version 1	workspace/lib/AndroidStudio/Debug/x86_64/libpiziot_os.so
+
+x86-64, version 1	workspace/lib/AndroidStudio/Debug/x86_64/libpiziot_p2p_client.so
+
+x86-64, version 1	workspace/lib/AndroidStudio/Debug/x86_64/libpiziot_core_cms.so
+

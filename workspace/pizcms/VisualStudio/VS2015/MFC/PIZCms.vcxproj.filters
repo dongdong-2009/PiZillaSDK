@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="libpiziot">
+      <UniqueIdentifier>{ee75d938-cf1b-4f2c-bb42-13ecb951afd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mfc">
+      <UniqueIdentifier>{20fd47f3-e953-40db-9a0d-898fef5c20ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mfc\src">
+      <UniqueIdentifier>{322959b3-1192-404b-9b52-e72e30b09cf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mfc\src\form">
+      <UniqueIdentifier>{2f5eb826-9a04-4528-b6e9-ce8166cc4a47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src">
+      <UniqueIdentifier>{6fae4d75-9a18-4a9f-b04c-9399baac7cb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libpiziot\src\pizcms">
+      <UniqueIdentifier>{d0b65129-c5c4-483f-bc72-2c51467603b3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PIZCms.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Linux\src\pizcms\pizcms_config.h">
+      <Filter>libpiziot\src\pizcms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Linux\src\pizcms\pizcms_main.h">
+      <Filter>libpiziot\src\pizcms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Linux\src\pizcms\pizcms_setting.h">
+      <Filter>libpiziot\src\pizcms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Linux\src\pizcms\stdafx_lib.h">
+      <Filter>libpiziot\src\pizcms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_mfc\form\Form_Main_Test.h">
+      <Filter>mfc\src\form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_mfc\form\Form_Main_List.h">
+      <Filter>mfc\src\form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_mfc\form\Form_Test.h">
+      <Filter>mfc\src\form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_mfc\form\form_type_define.h">
+      <Filter>mfc\src\form</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Linux\src\pizcms\pizcms_main.c">
+      <Filter>libpiziot\src\pizcms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Linux\src\pizcms\pizcms_setting.c">
+      <Filter>libpiziot\src\pizcms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_mfc\form\Form_Main_Test.cpp">
+      <Filter>mfc\src\form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_mfc\form\Form_Main_List.cpp">
+      <Filter>mfc\src\form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_mfc\form\Form_Test.cpp">
+      <Filter>mfc\src\form</Filter>
+    </ClCompile>
+    <ClCompile Include="PIZCms.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PIZCms.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\PIZCms.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\PIZCms.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Toolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

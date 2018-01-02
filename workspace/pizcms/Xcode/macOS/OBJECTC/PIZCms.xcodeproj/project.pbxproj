@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A30A154B1FB16B2B004FCF91 /* xpiziot_p2p_device.m in Sources */ = {isa = PBXBuildFile; fileRef = A30A15491FB16B2B004FCF91 /* xpiziot_p2p_device.m */; };
+		A3897B681F9DCFE500B1A3C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3897B671F9DCFE500B1A3C6 /* AppDelegate.m */; };
+		A3897B6B1F9DCFE500B1A3C6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3897B6A1F9DCFE500B1A3C6 /* ViewController.m */; };
+		A3897B6D1F9DCFE500B1A3C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3897B6C1F9DCFE500B1A3C6 /* Assets.xcassets */; };
+		A3897B701F9DCFE500B1A3C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3897B6E1F9DCFE500B1A3C6 /* Main.storyboard */; };
+		A3897B731F9DCFE500B1A3C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3897B721F9DCFE500B1A3C6 /* main.m */; };
+		A3897B7E1F9DCFE500B1A3C6 /* PIZCmsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3897B7D1F9DCFE500B1A3C6 /* PIZCmsTests.m */; };
+		A3897B891F9DCFE500B1A3C6 /* PIZCmsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3897B881F9DCFE500B1A3C6 /* PIZCmsUITests.m */; };
+		A3897B981F9DD28F00B1A3C6 /* libpiziot_os.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3897B971F9DD28F00B1A3C6 /* libpiziot_os.a */; };
+		A3897B9A1F9DD2A100B1A3C6 /* libpiziot_p2p_common.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3897B991F9DD2A100B1A3C6 /* libpiziot_p2p_common.a */; };
+		A3897B9C1F9DD2B600B1A3C6 /* libpiziot_p2p_client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3897B9B1F9DD2B600B1A3C6 /* libpiziot_p2p_client.a */; };
+		A3897B9E1F9DD2C700B1A3C6 /* libpiziot_core_cms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3897B9D1F9DD2C700B1A3C6 /* libpiziot_core_cms.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A3897B7A1F9DCFE500B1A3C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3897B5B1F9DCFE400B1A3C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A3897B621F9DCFE500B1A3C6;
+			remoteInfo = PIZCms;
+		};
+		A3897B851F9DCFE500B1A3C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3897B5B1F9DCFE400B1A3C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A3897B621F9DCFE500B1A3C6;
+			remoteInfo = PIZCms;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A30A15491FB16B2B004FCF91 /* xpiziot_p2p_device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xpiziot_p2p_device.m; sourceTree = "<group>"; };
+		A30A154A1FB16B2B004FCF91 /* xpiziot_p2p_device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xpiziot_p2p_device.h; sourceTree = "<group>"; };
+		A3897B631F9DCFE500B1A3C6 /* PIZCms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PIZCms.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3897B661F9DCFE500B1A3C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A3897B671F9DCFE500B1A3C6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A3897B691F9DCFE500B1A3C6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A3897B6A1F9DCFE500B1A3C6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A3897B6C1F9DCFE500B1A3C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A3897B6F1F9DCFE500B1A3C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A3897B711F9DCFE500B1A3C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3897B721F9DCFE500B1A3C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A3897B741F9DCFE500B1A3C6 /* PIZCms.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PIZCms.entitlements; sourceTree = "<group>"; };
+		A3897B791F9DCFE500B1A3C6 /* PIZCmsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PIZCmsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3897B7D1F9DCFE500B1A3C6 /* PIZCmsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PIZCmsTests.m; sourceTree = "<group>"; };
+		A3897B7F1F9DCFE500B1A3C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3897B841F9DCFE500B1A3C6 /* PIZCmsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PIZCmsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3897B881F9DCFE500B1A3C6 /* PIZCmsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PIZCmsUITests.m; sourceTree = "<group>"; };
+		A3897B8A1F9DCFE500B1A3C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3897B971F9DD28F00B1A3C6 /* libpiziot_os.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpiziot_os.a; path = ../../../../lib/Xcode/macOS/Release/libpiziot_os.a; sourceTree = "<group>"; };
+		A3897B991F9DD2A100B1A3C6 /* libpiziot_p2p_common.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpiziot_p2p_common.a; path = ../../../../lib/Xcode/macOS/Release/libpiziot_p2p_common.a; sourceTree = "<group>"; };
+		A3897B9B1F9DD2B600B1A3C6 /* libpiziot_p2p_client.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpiziot_p2p_client.a; path = ../../../../lib/Xcode/macOS/Release/libpiziot_p2p_client.a; sourceTree = "<group>"; };
+		A3897B9D1F9DD2C700B1A3C6 /* libpiziot_core_cms.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpiziot_core_cms.a; path = ../../../../lib/Xcode/macOS/Release/libpiziot_core_cms.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A3897B601F9DCFE500B1A3C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3897B981F9DD28F00B1A3C6 /* libpiziot_os.a in Frameworks */,
+				A3897B9A1F9DD2A100B1A3C6 /* libpiziot_p2p_common.a in Frameworks */,
+				A3897B9C1F9DD2B600B1A3C6 /* libpiziot_p2p_client.a in Frameworks */,
+				A3897B9E1F9DD2C700B1A3C6 /* libpiziot_core_cms.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3897B761F9DCFE500B1A3C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3897B811F9DCFE500B1A3C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A30A15481FB16B14004FCF91 /* libpiziot */ = {
+			isa = PBXGroup;
+			children = (
+				A30A154A1FB16B2B004FCF91 /* xpiziot_p2p_device.h */,
+				A30A15491FB16B2B004FCF91 /* xpiziot_p2p_device.m */,
+			);
+			path = libpiziot;
+			sourceTree = "<group>";
+		};
+		A3897B5A1F9DCFE400B1A3C6 = {
+			isa = PBXGroup;
+			children = (
+				A3897B651F9DCFE500B1A3C6 /* PIZCms */,
+				A3897B7C1F9DCFE500B1A3C6 /* PIZCmsTests */,
+				A3897B871F9DCFE500B1A3C6 /* PIZCmsUITests */,
+				A3897B641F9DCFE500B1A3C6 /* Products */,
+				A3897B961F9DD28E00B1A3C6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A3897B641F9DCFE500B1A3C6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A3897B631F9DCFE500B1A3C6 /* PIZCms.app */,
+				A3897B791F9DCFE500B1A3C6 /* PIZCmsTests.xctest */,
+				A3897B841F9DCFE500B1A3C6 /* PIZCmsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A3897B651F9DCFE500B1A3C6 /* PIZCms */ = {
+			isa = PBXGroup;
+			children = (
+				A30A15481FB16B14004FCF91 /* libpiziot */,
+				A3897B661F9DCFE500B1A3C6 /* AppDelegate.h */,
+				A3897B671F9DCFE500B1A3C6 /* AppDelegate.m */,
+				A3897B691F9DCFE500B1A3C6 /* ViewController.h */,
+				A3897B6A1F9DCFE500B1A3C6 /* ViewController.m */,
+				A3897B6C1F9DCFE500B1A3C6 /* Assets.xcassets */,
+				A3897B6E1F9DCFE500B1A3C6 /* Main.storyboard */,
+				A3897B711F9DCFE500B1A3C6 /* Info.plist */,
+				A3897B721F9DCFE500B1A3C6 /* main.m */,
+				A3897B741F9DCFE500B1A3C6 /* PIZCms.entitlements */,
+			);
+			path = PIZCms;
+			sourceTree = "<group>";
+		};
+		A3897B7C1F9DCFE500B1A3C6 /* PIZCmsTests */ = {
+			isa = PBXGroup;
+			children = (
+				A3897B7D1F9DCFE500B1A3C6 /* PIZCmsTests.m */,
+				A3897B7F1F9DCFE500B1A3C6 /* Info.plist */,
+			);
+			path = PIZCmsTests;
+			sourceTree = "<group>";
+		};
+		A3897B871F9DCFE500B1A3C6 /* PIZCmsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A3897B881F9DCFE500B1A3C6 /* PIZCmsUITests.m */,
+				A3897B8A1F9DCFE500B1A3C6 /* Info.plist */,
+			);
+			path = PIZCmsUITests;
+			sourceTree = "<group>";
+		};
+		A3897B961F9DD28E00B1A3C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3897B9D1F9DD2C700B1A3C6 /* libpiziot_core_cms.a */,
+				A3897B9B1F9DD2B600B1A3C6 /* libpiziot_p2p_client.a */,
+				A3897B991F9DD2A100B1A3C6 /* libpiziot_p2p_common.a */,
+				A3897B971F9DD28F00B1A3C6 /* libpiziot_os.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A3897B621F9DCFE500B1A3C6 /* PIZCms */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3897B8D1F9DCFE500B1A3C6 /* Build configuration list for PBXNativeTarget "PIZCms" */;
+			buildPhases = (
+				A3897B5F1F9DCFE500B1A3C6 /* Sources */,
+				A3897B601F9DCFE500B1A3C6 /* Frameworks */,
+				A3897B611F9DCFE500B1A3C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PIZCms;
+			productName = PIZCms;
+			productReference = A3897B631F9DCFE500B1A3C6 /* PIZCms.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A3897B781F9DCFE500B1A3C6 /* PIZCmsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3897B901F9DCFE500B1A3C6 /* Build configuration list for PBXNativeTarget "PIZCmsTests" */;
+			buildPhases = (
+				A3897B751F9DCFE500B1A3C6 /* Sources */,
+				A3897B761F9DCFE500B1A3C6 /* Frameworks */,
+				A3897B771F9DCFE500B1A3C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A3897B7B1F9DCFE500B1A3C6 /* PBXTargetDependency */,
+			);
+			name = PIZCmsTests;
+			productName = PIZCmsTests;
+			productReference = A3897B791F9DCFE500B1A3C6 /* PIZCmsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A3897B831F9DCFE500B1A3C6 /* PIZCmsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3897B931F9DCFE500B1A3C6 /* Build configuration list for PBXNativeTarget "PIZCmsUITests" */;
+			buildPhases = (
+				A3897B801F9DCFE500B1A3C6 /* Sources */,
+				A3897B811F9DCFE500B1A3C6 /* Frameworks */,
+				A3897B821F9DCFE500B1A3C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A3897B861F9DCFE500B1A3C6 /* PBXTargetDependency */,
+			);
+			name = PIZCmsUITests;
+			productName = PIZCmsUITests;
+			productReference = A3897B841F9DCFE500B1A3C6 /* PIZCmsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A3897B5B1F9DCFE400B1A3C6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = LIBPIZIOT;
+				TargetAttributes = {
+					A3897B621F9DCFE500B1A3C6 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					A3897B781F9DCFE500B1A3C6 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A3897B621F9DCFE500B1A3C6;
+					};
+					A3897B831F9DCFE500B1A3C6 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A3897B621F9DCFE500B1A3C6;
+					};
+				};
+			};
+			buildConfigurationList = A3897B5E1F9DCFE400B1A3C6 /* Build configuration list for PBXProject "PIZCms" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A3897B5A1F9DCFE400B1A3C6;
+			productRefGroup = A3897B641F9DCFE500B1A3C6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A3897B621F9DCFE500B1A3C6 /* PIZCms */,
+				A3897B781F9DCFE500B1A3C6 /* PIZCmsTests */,
+				A3897B831F9DCFE500B1A3C6 /* PIZCmsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A3897B611F9DCFE500B1A3C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3897B6D1F9DCFE500B1A3C6 /* Assets.xcassets in Resources */,
+				A3897B701F9DCFE500B1A3C6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3897B771F9DCFE500B1A3C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3897B821F9DCFE500B1A3C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A3897B5F1F9DCFE500B1A3C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A30A154B1FB16B2B004FCF91 /* xpiziot_p2p_device.m in Sources */,
+				A3897B6B1F9DCFE500B1A3C6 /* ViewController.m in Sources */,
+				A3897B731F9DCFE500B1A3C6 /* main.m in Sources */,
+				A3897B681F9DCFE500B1A3C6 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3897B751F9DCFE500B1A3C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3897B7E1F9DCFE500B1A3C6 /* PIZCmsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3897B801F9DCFE500B1A3C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3897B891F9DCFE500B1A3C6 /* PIZCmsUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A3897B7B1F9DCFE500B1A3C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A3897B621F9DCFE500B1A3C6 /* PIZCms */;
+			targetProxy = A3897B7A1F9DCFE500B1A3C6 /* PBXContainerItemProxy */;
+		};
+		A3897B861F9DCFE500B1A3C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A3897B621F9DCFE500B1A3C6 /* PIZCms */;
+			targetProxy = A3897B851F9DCFE500B1A3C6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A3897B6E1F9DCFE500B1A3C6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3897B6F1F9DCFE500B1A3C6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A3897B8B1F9DCFE500B1A3C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A3897B8C1F9DCFE500B1A3C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A3897B8E1F9DCFE500B1A3C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PIZCms/PIZCms.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				INFOPLIST_FILE = PIZCms/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "$(PROJECT_DIR)/../../../../lib/Xcode/macOS/Debug";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pppiziot.www.PIZCms;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../../../include";
+			};
+			name = Debug;
+		};
+		A3897B8F1F9DCFE500B1A3C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PIZCms/PIZCms.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				INFOPLIST_FILE = PIZCms/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "$(PROJECT_DIR)/../../../../lib/Xcode/macOS/Release";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pppiziot.www.PIZCms;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../../../include";
+			};
+			name = Release;
+		};
+		A3897B911F9DCFE500B1A3C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PIZCmsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pppiziot.www.PIZCmsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PIZCms.app/Contents/MacOS/PIZCms";
+			};
+			name = Debug;
+		};
+		A3897B921F9DCFE500B1A3C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PIZCmsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pppiziot.www.PIZCmsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PIZCms.app/Contents/MacOS/PIZCms";
+			};
+			name = Release;
+		};
+		A3897B941F9DCFE500B1A3C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PIZCmsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pppiziot.www.PIZCmsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PIZCms;
+			};
+			name = Debug;
+		};
+		A3897B951F9DCFE500B1A3C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PIZCmsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pppiziot.www.PIZCmsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PIZCms;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A3897B5E1F9DCFE400B1A3C6 /* Build configuration list for PBXProject "PIZCms" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3897B8B1F9DCFE500B1A3C6 /* Debug */,
+				A3897B8C1F9DCFE500B1A3C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3897B8D1F9DCFE500B1A3C6 /* Build configuration list for PBXNativeTarget "PIZCms" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3897B8E1F9DCFE500B1A3C6 /* Debug */,
+				A3897B8F1F9DCFE500B1A3C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3897B901F9DCFE500B1A3C6 /* Build configuration list for PBXNativeTarget "PIZCmsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3897B911F9DCFE500B1A3C6 /* Debug */,
+				A3897B921F9DCFE500B1A3C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3897B931F9DCFE500B1A3C6 /* Build configuration list for PBXNativeTarget "PIZCmsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3897B941F9DCFE500B1A3C6 /* Debug */,
+				A3897B951F9DCFE500B1A3C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A3897B5B1F9DCFE400B1A3C6 /* Project object */;
+}

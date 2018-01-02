@@ -1,0 +1,6 @@
+; libpiziot_core_ipcamera.def : Declares the module parameters for the DLL.
+
+LIBRARY      "libpiziot_core_ipcamera"
+
+EXPORTS
+    ; Explicit exports can go here
