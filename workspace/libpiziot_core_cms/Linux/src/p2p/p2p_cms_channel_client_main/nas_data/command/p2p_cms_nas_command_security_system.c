@@ -64,13 +64,13 @@ static char THIS_FILE[] = __FILE__;
 #define TRACEB(...) {LIBPIZIOT_FIX_ANDROID_COMPILE_MIPS_ERROR(0);} //TRACEA
 #endif
 
-static void p2p_cms_nas_command_security_system_set_action(p2p_func_client_protocol_action_status_t* Alpsetting_action) {
-    gettimeofday(&Alpsetting_action->timeval_action_start, NULL);
-    Alpsetting_action->protocol_action_flag = P2P_FUNC_CLIENT_PROTOCOL_ACTION_BEGIN;
+static void p2p_cms_nas_command_security_system_set_action(p2p_func_client_protocol_action_status_t* Alpprotocol_action_status) {
+    gettimeofday(&Alpprotocol_action_status->timeval_action_start, NULL);
+    Alpprotocol_action_status->protocol_action_flag = P2P_FUNC_CLIENT_PROTOCOL_ACTION_BEGIN;
 }
 
-static void p2p_cms_nas_command_security_system_clear_action(p2p_func_client_protocol_action_status_t* Alpsetting_action) {
-    Alpsetting_action->protocol_action_flag = P2P_FUNC_CLIENT_PROTOCOL_ACTION_END;
+static void p2p_cms_nas_command_security_system_clear_action(p2p_func_client_protocol_action_status_t* Alpprotocol_action_status) {
+    Alpprotocol_action_status->protocol_action_flag = P2P_FUNC_CLIENT_PROTOCOL_ACTION_END;
 }
 
 static void p2p_cms_nas_command_security_system_show_yn_resp(uint32_t Achannel_server_handle, libpiziot_core_p2p_protocol_optoin_yn_e Aoption_yn, char *Alpstractoin, char *AlpstrSG) {
@@ -98,7 +98,7 @@ static void p2p_cms_nas_command_security_system_show_yn_resp(uint32_t Achannel_s
     }
 }
 
-static libpiziot_os_type_func_result_e p2p_cms_nas_command_security_system_recv_set_yn_resp(int32_t Aarray_index, libpiziot_core_p2p_cmd_head_from_server_t *Alpcmd, p2p_cms_nas_main_zigbee_action_general_t* Alpsetting_action, char *Alpstractoin) {
+static libpiziot_os_type_func_result_e p2p_cms_nas_command_security_system_recv_set_yn_resp(int32_t Aarray_index, libpiziot_core_p2p_cmd_head_from_server_t *Alpcmd, p2p_cms_nas_main_zigbee_action_general_t* Alpzigbee_action_general, char *Alpstractoin) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     if (Aarray_index) { LIBPIZIOT_FIX_ANDROID_COMPILE_MIPS_ERROR(0); }
     {
@@ -108,7 +108,7 @@ static libpiziot_os_type_func_result_e p2p_cms_nas_command_security_system_recv_
         {
             libpiziot_core_p2p_protocol_optoin_yn_e option_yn = mem_endian_32((uint32_t)(lpdata_respond->option_yn));
             p2p_cms_nas_command_security_system_show_yn_resp(lpdata_respond->cmd_info.channel_server_handle, option_yn, Alpstractoin, "SET");
-            p2p_cms_nas_command_security_system_clear_action(&(Alpsetting_action->action));
+            p2p_cms_nas_command_security_system_clear_action(&(Alpzigbee_action_general->action_set));
         }
     }
     return LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
@@ -120,11 +120,11 @@ static libpiziot_os_type_func_result_e p2p_cms_nas_command_security_system_send_
     data_request.cmd_info.size = mem_endian_32(sizeof(data_request));
     data_request.cmd_info.cmd = mem_endian_32(((uint32_t)Acmd));
     data_request.option_yn = mem_endian_32((uint32_t)Aoption_yn);
-    rval = libpiziot_core_p2p_cms_nas_channel_send(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND, (unsigned char *) &(data_request), sizeof(data_request));
+    rval = libpiziot_core_p2p_cms_main_nas_channel_send(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND, (unsigned char *) &(data_request), sizeof(data_request));
     return rval;
 }
 
-static libpiziot_os_type_func_result_e p2p_cms_nas_command_security_system_recv_get_yn_resp(int32_t Aarray_index, libpiziot_core_p2p_cmd_head_from_server_t *Alpcmd, p2p_cms_nas_main_zigbee_action_general_t* Alpsetting_action, char *Alpstractoin) {
+static libpiziot_os_type_func_result_e p2p_cms_nas_command_security_system_recv_get_yn_resp(int32_t Aarray_index, libpiziot_core_p2p_cmd_head_from_server_t *Alpcmd, p2p_cms_nas_main_zigbee_action_general_t* Alpzigbee_action_general, char *Alpstractoin) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     if (Aarray_index) { LIBPIZIOT_FIX_ANDROID_COMPILE_MIPS_ERROR(0); }
     {
@@ -134,7 +134,7 @@ static libpiziot_os_type_func_result_e p2p_cms_nas_command_security_system_recv_
         {
             libpiziot_core_p2p_protocol_optoin_yn_e option_yn = mem_endian_32((uint32_t)(lpdata_respond->option_yn));
             p2p_cms_nas_command_security_system_show_yn_resp(lpdata_respond->cmd_info.channel_server_handle, option_yn, Alpstractoin, "GET");
-            p2p_cms_nas_command_security_system_clear_action(&(Alpsetting_action->action));
+            p2p_cms_nas_command_security_system_clear_action(&(Alpzigbee_action_general->action_get));
         }
     }
     return LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
@@ -145,7 +145,7 @@ static libpiziot_os_type_func_result_e p2p_cms_nas_command_security_system_send_
     p2p_protocol_nas_command_security_system_get_yn_req_t data_request;
     data_request.cmd_info.size = mem_endian_32(sizeof(data_request));
     data_request.cmd_info.cmd = mem_endian_32(((uint32_t)Acmd));
-    rval = libpiziot_core_p2p_cms_nas_channel_send(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND, (unsigned char *) &(data_request), sizeof(data_request));
+    rval = libpiziot_core_p2p_cms_main_nas_channel_send(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND, (unsigned char *) &(data_request), sizeof(data_request));
     return rval;
 }
 
@@ -159,27 +159,27 @@ libpiziot_os_type_func_result_e p2p_cms_nas_command_security_system_parser(p2p_p
         }
         switch (Acmd) {
         case P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM_SET_LOCK_RESP: {
-            rval = p2p_cms_nas_command_security_system_recv_set_yn_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_zigbee_set_lock), "LOCK");
+            rval = p2p_cms_nas_command_security_system_recv_set_yn_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_zigbee_lock), "LOCK");
         }
                                                             break;
         case P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM_GET_LOCK_RESP: {
-            rval = p2p_cms_nas_command_security_system_recv_get_yn_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_zigbee_get_lock), "LOCK");
+            rval = p2p_cms_nas_command_security_system_recv_get_yn_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_zigbee_lock), "LOCK");
         }
                                                             break;
         case P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM_SET_MUTE_RESP: {
-            rval = p2p_cms_nas_command_security_system_recv_set_yn_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_zigbee_set_mute), "MUTE");
+            rval = p2p_cms_nas_command_security_system_recv_set_yn_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_zigbee_mute), "MUTE");
         }
                                                             break;
         case P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM_GET_MUTE_RESP: {
-            rval = p2p_cms_nas_command_security_system_recv_get_yn_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_zigbee_get_mute), "MUTE");
+            rval = p2p_cms_nas_command_security_system_recv_get_yn_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_zigbee_mute), "MUTE");
         }
                                                             break;
         case P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM_SET_CALLOUT_RESP: {
-            rval = p2p_cms_nas_command_security_system_recv_set_yn_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_zigbee_set_callout), "CALLOUT");
+            rval = p2p_cms_nas_command_security_system_recv_set_yn_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_zigbee_callout), "CALLOUT");
         }
                                                                break;
         case P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM_GET_CALLOUT_RESP: {
-            rval = p2p_cms_nas_command_security_system_recv_get_yn_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_zigbee_get_callout), "CALLOUT");
+            rval = p2p_cms_nas_command_security_system_recv_get_yn_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_zigbee_callout), "CALLOUT");
         }
                                                                break;
         default: {
@@ -192,18 +192,18 @@ libpiziot_os_type_func_result_e p2p_cms_nas_command_security_system_parser(p2p_p
     return rval;
 }
 
-static libpiziot_os_type_func_result_e p2p_cms_nas_command_security_system_check_time_to_resend_action(p2p_func_client_protocol_action_status_t* Alpsetting_action) {
+static libpiziot_os_type_func_result_e p2p_cms_nas_command_security_system_check_time_to_resend_action(p2p_func_client_protocol_action_status_t* Alpprotocol_action_status) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     libpiziot_os_mutex_plock_lock(&p2p_cms_main_nas_channel_mutex);
     do {
-        if (Alpsetting_action->protocol_action_flag == P2P_FUNC_CLIENT_PROTOCOL_ACTION_BEGIN) {
-            Alpsetting_action->protocol_action_flag = P2P_FUNC_CLIENT_PROTOCOL_ACTION_RESEND;
+        if (Alpprotocol_action_status->protocol_action_flag == P2P_FUNC_CLIENT_PROTOCOL_ACTION_BEGIN) {
+            Alpprotocol_action_status->protocol_action_flag = P2P_FUNC_CLIENT_PROTOCOL_ACTION_RESEND;
             rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
         }
-        else if (Alpsetting_action->protocol_action_flag == P2P_FUNC_CLIENT_PROTOCOL_ACTION_RESEND) {
-            struct timeval pass = libpiziot_os_time_get_pass(&(Alpsetting_action->timeval_action_start));
+        else if (Alpprotocol_action_status->protocol_action_flag == P2P_FUNC_CLIENT_PROTOCOL_ACTION_RESEND) {
+            struct timeval pass = libpiziot_os_time_get_pass(&(Alpprotocol_action_status->timeval_action_start));
             if (pass.tv_sec > P2P_FUNC_CLIENT_ACTION_WAIT_SEC) {
-                gettimeofday(&Alpsetting_action->timeval_action_start, NULL);
+                gettimeofday(&Alpprotocol_action_status->timeval_action_start, NULL);
                 rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
             }
         }
@@ -221,42 +221,31 @@ void p2p_cms_nas_command_security_system_send_action(int32_t Aarray_index) {
     }
     libpiziot_os_mutex_plock_unlock(&p2p_cms_main_nas_channel_mutex);
     if (rval == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
-        if (p2p_cms_nas_command_security_system_check_time_to_resend_action(&(lpprotocol_command->action_zigbee_set_lock.action)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
-            p2p_cms_nas_command_security_system_send_set_yn_req(Aarray_index, P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM_SET_LOCK_REQ, lpprotocol_command->action_zigbee_set_lock.option_yn);
+        if (p2p_cms_nas_command_security_system_check_time_to_resend_action(&(lpprotocol_command->action_zigbee_lock.action_set)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
+            p2p_cms_nas_command_security_system_send_set_yn_req(Aarray_index, P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM_SET_LOCK_REQ, lpprotocol_command->action_zigbee_lock.option_yn_set);
         }
-        if (p2p_cms_nas_command_security_system_check_time_to_resend_action(&(lpprotocol_command->action_zigbee_get_lock.action)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
+        if (p2p_cms_nas_command_security_system_check_time_to_resend_action(&(lpprotocol_command->action_zigbee_lock.action_get)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
             p2p_cms_nas_command_security_system_send_get_yn_req(Aarray_index, P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM_GET_LOCK_REQ);
         }
-        if (p2p_cms_nas_command_security_system_check_time_to_resend_action(&(lpprotocol_command->action_zigbee_set_mute.action)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
-            p2p_cms_nas_command_security_system_send_set_yn_req(Aarray_index, P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM_SET_MUTE_REQ, lpprotocol_command->action_zigbee_set_mute.option_yn);
+        if (p2p_cms_nas_command_security_system_check_time_to_resend_action(&(lpprotocol_command->action_zigbee_mute.action_set)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
+            p2p_cms_nas_command_security_system_send_set_yn_req(Aarray_index, P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM_SET_MUTE_REQ, lpprotocol_command->action_zigbee_mute.option_yn_set);
         }
-        if (p2p_cms_nas_command_security_system_check_time_to_resend_action(&(lpprotocol_command->action_zigbee_get_mute.action)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
+        if (p2p_cms_nas_command_security_system_check_time_to_resend_action(&(lpprotocol_command->action_zigbee_mute.action_get)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
             p2p_cms_nas_command_security_system_send_get_yn_req(Aarray_index, P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM_GET_MUTE_REQ);
         }
-        if (p2p_cms_nas_command_security_system_check_time_to_resend_action(&(lpprotocol_command->action_zigbee_set_callout.action)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
-            p2p_cms_nas_command_security_system_send_set_yn_req(Aarray_index, P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM_SET_CALLOUT_REQ, lpprotocol_command->action_zigbee_set_callout.option_yn);
+        if (p2p_cms_nas_command_security_system_check_time_to_resend_action(&(lpprotocol_command->action_zigbee_callout.action_set)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
+            p2p_cms_nas_command_security_system_send_set_yn_req(Aarray_index, P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM_SET_CALLOUT_REQ, lpprotocol_command->action_zigbee_callout.option_yn_set);
         }
-        if (p2p_cms_nas_command_security_system_check_time_to_resend_action(&(lpprotocol_command->action_zigbee_get_callout.action)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
+        if (p2p_cms_nas_command_security_system_check_time_to_resend_action(&(lpprotocol_command->action_zigbee_callout.action_get)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
             p2p_cms_nas_command_security_system_send_get_yn_req(Aarray_index, P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM_GET_CALLOUT_REQ);
         }
     }
 }
 
-void p2p_cms_nas_command_security_system_init(int32_t Aarray_index) {
-    libpiziot_os_mutex_plock_lock(&p2p_cms_main_nas_channel_mutex);
-    do {
-        p2p_cms_nas_main_protocol_command_t *lpprotocol_command;
-        if (libpiziot_core_p2p_cms_nas_get_protocol_command(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND, &lpprotocol_command) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
-            break;
-        }
-        memset(&(lpprotocol_command->action_zigbee_set_lock), 0, sizeof(p2p_func_client_protocol_action_status_t));
-        memset(&(lpprotocol_command->action_zigbee_get_lock), 0, sizeof(p2p_func_client_protocol_action_status_t));
-        memset(&(lpprotocol_command->action_zigbee_set_mute), 0, sizeof(p2p_func_client_protocol_action_status_t));
-        memset(&(lpprotocol_command->action_zigbee_get_mute), 0, sizeof(p2p_func_client_protocol_action_status_t));
-        memset(&(lpprotocol_command->action_zigbee_set_callout), 0, sizeof(p2p_func_client_protocol_action_status_t));
-        memset(&(lpprotocol_command->action_zigbee_get_callout), 0, sizeof(p2p_func_client_protocol_action_status_t));
-    } while (0);
-    libpiziot_os_mutex_plock_unlock(&p2p_cms_main_nas_channel_mutex);
+void p2p_cms_nas_command_security_system_init_action(p2p_cms_nas_main_protocol_command_t *Alpprotocol_command) {
+    memset(&(Alpprotocol_command->action_zigbee_lock), 0, sizeof(Alpprotocol_command->action_zigbee_lock));
+    memset(&(Alpprotocol_command->action_zigbee_mute), 0, sizeof(Alpprotocol_command->action_zigbee_mute));
+    memset(&(Alpprotocol_command->action_zigbee_callout), 0, sizeof(Alpprotocol_command->action_zigbee_callout));
 }
 
 libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_nas_channel_zigbee_set_lock(int32_t Aarray_index, libpiziot_core_p2p_protocol_optoin_yn_e Aoption_yn) {
@@ -267,8 +256,8 @@ libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_nas_channel_zigbee_set_lo
         if (libpiziot_core_p2p_cms_nas_get_protocol_command(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND, &lpprotocol_command) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
             break;
         }
-        p2p_cms_nas_command_security_system_set_action(&(lpprotocol_command->action_zigbee_set_lock.action));
-        lpprotocol_command->action_zigbee_set_lock.option_yn = Aoption_yn;
+        p2p_cms_nas_command_security_system_set_action(&(lpprotocol_command->action_zigbee_lock.action_set));
+        lpprotocol_command->action_zigbee_lock.option_yn_set = Aoption_yn;
         rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
     } while (0);
     libpiziot_os_mutex_plock_unlock(&p2p_cms_main_nas_channel_mutex);
@@ -283,7 +272,7 @@ libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_nas_channel_zigbee_get_lo
         if (libpiziot_core_p2p_cms_nas_get_protocol_command(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND, &lpprotocol_command) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
             break;
         }
-        p2p_cms_nas_command_security_system_set_action(&(lpprotocol_command->action_zigbee_get_lock.action));
+        p2p_cms_nas_command_security_system_set_action(&(lpprotocol_command->action_zigbee_lock.action_get));
         rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
     } while (0);
     libpiziot_os_mutex_plock_unlock(&p2p_cms_main_nas_channel_mutex);
@@ -298,8 +287,8 @@ libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_nas_channel_zigbee_set_mu
         if (libpiziot_core_p2p_cms_nas_get_protocol_command(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND, &lpprotocol_command) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
             break;
         }
-        p2p_cms_nas_command_security_system_set_action(&(lpprotocol_command->action_zigbee_set_mute.action));
-        lpprotocol_command->action_zigbee_set_mute.option_yn = Aoption_yn;
+        p2p_cms_nas_command_security_system_set_action(&(lpprotocol_command->action_zigbee_mute.action_set));
+        lpprotocol_command->action_zigbee_mute.option_yn_set = Aoption_yn;
         rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
     } while (0);
     libpiziot_os_mutex_plock_unlock(&p2p_cms_main_nas_channel_mutex);
@@ -314,7 +303,7 @@ libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_nas_channel_zigbee_get_mu
         if (libpiziot_core_p2p_cms_nas_get_protocol_command(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND, &lpprotocol_command) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
             break;
         }
-        p2p_cms_nas_command_security_system_set_action(&(lpprotocol_command->action_zigbee_get_mute.action));
+        p2p_cms_nas_command_security_system_set_action(&(lpprotocol_command->action_zigbee_mute.action_get));
         rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
     } while (0);
     libpiziot_os_mutex_plock_unlock(&p2p_cms_main_nas_channel_mutex);
@@ -329,8 +318,8 @@ libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_nas_channel_zigbee_set_ca
         if (libpiziot_core_p2p_cms_nas_get_protocol_command(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND, &lpprotocol_command) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
             break;
         }
-        p2p_cms_nas_command_security_system_set_action(&(lpprotocol_command->action_zigbee_set_callout.action));
-        lpprotocol_command->action_zigbee_set_callout.option_yn = Aoption_yn;
+        p2p_cms_nas_command_security_system_set_action(&(lpprotocol_command->action_zigbee_callout.action_set));
+        lpprotocol_command->action_zigbee_callout.option_yn_set = Aoption_yn;
         rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
     } while (0);
     libpiziot_os_mutex_plock_unlock(&p2p_cms_main_nas_channel_mutex);
@@ -345,7 +334,7 @@ libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_nas_channel_zigbee_get_ca
         if (libpiziot_core_p2p_cms_nas_get_protocol_command(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND, &lpprotocol_command) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
             break;
         }
-        p2p_cms_nas_command_security_system_set_action(&(lpprotocol_command->action_zigbee_get_callout.action));
+        p2p_cms_nas_command_security_system_set_action(&(lpprotocol_command->action_zigbee_callout.action_get));
         rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
     } while (0);
     libpiziot_os_mutex_plock_unlock(&p2p_cms_main_nas_channel_mutex);

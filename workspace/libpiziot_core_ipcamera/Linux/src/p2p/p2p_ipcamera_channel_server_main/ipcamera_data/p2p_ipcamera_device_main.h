@@ -27,11 +27,14 @@ typedef struct p2p_ipcamera_device_main_thread_info_s p2p_ipcamera_device_main_t
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)
 typedef struct p2p_ipcamera_device_main_common_action_general_s {
-    p2p_func_client_protocol_action_status_t action;
+    p2p_func_client_protocol_action_status_t action_set;
+    p2p_func_client_protocol_action_status_t action_get;
 } p2p_ipcamera_device_main_common_action_general_t;
 
 typedef struct p2p_ipcamera_device_main_common_action_timezone_s {
-    p2p_func_client_protocol_action_status_t action;
+    p2p_func_client_protocol_action_status_t action_set;
+    p2p_func_client_protocol_action_status_t action_get;
+    libpiziot_core_p2p_protocol_optoin_timezone_e option_timezone_current;
 } p2p_ipcamera_device_main_common_action_timezone_t;
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
@@ -39,12 +42,10 @@ typedef struct p2p_ipcamera_device_main_common_action_timezone_s {
 typedef struct p2p_ipcamera_device_main_protocol_command_s {
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)
-    p2p_ipcamera_device_main_common_action_general_t action_common_get_model;
-    p2p_ipcamera_device_main_common_action_general_t action_common_get_fwverp2p;
-    p2p_ipcamera_device_main_common_action_general_t action_common_set_reboot;
-    libpiziot_core_p2p_protocol_optoin_timezone_e action_value_common_timezone;
-    p2p_ipcamera_device_main_common_action_timezone_t action_common_set_timezone;
-    p2p_ipcamera_device_main_common_action_general_t action_common_get_timezone;
+    p2p_ipcamera_device_main_common_action_general_t action_common_model;
+    p2p_ipcamera_device_main_common_action_general_t action_common_fwverp2p;
+    p2p_ipcamera_device_main_common_action_general_t action_common_reboot;
+    p2p_ipcamera_device_main_common_action_timezone_t action_common_timezone;
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
     p2p_func_client_channel_enable_flag_t channel_enable_flag;

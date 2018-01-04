@@ -241,18 +241,6 @@ static libpiziot_os_type_func_result_e p2p_nas_device_main_malloc(p2p_nas_main_d
                     }
                 }
             }
-#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
-#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_COMMON)
-            {
-                p2p_nas_device_command_common_init_action(Athread_info_index);
-            }
-#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_COMMON)
-#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM)
-            {
-                p2p_nas_device_command_security_system_init_action(Athread_info_index);
-            }
-#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM)
-#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
         }
         rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
     } while (0);

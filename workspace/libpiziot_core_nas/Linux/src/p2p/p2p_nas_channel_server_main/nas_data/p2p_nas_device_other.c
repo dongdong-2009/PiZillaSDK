@@ -60,9 +60,7 @@ static char THIS_FILE[] = __FILE__;
 #define TRACEB(...) {LIBPIZIOT_FIX_ANDROID_COMPILE_MIPS_ERROR(0);} //TRACEA
 #endif
 
-#if defined(P2P_PROTOCOL_NAS_OTHER_DEVICE_SEND_DATA_MAX_SIZE)
 static struct timeval p2p_nas_device_other_send_packet_timeout = { 30, 0 };
-#endif //defined(P2P_PROTOCOL_NAS_OTHER_DEVICE_SEND_DATA_MAX_SIZE)
 
 void p2p_nas_device_other_data_in_callback(void *Alpobject, int32_t Adevice_handle, int32_t Achannel_server_handle, int32_t Achannel_id, struct sockaddr_in *Alpin_channel_client_ip, unsigned char *Alpdata, int32_t Adata_size) {
     p2p_nas_device_main_thread_info_t *lpthread_info = Alpobject;
@@ -114,8 +112,6 @@ void p2p_nas_device_other_data_in_callback(void *Alpobject, int32_t Adevice_hand
     libpiziot_os_mutex_plock_unlock(&(lpthread_info->data_in_mutex));
 }
 
-#if defined(P2P_PROTOCOL_NAS_OTHER_DEVICE_SEND_DATA_MAX_SIZE)
-
 static libpiziot_os_type_func_result_e p2p_nas_device_other_encrypt_data_callback_before_send(unsigned char *Alpdata, int32_t Adata_size, unsigned char *Alpdata_enc, unsigned char **Alppdata_send, void *Alpobject) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     p2p_nas_device_main_thread_info_t *lpthread_info = Alpobject;
@@ -143,6 +139,9 @@ static libpiziot_os_type_func_result_e p2p_nas_device_other_send(p2p_nas_device_
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     libpiziot_os_mutex_plock_lock(&(Alpthread_info->instance_mutex));
     do {
+        if (Adata_size <= 0) {
+            break;
+        }
         if (Alpthread_info->thread_index < 0) {
             break;
         }
@@ -251,11 +250,11 @@ libpiziot_os_type_func_result_e p2p_nas_device_other_send_to_channel_client(p2p_
 libpiziot_os_pthread_dword_t p2p_nas_device_other_thread_instance_routine(void *arg) {
     libpiziot_os_pthread_instance_t *lpthread_instance = (libpiziot_os_pthread_instance_t *)arg;
     p2p_nas_device_main_thread_info_t *lpthread_info = (p2p_nas_device_main_thread_info_t *)(lpthread_instance->m_extra);
-#if defined(P2P_PROTOCOL_NAS_OTHER_DEVICE_SEND_DATA_MAX_SIZE)
+
     if (lpthread_info->lpdata_send_to_client != 0) {
         p2p_nas_device_other_init_data(lpthread_info->channel_id, lpthread_info->lpdata_send_to_client, P2P_PROTOCOL_NAS_OTHER_DEVICE_SEND_DATA_MAX_SIZE);
     }
-#endif //defined(P2P_PROTOCOL_NAS_OTHER_DEVICE_SEND_DATA_MAX_SIZE)
+
     TRACEB("%s:start_routine ...\n", LIBPIZIOT_OS__FUNCTION__);
     do {
         usleep(1000);
@@ -263,17 +262,16 @@ libpiziot_os_pthread_dword_t p2p_nas_device_other_thread_instance_routine(void *
             TRACEB("%s:BreakThread\n", LIBPIZIOT_OS__FUNCTION__);
             break;
         }
-#if defined(P2P_PROTOCOL_NAS_OTHER_DEVICE_SEND_DATA_MAX_SIZE)
+
         if (lpthread_info->lpdata_send_to_client != 0) {
             p2p_nas_device_other_send(lpthread_info, LIBPIZIOT_P2P_COMMON_CHANNEL_SERVER_BROADCAST_DATA, lpthread_info->lpdata_send_to_client, P2P_PROTOCOL_NAS_OTHER_DEVICE_SEND_DATA_MAX_SIZE, p2p_nas_device_other_encrypt_data_callback_before_send);
         }
-#endif //defined(P2P_PROTOCOL_NAS_OTHER_DEVICE_SEND_DATA_MAX_SIZE)
+
     } while (1);
     TRACEB("%s:end_routine ...\n", LIBPIZIOT_OS__FUNCTION__);
     return (libpiziot_os_pthread_dword_t)1234567;
 }
 
-#endif //defined(P2P_PROTOCOL_NAS_OTHER_DEVICE_SEND_DATA_MAX_SIZE)
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_OTHER)
 
 #endif //defined(ENABLE_P2P_NAS)

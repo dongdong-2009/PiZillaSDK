@@ -264,9 +264,12 @@ static libpiziot_os_type_func_result_e p2p_cms_nas_main_malloc(p2p_cms_main_nas_
                 }
                 {
                     {
-                        lpthread_info->data_dec_from_server_size = protocol_head_len + Arecv_data_max_size;
-                        lpthread_info->lpdata_dec_from_server = malloc(lpthread_info->data_dec_from_server_size);
-                        if (lpthread_info->lpdata_dec_from_server == 0) break;
+                        lpthread_info->data_dec_from_server_size = 0;
+                        if (Arecv_data_max_size > 0) {
+                            lpthread_info->data_dec_from_server_size = protocol_head_len + Arecv_data_max_size;
+                            lpthread_info->lpdata_dec_from_server = malloc(lpthread_info->data_dec_from_server_size);
+                            if (lpthread_info->lpdata_dec_from_server == 0) break;
+                        }
                     }
                     {
                         libpiziot_os_fifo_buffer_info_t *lp_fifo_recv_from_server = &(lpthread_info->m_fifo_recv_from_server);
@@ -278,24 +281,15 @@ static libpiziot_os_type_func_result_e p2p_cms_nas_main_malloc(p2p_cms_main_nas_
                         }
                     }
                     {
-                        lpthread_info->data_recv_from_server_size = protocol_head_len + Arecv_data_max_size;;
-                        lpthread_info->lpdata_recv_from_server = malloc(lpthread_info->data_recv_from_server_size);
-                        if (lpthread_info->lpdata_recv_from_server == 0) break;
+                        lpthread_info->data_recv_from_server_size = 0;
+                        if (Arecv_data_max_size > 0) {
+                            lpthread_info->data_recv_from_server_size = protocol_head_len + Arecv_data_max_size;
+                            lpthread_info->lpdata_recv_from_server = malloc(lpthread_info->data_recv_from_server_size);
+                            if (lpthread_info->lpdata_recv_from_server == 0) break;
+                        }
                     }
                 }
             }
-#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
-#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_COMMON)
-            {
-                p2p_cms_nas_command_common_init_action(Athread_info_index);
-            }
-#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_COMMON)
-#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM)
-            {
-                p2p_cms_nas_command_security_system_init(Athread_info_index);
-            }
-#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM)
-#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
         }
         rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
     } while (0);
@@ -428,7 +422,10 @@ libpiziot_os_type_func_result_e p2p_cms_nas_main_start_thread(p2p_cms_main_nas_t
                     // Call the P2P SDK to create a new channel client socket.
                     {
                         int32_t protocol_head_len = (sizeof(libpiziot_core_p2p_protocol_command_head_t) + 0xF) & 0xFFFFFFF0;
-                        int32_t recv_data_max_size = protocol_head_len + Arecv_data_max_size;
+                        int32_t recv_data_max_size = 0;
+                        if (Arecv_data_max_size > 0) {
+                            recv_data_max_size = protocol_head_len + Arecv_data_max_size;
+                        }
                         if (libpiziot_p2p_clientsdk_create_channel_client(Aviewer_handle, Achannel_id, select_net_type, Adata_type, channel_account, channel_password, &(m_p2p_cms_nas_callback), recv_data_max_size, &(lpthread_info->p2p_cms_channel_client_handle)) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
                             TRACEA("PIZCmsNas:create_channel_client,error !!\n");
                             break;

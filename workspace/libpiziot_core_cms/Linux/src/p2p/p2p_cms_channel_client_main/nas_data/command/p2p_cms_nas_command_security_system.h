@@ -39,7 +39,7 @@ extern "C"
 
     extern void p2p_cms_nas_command_security_system_send_action(int32_t Aarray_index);
 
-    extern void p2p_cms_nas_command_security_system_init(int32_t Aarray_index);
+    extern void p2p_cms_nas_command_security_system_init_action(p2p_cms_nas_main_protocol_command_t *Alpprotocol_command);
 
 #ifdef __cplusplus
 }

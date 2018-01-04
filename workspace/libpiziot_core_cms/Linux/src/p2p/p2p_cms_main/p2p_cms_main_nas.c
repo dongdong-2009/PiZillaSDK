@@ -43,6 +43,15 @@
 #include "../p2p_cms_channel_client_main/nas_data/p2p_cms_nas_command.h"
 #include "../p2p_cms_channel_client_main/nas_data/p2p_cms_nas_other.h"
 
+#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
+#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_COMMON)
+#include "../p2p_cms_channel_client_main/nas_data/command/p2p_cms_nas_command_common.h"
+#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_COMMON)
+#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM)
+#include "../p2p_cms_channel_client_main/nas_data/command/p2p_cms_nas_command_security_system.h"
+#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM)
+#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
+
 //Define Common Library
 
 //Define Debug Library
@@ -116,6 +125,18 @@ static void p2p_cms_main_nas_channel_update_mode(p2p_cms_main_nas_thread_info_t 
             libpiziot_os_mutex_plock_lock(&p2p_cms_main_nas_channel_mutex);
             {
                 Alpprotocol_command->lpthread_info = Alpthread_info->lpp2p_cms_nas_main_thread_info[Alpthread_info->update_thread_info_index];
+#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
+#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_COMMON)
+                {
+                    p2p_cms_nas_command_common_init_action(Alpprotocol_command);
+                }
+#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_COMMON)
+#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM)
+                {
+                    p2p_cms_nas_command_security_system_init_action(Alpprotocol_command);
+                }
+#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM)
+#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
             }
             libpiziot_os_mutex_plock_unlock(&p2p_cms_main_nas_channel_mutex);
         }

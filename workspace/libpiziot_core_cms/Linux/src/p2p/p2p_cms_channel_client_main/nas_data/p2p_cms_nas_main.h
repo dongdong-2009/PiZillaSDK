@@ -30,18 +30,23 @@ typedef struct p2p_cms_nas_main_thread_info_s p2p_cms_nas_main_thread_info_t;
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_COMMON)
 typedef struct p2p_cms_nas_main_common_action_general_s {
-    p2p_func_client_protocol_action_status_t action;
+    p2p_func_client_protocol_action_status_t action_set;
+    p2p_func_client_protocol_action_status_t action_get;
 } p2p_cms_nas_main_common_action_general_t;
 
 typedef struct p2p_cms_nas_main_common_action_timezone_s {
-    p2p_func_client_protocol_action_status_t action;
-    libpiziot_core_p2p_protocol_optoin_timezone_e option_timezone;
+    p2p_func_client_protocol_action_status_t action_set;
+    libpiziot_core_p2p_protocol_optoin_timezone_e option_timezone_set;
+    p2p_func_client_protocol_action_status_t action_get;
+    libpiziot_core_p2p_protocol_optoin_timezone_e option_timezone_current;
 } p2p_cms_nas_main_common_action_timezone_t;
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_COMMON)
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM)
 typedef struct p2p_cms_nas_main_zigbee_action_general_s {
-    p2p_func_client_protocol_action_status_t action;
-    libpiziot_core_p2p_protocol_optoin_yn_e option_yn;
+    p2p_func_client_protocol_action_status_t action_set;
+    libpiziot_core_p2p_protocol_optoin_yn_e option_yn_set;
+    p2p_func_client_protocol_action_status_t action_get;
+    libpiziot_core_p2p_protocol_optoin_yn_e option_yn_current;
 } p2p_cms_nas_main_zigbee_action_general_t;
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM)
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
@@ -49,19 +54,15 @@ typedef struct p2p_cms_nas_main_zigbee_action_general_s {
 typedef struct p2p_cms_nas_main_protocol_command_s {
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_COMMON)
-    p2p_cms_nas_main_common_action_general_t action_common_get_model;
-    p2p_cms_nas_main_common_action_general_t action_common_get_fwverp2p;
-    p2p_cms_nas_main_common_action_general_t action_common_set_reboot;
-    p2p_cms_nas_main_common_action_timezone_t action_common_set_timezone;
-    p2p_cms_nas_main_common_action_general_t action_common_get_timezone;
+    p2p_cms_nas_main_common_action_general_t action_common_model;
+    p2p_cms_nas_main_common_action_general_t action_common_fwverp2p;
+    p2p_cms_nas_main_common_action_general_t action_common_reboot;
+    p2p_cms_nas_main_common_action_timezone_t action_common_timezone;
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_COMMON)
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM)
-    p2p_cms_nas_main_zigbee_action_general_t action_zigbee_set_lock;
-    p2p_cms_nas_main_zigbee_action_general_t action_zigbee_get_lock;
-    p2p_cms_nas_main_zigbee_action_general_t action_zigbee_set_mute;
-    p2p_cms_nas_main_zigbee_action_general_t action_zigbee_get_mute;
-    p2p_cms_nas_main_zigbee_action_general_t action_zigbee_set_callout;
-    p2p_cms_nas_main_zigbee_action_general_t action_zigbee_get_callout;
+    p2p_cms_nas_main_zigbee_action_general_t action_zigbee_lock;
+    p2p_cms_nas_main_zigbee_action_general_t action_zigbee_mute;
+    p2p_cms_nas_main_zigbee_action_general_t action_zigbee_callout;
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM)
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
     p2p_func_client_channel_enable_flag_t channel_enable_flag;

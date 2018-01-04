@@ -497,10 +497,10 @@ namespace LibPIZIOTClass
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)
 
-        if (libpiziot_core_p2p_cms_ipcamera_channel_common_set_timezone(cms_viewer_ipcamera_ref, LIBPIZIOT_CORE_P2P_PROTOCOL_OPTION_TIMEZONE_TAIPEI) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
-        }
-        if (libpiziot_core_p2p_cms_ipcamera_channel_common_get_timezone(cms_viewer_ipcamera_ref) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
-        }
+        //if (libpiziot_core_p2p_cms_ipcamera_channel_common_set_timezone(cms_viewer_ipcamera_ref, LIBPIZIOT_CORE_P2P_PROTOCOL_OPTION_TIMEZONE_TAIPEI) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
+        //}
+        //if (libpiziot_core_p2p_cms_ipcamera_channel_common_get_timezone(cms_viewer_ipcamera_ref) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
+        //}
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
 #endif //defined(ENABLE_P2P_CMS)
@@ -511,17 +511,17 @@ namespace LibPIZIOTClass
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_COMMON)
 
-        if (libpiziot_core_p2p_cms_nas_channel_common_set_timezone(cms_viewer_nas_ref, LIBPIZIOT_CORE_P2P_PROTOCOL_OPTION_TIMEZONE_TAIPEI) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
-        }
-        if (libpiziot_core_p2p_cms_nas_channel_common_get_timezone(cms_viewer_nas_ref) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
-        }
+        //if (libpiziot_core_p2p_cms_nas_channel_common_set_timezone(cms_viewer_nas_ref, LIBPIZIOT_CORE_P2P_PROTOCOL_OPTION_TIMEZONE_TAIPEI) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
+        //}
+        //if (libpiziot_core_p2p_cms_nas_channel_common_get_timezone(cms_viewer_nas_ref) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
+        //}
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_COMMON)
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM)
 
-        if (libpiziot_core_p2p_cms_nas_channel_zigbee_set_lock(cms_viewer_nas_ref, LIBPIZIOT_CORE_P2P_PROTOCOL_OPTION_YN_YES) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
-        }
-        if (libpiziot_core_p2p_cms_nas_channel_zigbee_get_lock(cms_viewer_nas_ref) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
-        }
+        //if (libpiziot_core_p2p_cms_nas_channel_zigbee_set_lock(cms_viewer_nas_ref, LIBPIZIOT_CORE_P2P_PROTOCOL_OPTION_YN_YES) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
+        //}
+        //if (libpiziot_core_p2p_cms_nas_channel_zigbee_get_lock(cms_viewer_nas_ref) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
+        //}
 
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM)
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)

@@ -62,9 +62,9 @@ static char THIS_FILE[] = __FILE__;
 #define TRACEB(...) {LIBPIZIOT_FIX_ANDROID_COMPILE_MIPS_ERROR(0);} //TRACEA
 #endif
 
-static void p2p_ipcamera_device_command_common_set_action(p2p_func_client_protocol_action_status_t* Alpsetting_action) {
-    gettimeofday(&Alpsetting_action->timeval_action_start, NULL);
-    Alpsetting_action->protocol_action_flag = P2P_FUNC_CLIENT_PROTOCOL_ACTION_BEGIN;
+static void p2p_ipcamera_device_command_common_set_action(p2p_func_client_protocol_action_status_t* Alpprotocol_action_status) {
+    gettimeofday(&Alpprotocol_action_status->timeval_action_start, NULL);
+    Alpprotocol_action_status->protocol_action_flag = P2P_FUNC_CLIENT_PROTOCOL_ACTION_BEGIN;
 }
 
 static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_recv_get_model_req(libpiziot_core_p2p_cmd_head_from_client_t *Alpcmd, char *Alpstractoin) {
@@ -78,7 +78,7 @@ static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_recv_g
     return LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
 }
 
-static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_send_get_model_resp(p2p_ipcamera_device_main_protocol_command_t *Alpprotocol_command, p2p_ipcamera_device_main_common_action_general_t *Alpsetting_action, p2p_protocol_ipcamera_command_e Acmd, libpiziot_core_p2p_data_from_client_head_t *Alphead) {
+static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_send_get_model_resp(p2p_ipcamera_device_main_protocol_command_t *Alpprotocol_command, p2p_ipcamera_device_main_common_action_general_t *Alpcommon_action_general, p2p_protocol_ipcamera_command_e Acmd, libpiziot_core_p2p_data_from_client_head_t *Alphead) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     {
         p2p_protocol_ipcamera_command_common_get_model_resp_t data_respond;
@@ -116,7 +116,7 @@ static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_send_g
         }
         data_respond.cmd_info.channel_server_handle = Alphead->channel_server_handle;
         rval = p2p_ipcamera_device_command_send_to_channel_client(Alpprotocol_command->lpthread_info, (unsigned char *) &(data_respond), sizeof(data_respond));
-        p2p_ipcamera_device_command_common_set_action(&(Alpsetting_action->action));
+        p2p_ipcamera_device_command_common_set_action(&(Alpcommon_action_general->action_get));
     }
     return rval;
 }
@@ -132,7 +132,7 @@ static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_recv_g
     return LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
 }
 
-static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_send_get_fwverp2p_resp(p2p_ipcamera_device_main_protocol_command_t *Alpprotocol_command, p2p_ipcamera_device_main_common_action_general_t *Alpsetting_action, p2p_protocol_ipcamera_command_e Acmd, libpiziot_core_p2p_data_from_client_head_t *Alphead) {
+static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_send_get_fwverp2p_resp(p2p_ipcamera_device_main_protocol_command_t *Alpprotocol_command, p2p_ipcamera_device_main_common_action_general_t *Alpcommon_action_general, p2p_protocol_ipcamera_command_e Acmd, libpiziot_core_p2p_data_from_client_head_t *Alphead) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     {
         p2p_protocol_ipcamera_command_common_get_fwverp2p_resp_t data_respond;
@@ -144,7 +144,7 @@ static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_send_g
         }
         data_respond.cmd_info.channel_server_handle = Alphead->channel_server_handle;
         rval = p2p_ipcamera_device_command_send_to_channel_client(Alpprotocol_command->lpthread_info, (unsigned char *) &(data_respond), sizeof(data_respond));
-        p2p_ipcamera_device_command_common_set_action(&(Alpsetting_action->action));
+        p2p_ipcamera_device_command_common_set_action(&(Alpcommon_action_general->action_get));
     }
     return rval;
 }
@@ -160,7 +160,7 @@ static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_recv_s
     return LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
 }
 
-static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_send_set_reboot_resp(p2p_ipcamera_device_main_protocol_command_t *Alpprotocol_command, p2p_ipcamera_device_main_common_action_general_t *Alpsetting_action, p2p_protocol_ipcamera_command_e Acmd, libpiziot_core_p2p_data_from_client_head_t *Alphead) {
+static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_send_set_reboot_resp(p2p_ipcamera_device_main_protocol_command_t *Alpprotocol_command, p2p_ipcamera_device_main_common_action_general_t *Alpcommon_action_general, p2p_protocol_ipcamera_command_e Acmd, libpiziot_core_p2p_data_from_client_head_t *Alphead) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     {
         p2p_protocol_ipcamera_command_common_set_reboot_resp_t data_respond;
@@ -169,12 +169,12 @@ static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_send_s
         data_respond.cmd_info.channel_server_handle = LIBPIZIOT_P2P_COMMON_CHANNEL_SERVER_BROADCAST_DATA;
         if (Alphead->channel_server_handle) { LIBPIZIOT_FIX_ANDROID_COMPILE_MIPS_ERROR(0); }
         rval = p2p_ipcamera_device_command_send_to_channel_client(Alpprotocol_command->lpthread_info, (unsigned char *) &(data_respond), sizeof(data_respond));
-        p2p_ipcamera_device_command_common_set_action(&(Alpsetting_action->action));
+        p2p_ipcamera_device_command_common_set_action(&(Alpcommon_action_general->action_set));
     }
     return rval;
 }
 
-static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_recv_set_timezone_req(libpiziot_core_p2p_protocol_optoin_timezone_e *Alpoption_timezone, libpiziot_core_p2p_cmd_head_from_client_t *Alpcmd, char *Alpstractoin) {
+static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_recv_set_timezone_req(p2p_ipcamera_device_main_common_action_timezone_t *Alpcommon_action_timezone, libpiziot_core_p2p_cmd_head_from_client_t *Alpcmd, char *Alpstractoin) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     {
         p2p_protocol_ipcamera_command_common_set_timezone_req_t *lpdata_request = (p2p_protocol_ipcamera_command_common_set_timezone_req_t *)Alpcmd;
@@ -183,7 +183,7 @@ static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_recv_s
         {
             switch (mem_endian_32(lpdata_request->option_timezone)) {
             case LIBPIZIOT_CORE_P2P_PROTOCOL_OPTION_TIMEZONE_TAIPEI: {
-                (*Alpoption_timezone) = mem_endian_32(lpdata_request->option_timezone);
+                Alpcommon_action_timezone->option_timezone_current = mem_endian_32(lpdata_request->option_timezone);
                 TRACEA("RECV IPCAMERA COMMON SET %s TAIPEI REQ\n", Alpstractoin);
             }
             default: {
@@ -196,43 +196,43 @@ static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_recv_s
     return LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
 }
 
-static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_send_set_timezone_resp(p2p_ipcamera_device_main_protocol_command_t *Alpprotocol_command, p2p_ipcamera_device_main_common_action_timezone_t *Alpsetting_action, libpiziot_core_p2p_protocol_optoin_timezone_e *Alpoption_timezone, p2p_protocol_ipcamera_command_e Acmd, libpiziot_core_p2p_data_from_client_head_t *Alphead) {
+static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_send_set_timezone_resp(p2p_ipcamera_device_main_protocol_command_t *Alpprotocol_command, p2p_ipcamera_device_main_common_action_timezone_t *Alpcommon_action_timezone, p2p_protocol_ipcamera_command_e Acmd, libpiziot_core_p2p_data_from_client_head_t *Alphead) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     {
         p2p_protocol_ipcamera_command_common_set_timezone_resp_t data_respond;
         data_respond.cmd_info.size = mem_endian_32(sizeof(data_respond));
         data_respond.cmd_info.cmd = mem_endian_32(((uint32_t)Acmd));
-        data_respond.option_timezone = mem_endian_32(((uint32_t)(*Alpoption_timezone)));
+        data_respond.option_timezone = mem_endian_32(((uint32_t)(Alpcommon_action_timezone->option_timezone_current)));
         data_respond.cmd_info.channel_server_handle = LIBPIZIOT_P2P_COMMON_CHANNEL_SERVER_BROADCAST_DATA;
         if (Alphead->channel_server_handle) { LIBPIZIOT_FIX_ANDROID_COMPILE_MIPS_ERROR(0); }
         rval = p2p_ipcamera_device_command_send_to_channel_client(Alpprotocol_command->lpthread_info, (unsigned char *) &(data_respond), sizeof(data_respond));
-        p2p_ipcamera_device_command_common_set_action(&(Alpsetting_action->action));
+        p2p_ipcamera_device_command_common_set_action(&(Alpcommon_action_timezone->action_set));
     }
     return rval;
 }
 
-static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_recv_get_timezone_req(libpiziot_core_p2p_protocol_optoin_timezone_e *Alpoption_timezone, libpiziot_core_p2p_cmd_head_from_client_t *Alpcmd, char *Alpstractoin) {
+static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_recv_get_timezone_req(p2p_ipcamera_device_main_common_action_timezone_t *Alpcommon_action_timezone, libpiziot_core_p2p_cmd_head_from_client_t *Alpcmd, char *Alpstractoin) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     {
         p2p_protocol_ipcamera_command_common_get_timezone_req_t *lpdata_request = (p2p_protocol_ipcamera_command_common_get_timezone_req_t *)Alpcmd;
         uint32_t size = mem_endian_32(lpdata_request->cmd_info.size);
         if (size != sizeof(p2p_protocol_ipcamera_command_common_get_timezone_req_t)) return rval;
         TRACEA("RECV IPCAMERA COMMON GET %s REQ\n", Alpstractoin);
-        if (Alpoption_timezone) { LIBPIZIOT_FIX_ANDROID_COMPILE_MIPS_ERROR(0); }
+        if (Alpcommon_action_timezone) { LIBPIZIOT_FIX_ANDROID_COMPILE_MIPS_ERROR(0); }
     }
     return LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
 }
 
-static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_send_get_timezone_resp(p2p_ipcamera_device_main_protocol_command_t *Alpprotocol_command, p2p_ipcamera_device_main_common_action_general_t *Alpsetting_action, libpiziot_core_p2p_protocol_optoin_timezone_e *Alpoption_timezone, p2p_protocol_ipcamera_command_e Acmd, libpiziot_core_p2p_data_from_client_head_t *Alphead) {
+static libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_send_get_timezone_resp(p2p_ipcamera_device_main_protocol_command_t *Alpprotocol_command, p2p_ipcamera_device_main_common_action_timezone_t *Alpcommon_action_timezone, p2p_protocol_ipcamera_command_e Acmd, libpiziot_core_p2p_data_from_client_head_t *Alphead) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     {
         p2p_protocol_ipcamera_command_common_get_timezone_resp_t data_respond;
         data_respond.cmd_info.size = mem_endian_32(sizeof(data_respond));
         data_respond.cmd_info.cmd = mem_endian_32(((uint32_t)Acmd));
-        data_respond.option_timezone = mem_endian_32(((uint32_t)(*Alpoption_timezone)));
+        data_respond.option_timezone = mem_endian_32(((uint32_t)(Alpcommon_action_timezone->option_timezone_current)));
         data_respond.cmd_info.channel_server_handle = Alphead->channel_server_handle;
         rval = p2p_ipcamera_device_command_send_to_channel_client(Alpprotocol_command->lpthread_info, (unsigned char *) &(data_respond), sizeof(data_respond));
-        p2p_ipcamera_device_command_common_set_action(&(Alpsetting_action->action));
+        p2p_ipcamera_device_command_common_set_action(&(Alpcommon_action_timezone->action_get));
     }
     return rval;
 }
@@ -248,27 +248,27 @@ libpiziot_os_type_func_result_e p2p_ipcamera_device_command_common_parser(p2p_pr
         switch (Acmd) {
         case P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_GET_MODEL_REQ: {
             p2p_ipcamera_device_command_common_recv_get_model_req(Alpcmd, "MODEL");
-            p2p_ipcamera_device_command_common_send_get_model_resp(lpprotocol_command, &(lpprotocol_command->action_common_get_model), P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_GET_MODEL_RESP, Alphead);
+            p2p_ipcamera_device_command_common_send_get_model_resp(lpprotocol_command, &(lpprotocol_command->action_common_model), P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_GET_MODEL_RESP, Alphead);
         }
                                                                  break;
         case P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_GET_FWVERP2P_REQ: {
             p2p_ipcamera_device_command_common_recv_get_fwverp2p_req(Alpcmd, "FWVERP2P");
-            p2p_ipcamera_device_command_common_send_get_fwverp2p_resp(lpprotocol_command, &(lpprotocol_command->action_common_get_fwverp2p), P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_GET_FWVERP2P_RESP, Alphead);
+            p2p_ipcamera_device_command_common_send_get_fwverp2p_resp(lpprotocol_command, &(lpprotocol_command->action_common_fwverp2p), P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_GET_FWVERP2P_RESP, Alphead);
         }
                                                                     break;
         case P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_SET_REBOOT_REQ: {
             p2p_ipcamera_device_command_common_recv_set_reboot_req(Alpcmd, "REBOOT");
-            p2p_ipcamera_device_command_common_send_set_reboot_resp(lpprotocol_command, &(lpprotocol_command->action_common_set_reboot), P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_SET_REBOOT_RESP, Alphead);
+            p2p_ipcamera_device_command_common_send_set_reboot_resp(lpprotocol_command, &(lpprotocol_command->action_common_reboot), P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_SET_REBOOT_RESP, Alphead);
         }
                                                                   break;
         case P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_SET_TIMEZONE_REQ: {
-            p2p_ipcamera_device_command_common_recv_set_timezone_req(&(lpprotocol_command->action_value_common_timezone), Alpcmd, "TIMEZONE");
-            p2p_ipcamera_device_command_common_send_set_timezone_resp(lpprotocol_command, &(lpprotocol_command->action_common_set_timezone), &(lpprotocol_command->action_value_common_timezone), P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_SET_TIMEZONE_RESP, Alphead);
+            p2p_ipcamera_device_command_common_recv_set_timezone_req(&(lpprotocol_command->action_common_timezone), Alpcmd, "TIMEZONE");
+            p2p_ipcamera_device_command_common_send_set_timezone_resp(lpprotocol_command, &(lpprotocol_command->action_common_timezone), P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_SET_TIMEZONE_RESP, Alphead);
         }
                                                                     break;
         case P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_GET_TIMEZONE_REQ: {
-            p2p_ipcamera_device_command_common_recv_get_timezone_req(&(lpprotocol_command->action_value_common_timezone), Alpcmd, "TIMEZONE");
-            p2p_ipcamera_device_command_common_send_get_timezone_resp(lpprotocol_command, &(lpprotocol_command->action_common_get_timezone), &(lpprotocol_command->action_value_common_timezone), P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_GET_TIMEZONE_RESP, Alphead);
+            p2p_ipcamera_device_command_common_recv_get_timezone_req(&(lpprotocol_command->action_common_timezone), Alpcmd, "TIMEZONE");
+            p2p_ipcamera_device_command_common_send_get_timezone_resp(lpprotocol_command, &(lpprotocol_command->action_common_timezone), P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_GET_TIMEZONE_RESP, Alphead);
         }
                                                                     break;
         default: {
@@ -293,21 +293,14 @@ void p2p_ipcamera_device_command_common_send_action(int32_t Aarray_index) {
     }
 }
 
-void p2p_ipcamera_device_command_common_init_action(int32_t Aarray_index) {
-    libpiziot_os_mutex_plock_lock(&p2p_ipcamera_main_device_channel_mutex);
-    do {
-        p2p_ipcamera_device_main_protocol_command_t *lpprotocol_command;
-        if (libpiziot_core_p2p_ipcamera_device_get_protocol_command(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND, &lpprotocol_command) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
-            break;
-        }
-        lpprotocol_command->action_value_common_timezone = LIBPIZIOT_CORE_P2P_PROTOCOL_OPTION_TIMEZONE_TAIPEI;
-        memset(&(lpprotocol_command->action_common_get_model), 0, sizeof(p2p_func_client_protocol_action_status_t));
-        memset(&(lpprotocol_command->action_common_get_fwverp2p), 0, sizeof(p2p_func_client_protocol_action_status_t));
-        memset(&(lpprotocol_command->action_common_set_reboot), 0, sizeof(p2p_func_client_protocol_action_status_t));
-        memset(&(lpprotocol_command->action_common_set_timezone), 0, sizeof(p2p_func_client_protocol_action_status_t));
-        memset(&(lpprotocol_command->action_common_get_timezone), 0, sizeof(p2p_func_client_protocol_action_status_t));
-    } while (0);
-    libpiziot_os_mutex_plock_unlock(&p2p_ipcamera_main_device_channel_mutex);
+void p2p_ipcamera_device_command_common_init_action(p2p_ipcamera_device_main_protocol_command_t *Alpprotocol_command) {
+    memset(&(Alpprotocol_command->action_common_model), 0, sizeof(Alpprotocol_command->action_common_model));
+    memset(&(Alpprotocol_command->action_common_fwverp2p), 0, sizeof(Alpprotocol_command->action_common_fwverp2p));
+    memset(&(Alpprotocol_command->action_common_reboot), 0, sizeof(Alpprotocol_command->action_common_reboot));
+    {
+        memset(&(Alpprotocol_command->action_common_timezone), 0, sizeof(Alpprotocol_command->action_common_timezone));
+        Alpprotocol_command->action_common_timezone.option_timezone_current = LIBPIZIOT_CORE_P2P_PROTOCOL_OPTION_TIMEZONE_UNKNOWN;
+    }
 }
 
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)

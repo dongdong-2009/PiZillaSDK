@@ -36,7 +36,7 @@ extern "C"
 
     extern void p2p_ipcamera_device_command_common_send_action(int32_t Aarray_index);
 
-    extern void p2p_ipcamera_device_command_common_init_action(int32_t Aarray_index);
+    extern void p2p_ipcamera_device_command_common_init_action(p2p_ipcamera_device_main_protocol_command_t *Alpprotocol_command);
 
 #ifdef __cplusplus
 }

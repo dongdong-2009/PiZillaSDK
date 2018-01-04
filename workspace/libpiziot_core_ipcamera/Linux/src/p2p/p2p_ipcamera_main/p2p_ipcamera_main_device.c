@@ -40,6 +40,12 @@
 #include "../p2p_ipcamera_channel_server_main/ipcamera_data/p2p_ipcamera_device_command.h"
 #include "../p2p_ipcamera_channel_server_main/ipcamera_data/p2p_ipcamera_device_other.h"
 
+#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
+#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)
+#include "../p2p_ipcamera_channel_server_main/ipcamera_data/command/p2p_ipcamera_device_command_common.h"
+#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)
+#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
+
 //Define Common Library
 
 //Define Debug Library
@@ -167,6 +173,13 @@ static void p2p_ipcamera_main_device_channel_update_mode(p2p_ipcamera_main_devic
             libpiziot_os_mutex_plock_lock(&p2p_ipcamera_main_device_channel_mutex);
             {
                 Alpprotocol_command->lpthread_info = Alpthread_info->lpp2p_ipcamera_device_main_thread_info[Alpthread_info->update_thread_info_index];
+#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
+#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)
+                {
+                    p2p_ipcamera_device_command_common_init_action(Alpprotocol_command);
+                }
+#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)
+#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
             }
             libpiziot_os_mutex_plock_unlock(&p2p_ipcamera_main_device_channel_mutex);
         }

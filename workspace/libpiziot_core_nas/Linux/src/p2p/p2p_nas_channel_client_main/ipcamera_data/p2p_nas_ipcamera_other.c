@@ -63,9 +63,7 @@ static char THIS_FILE[] = __FILE__;
 #define TRACEB(...) {LIBPIZIOT_FIX_ANDROID_COMPILE_MIPS_ERROR(0);} //TRACEA
 #endif
 
-#if defined(P2P_PROTOCOL_IPCAMERA_OTHER_VIEWER_SEND_DATA_MAX_SIZE)
 static struct timeval p2p_nas_ipcamera_other_send_packet_timeout = { 30, 0 };
-#endif //defined(P2P_PROTOCOL_IPCAMERA_OTHER_VIEWER_SEND_DATA_MAX_SIZE)
 
 void p2p_nas_ipcamera_other_data_in_callback(void *Alpobject, int32_t Aviewer_handle, int32_t Achannel_client_handle, int32_t Achannel_id, struct sockaddr_in *Alpin_channel_server_ip, unsigned char *Alpdata, int32_t Adata_size) {
     p2p_nas_ipcamera_main_thread_info_t *lpthread_info = Alpobject;
@@ -114,8 +112,6 @@ void p2p_nas_ipcamera_other_data_in_callback(void *Alpobject, int32_t Aviewer_ha
     } while (0);
 }
 
-#if defined(P2P_PROTOCOL_IPCAMERA_OTHER_VIEWER_SEND_DATA_MAX_SIZE)
-
 static libpiziot_os_type_func_result_e p2p_nas_ipcamera_other_encrypt_data_callback_before_send(unsigned char *Alpdata, int32_t Adata_size, unsigned char *Alpdata_enc, unsigned char **Alppdata_send, void *Alpobject) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     p2p_nas_ipcamera_main_thread_info_t *lpthread_info = Alpobject;
@@ -139,6 +135,9 @@ static libpiziot_os_type_func_result_e p2p_nas_ipcamera_other_send(p2p_nas_ipcam
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     libpiziot_os_mutex_plock_lock(&(Alpthread_info->instance_mutex));
     do {
+        if (Adata_size <= 0) {
+            break;
+        }
         if (Alpthread_info->thread_index < 0) {
             break;
         }
@@ -234,11 +233,11 @@ libpiziot_os_type_func_result_e p2p_nas_ipcamera_other_send_to_channel_server(p2
 libpiziot_os_pthread_dword_t p2p_nas_ipcamera_other_thread_instance_routine(void *arg) {
     libpiziot_os_pthread_instance_t *lpthread_instance = (libpiziot_os_pthread_instance_t *)arg;
     p2p_nas_ipcamera_main_thread_info_t *lpthread_info = (p2p_nas_ipcamera_main_thread_info_t *)(lpthread_instance->m_extra);
-#if defined(P2P_PROTOCOL_IPCAMERA_OTHER_VIEWER_SEND_DATA_MAX_SIZE)
+
     if (lpthread_info->lpdata_send_to_server != 0 && lpthread_info->lpdata_enc_to_server != 0) {
         p2p_nas_ipcamera_other_init_data(lpthread_info->channel_id, lpthread_info->lpdata_send_to_server, P2P_PROTOCOL_IPCAMERA_OTHER_VIEWER_SEND_DATA_MAX_SIZE);
     }
-#endif //defined(P2P_PROTOCOL_IPCAMERA_OTHER_VIEWER_SEND_DATA_MAX_SIZE)
+
     TRACEB("%s:start_routine ...\n", LIBPIZIOT_OS__FUNCTION__);
     do {
         usleep(1000);
@@ -246,7 +245,7 @@ libpiziot_os_pthread_dword_t p2p_nas_ipcamera_other_thread_instance_routine(void
             TRACEB("%s:BreakThread\n", LIBPIZIOT_OS__FUNCTION__);
             break;
         }
-#if defined(P2P_PROTOCOL_IPCAMERA_OTHER_VIEWER_SEND_DATA_MAX_SIZE)
+
         if (lpthread_info->lpdata_send_to_server != 0 && lpthread_info->lpdata_enc_to_server != 0) {
             p2p_nas_ipcamera_other_send(lpthread_info, lpthread_info->lpdata_send_to_server, P2P_PROTOCOL_IPCAMERA_OTHER_VIEWER_SEND_DATA_MAX_SIZE, lpthread_info->lpdata_enc_to_server, p2p_nas_ipcamera_other_encrypt_data_callback_before_send);
         }
@@ -258,13 +257,12 @@ libpiziot_os_pthread_dword_t p2p_nas_ipcamera_other_thread_instance_routine(void
             lpthread_info->p2p_nas_channel_client_handle = -1;
         }
 #endif //0
-#endif //defined(P2P_PROTOCOL_IPCAMERA_OTHER_VIEWER_SEND_DATA_MAX_SIZE)
+
     } while (1);
     TRACEB("%s:end_routine ...\n", LIBPIZIOT_OS__FUNCTION__);
     return (libpiziot_os_pthread_dword_t)1234567;
 }
 
-#endif //defined(P2P_PROTOCOL_IPCAMERA_OTHER_VIEWER_SEND_DATA_MAX_SIZE)
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_OTHER)
 
 #endif //defined(ENABLE_P2P_NAS)

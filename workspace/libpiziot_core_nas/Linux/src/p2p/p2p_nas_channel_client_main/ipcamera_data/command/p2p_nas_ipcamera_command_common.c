@@ -64,16 +64,16 @@ static char THIS_FILE[] = __FILE__;
 #define TRACEB(...) {LIBPIZIOT_FIX_ANDROID_COMPILE_MIPS_ERROR(0);} //TRACEA
 #endif
 
-static void p2p_nas_ipcamera_command_common_set_action(p2p_func_client_protocol_action_status_t *Alpsetting_action) {
-    gettimeofday(&Alpsetting_action->timeval_action_start, NULL);
-    Alpsetting_action->protocol_action_flag = P2P_FUNC_CLIENT_PROTOCOL_ACTION_BEGIN;
+static void p2p_nas_ipcamera_command_common_set_action(p2p_func_client_protocol_action_status_t* Alpprotocol_action_status) {
+    gettimeofday(&Alpprotocol_action_status->timeval_action_start, NULL);
+    Alpprotocol_action_status->protocol_action_flag = P2P_FUNC_CLIENT_PROTOCOL_ACTION_BEGIN;
 }
 
-static void p2p_nas_ipcamera_command_common_clear_action(p2p_func_client_protocol_action_status_t *Alpsetting_action) {
-    Alpsetting_action->protocol_action_flag = P2P_FUNC_CLIENT_PROTOCOL_ACTION_END;
+static void p2p_nas_ipcamera_command_common_clear_action(p2p_func_client_protocol_action_status_t* Alpprotocol_action_status) {
+    Alpprotocol_action_status->protocol_action_flag = P2P_FUNC_CLIENT_PROTOCOL_ACTION_END;
 }
 
-static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_recv_get_model_resp(int32_t Aarray_index, libpiziot_core_p2p_cmd_head_from_server_t *Alpcmd, p2p_nas_ipcamera_main_common_action_general_t* Alpsetting_action, char *Alpstractoin) {
+static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_recv_get_model_resp(int32_t Aarray_index, libpiziot_core_p2p_cmd_head_from_server_t *Alpcmd, p2p_nas_ipcamera_main_common_action_general_t* Alpcommon_action_general, char *Alpstractoin) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     if (Aarray_index) { LIBPIZIOT_FIX_ANDROID_COMPILE_MIPS_ERROR(0); }
     {
@@ -87,7 +87,7 @@ static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_recv_get_
             else {
                 TRACEA("NAS IPCAMERA COMMON GET %s RESP [%s]\n", Alpstractoin, lpdata_respond->lpmodel);
             }
-            p2p_nas_ipcamera_command_common_clear_action(&(Alpsetting_action->action));
+            p2p_nas_ipcamera_command_common_clear_action(&(Alpcommon_action_general->action_get));
         }
     }
     return LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
@@ -98,11 +98,11 @@ static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_send_get_
     p2p_protocol_ipcamera_command_common_get_model_req_t data_request;
     data_request.cmd_info.size = mem_endian_32(sizeof(data_request));
     data_request.cmd_info.cmd = mem_endian_32(((uint32_t)Acmd));
-    rval = libpiziot_core_p2p_nas_viewer_channel_send(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND, (unsigned char *) &(data_request), sizeof(data_request));
+    rval = libpiziot_core_p2p_nas_main_viewer_channel_send(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND, (unsigned char *) &(data_request), sizeof(data_request));
     return rval;
 }
 
-static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_recv_get_fwverp2p_resp(int32_t Aarray_index, libpiziot_core_p2p_cmd_head_from_server_t *Alpcmd, p2p_nas_ipcamera_main_common_action_general_t *Alpsetting_action, char *Alpstractoin) {
+static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_recv_get_fwverp2p_resp(int32_t Aarray_index, libpiziot_core_p2p_cmd_head_from_server_t *Alpcmd, p2p_nas_ipcamera_main_common_action_general_t *Alpcommon_action_general, char *Alpstractoin) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     if (Aarray_index) { LIBPIZIOT_FIX_ANDROID_COMPILE_MIPS_ERROR(0); }
     {
@@ -116,7 +116,7 @@ static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_recv_get_
             else {
                 TRACEA("NAS IPCAMERA COMMON GET %s RESP %d.%d.%d.%d\n", Alpstractoin, (int32_t)(lpdata_respond->lpVersion[0]), (int32_t)(lpdata_respond->lpVersion[1]), (int32_t)(lpdata_respond->lpVersion[2]), (int32_t)(lpdata_respond->lpVersion[3]));
             }
-            p2p_nas_ipcamera_command_common_clear_action(&(Alpsetting_action->action));
+            p2p_nas_ipcamera_command_common_clear_action(&(Alpcommon_action_general->action_get));
         }
     }
     return LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
@@ -127,11 +127,11 @@ static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_send_get_
     p2p_protocol_ipcamera_command_common_get_fwverp2p_req_t data_request;
     data_request.cmd_info.size = mem_endian_32(sizeof(data_request));
     data_request.cmd_info.cmd = mem_endian_32(((uint32_t)Acmd));
-    rval = libpiziot_core_p2p_nas_viewer_channel_send(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND, (unsigned char *) &(data_request), sizeof(data_request));
+    rval = libpiziot_core_p2p_nas_main_viewer_channel_send(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND, (unsigned char *) &(data_request), sizeof(data_request));
     return rval;
 }
 
-static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_recv_set_reboot_resp(int32_t Aarray_index, libpiziot_core_p2p_cmd_head_from_server_t *Alpcmd, p2p_nas_ipcamera_main_common_action_general_t *Alpsetting_action, char *Alpstractoin) {
+static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_recv_set_reboot_resp(int32_t Aarray_index, libpiziot_core_p2p_cmd_head_from_server_t *Alpcmd, p2p_nas_ipcamera_main_common_action_general_t *Alpcommon_action_general, char *Alpstractoin) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     if (Aarray_index) { LIBPIZIOT_FIX_ANDROID_COMPILE_MIPS_ERROR(0); }
     {
@@ -145,7 +145,7 @@ static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_recv_set_
             else {
                 TRACEA("NAS IPCAMERA COMMON SET %s RESP\n", Alpstractoin);
             }
-            p2p_nas_ipcamera_command_common_clear_action(&(Alpsetting_action->action));
+            p2p_nas_ipcamera_command_common_clear_action(&(Alpcommon_action_general->action_set));
         }
     }
     return LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
@@ -156,7 +156,7 @@ static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_send_set_
     p2p_protocol_ipcamera_command_common_set_reboot_req_t data_request;
     data_request.cmd_info.size = mem_endian_32(sizeof(data_request));
     data_request.cmd_info.cmd = mem_endian_32(((uint32_t)Acmd));
-    rval = libpiziot_core_p2p_nas_viewer_channel_send(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND, (unsigned char *) &(data_request), sizeof(data_request));
+    rval = libpiziot_core_p2p_nas_main_viewer_channel_send(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND, (unsigned char *) &(data_request), sizeof(data_request));
     return rval;
 }
 
@@ -180,7 +180,7 @@ static void p2p_nas_ipcamera_command_common_show_timezone_resp(uint32_t Achannel
     }
 }
 
-static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_recv_set_timezone_resp(int32_t Aarray_index, libpiziot_core_p2p_cmd_head_from_server_t *Alpcmd, p2p_nas_ipcamera_main_common_action_timezone_t* Alpsetting_action, char *Alpstractoin) {
+static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_recv_set_timezone_resp(int32_t Aarray_index, libpiziot_core_p2p_cmd_head_from_server_t *Alpcmd, p2p_nas_ipcamera_main_common_action_timezone_t* Alpcommon_action_timezone, char *Alpstractoin) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     if (Aarray_index) { LIBPIZIOT_FIX_ANDROID_COMPILE_MIPS_ERROR(0); }
     {
@@ -188,9 +188,9 @@ static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_recv_set_
         uint32_t size = mem_endian_32(lpdata_respond->cmd_info.size);
         if (size != sizeof(p2p_protocol_ipcamera_command_common_set_timezone_resp_t)) return rval;
         {
-            libpiziot_core_p2p_protocol_optoin_timezone_e option_timezone = mem_endian_32((uint32_t)(lpdata_respond->option_timezone));
-            p2p_nas_ipcamera_command_common_show_timezone_resp(lpdata_respond->cmd_info.channel_server_handle, option_timezone, Alpstractoin, "SET");
-            p2p_nas_ipcamera_command_common_clear_action(&(Alpsetting_action->action));
+            Alpcommon_action_timezone->option_timezone_current = mem_endian_32((uint32_t)(lpdata_respond->option_timezone));
+            p2p_nas_ipcamera_command_common_show_timezone_resp(lpdata_respond->cmd_info.channel_server_handle, Alpcommon_action_timezone->option_timezone_current, Alpstractoin, "SET");
+            p2p_nas_ipcamera_command_common_clear_action(&(Alpcommon_action_timezone->action_set));
         }
     }
     return LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
@@ -202,11 +202,11 @@ static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_send_set_
     data_request.cmd_info.size = mem_endian_32(sizeof(data_request));
     data_request.cmd_info.cmd = mem_endian_32(((uint32_t)Acmd));
     data_request.option_timezone = mem_endian_32((uint32_t)Aoption_timezone);
-    rval = libpiziot_core_p2p_nas_viewer_channel_send(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND, (unsigned char *) &(data_request), sizeof(data_request));
+    rval = libpiziot_core_p2p_nas_main_viewer_channel_send(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND, (unsigned char *) &(data_request), sizeof(data_request));
     return rval;
 }
 
-static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_recv_get_timezone_resp(int32_t Aarray_index, libpiziot_core_p2p_cmd_head_from_server_t *Alpcmd, p2p_nas_ipcamera_main_common_action_general_t *Alpsetting_action, char *Alpstractoin) {
+static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_recv_get_timezone_resp(int32_t Aarray_index, libpiziot_core_p2p_cmd_head_from_server_t *Alpcmd, p2p_nas_ipcamera_main_common_action_timezone_t *Alpcommon_action_timezone, char *Alpstractoin) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     if (Aarray_index) { LIBPIZIOT_FIX_ANDROID_COMPILE_MIPS_ERROR(0); }
     {
@@ -214,9 +214,9 @@ static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_recv_get_
         uint32_t size = mem_endian_32(lpdata_respond->cmd_info.size);
         if (size != sizeof(p2p_protocol_ipcamera_command_common_get_timezone_resp_t)) return rval;
         {
-            libpiziot_core_p2p_protocol_optoin_timezone_e option_timezone = mem_endian_32((uint32_t)(lpdata_respond->option_timezone));
-            p2p_nas_ipcamera_command_common_show_timezone_resp(lpdata_respond->cmd_info.channel_server_handle, option_timezone, Alpstractoin, "GET");
-            p2p_nas_ipcamera_command_common_clear_action(&(Alpsetting_action->action));
+            Alpcommon_action_timezone->option_timezone_current = mem_endian_32((uint32_t)(lpdata_respond->option_timezone));
+            p2p_nas_ipcamera_command_common_show_timezone_resp(lpdata_respond->cmd_info.channel_server_handle, Alpcommon_action_timezone->option_timezone_current, Alpstractoin, "GET");
+            p2p_nas_ipcamera_command_common_clear_action(&(Alpcommon_action_timezone->action_get));
         }
     }
     return LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
@@ -227,7 +227,7 @@ static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_send_get_
     p2p_protocol_ipcamera_command_common_get_timezone_req_t data_request;
     data_request.cmd_info.size = mem_endian_32(sizeof(data_request));
     data_request.cmd_info.cmd = mem_endian_32(((uint32_t)Acmd));
-    rval = libpiziot_core_p2p_nas_viewer_channel_send(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND, (unsigned char *) &(data_request), sizeof(data_request));
+    rval = libpiziot_core_p2p_nas_main_viewer_channel_send(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND, (unsigned char *) &(data_request), sizeof(data_request));
     return rval;
 }
 
@@ -241,23 +241,23 @@ libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_parser(p2p_proto
         }
         switch (Acmd) {
         case P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_GET_MODEL_RESP: {
-            p2p_nas_ipcamera_command_common_recv_get_model_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_common_get_model), "MODEL");
+            p2p_nas_ipcamera_command_common_recv_get_model_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_common_model), "MODEL");
         }
                                                                   break;
         case P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_GET_FWVERP2P_RESP: {
-            p2p_nas_ipcamera_command_common_recv_get_fwverp2p_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_common_get_fwverp2p), "FWVERP2P");
+            p2p_nas_ipcamera_command_common_recv_get_fwverp2p_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_common_fwverp2p), "FWVERP2P");
         }
                                                                      break;
         case P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_SET_REBOOT_RESP: {
-            p2p_nas_ipcamera_command_common_recv_set_reboot_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_common_set_reboot), "REBOOT");
+            p2p_nas_ipcamera_command_common_recv_set_reboot_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_common_reboot), "REBOOT");
         }
                                                                    break;
         case P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_SET_TIMEZONE_RESP: {
-            p2p_nas_ipcamera_command_common_recv_set_timezone_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_common_set_timezone), "TIMEZONE");
+            p2p_nas_ipcamera_command_common_recv_set_timezone_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_common_timezone), "TIMEZONE");
         }
                                                                      break;
         case P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_GET_TIMEZONE_RESP: {
-            p2p_nas_ipcamera_command_common_recv_get_timezone_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_common_get_timezone), "TIMEZONE");
+            p2p_nas_ipcamera_command_common_recv_get_timezone_resp(Aarray_index, Alpcmd, &(lpprotocol_command->action_common_timezone), "TIMEZONE");
         }
                                                                      break;
         default: {
@@ -270,18 +270,18 @@ libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_parser(p2p_proto
     return rval;
 }
 
-static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_check_time_to_resend_action(p2p_func_client_protocol_action_status_t *Alpsetting_action) {
+static libpiziot_os_type_func_result_e p2p_nas_ipcamera_command_common_check_time_to_resend_action(p2p_func_client_protocol_action_status_t* Alpprotocol_action_status) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     libpiziot_os_mutex_plock_lock(&p2p_nas_main_viewer_channel_mutex);
     do {
-        if (Alpsetting_action->protocol_action_flag == P2P_FUNC_CLIENT_PROTOCOL_ACTION_BEGIN) {
-            Alpsetting_action->protocol_action_flag = P2P_FUNC_CLIENT_PROTOCOL_ACTION_RESEND;
+        if (Alpprotocol_action_status->protocol_action_flag == P2P_FUNC_CLIENT_PROTOCOL_ACTION_BEGIN) {
+            Alpprotocol_action_status->protocol_action_flag = P2P_FUNC_CLIENT_PROTOCOL_ACTION_RESEND;
             rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
         }
-        else if (Alpsetting_action->protocol_action_flag == P2P_FUNC_CLIENT_PROTOCOL_ACTION_RESEND) {
-            struct timeval pass = libpiziot_os_time_get_pass(&(Alpsetting_action->timeval_action_start));
+        else if (Alpprotocol_action_status->protocol_action_flag == P2P_FUNC_CLIENT_PROTOCOL_ACTION_RESEND) {
+            struct timeval pass = libpiziot_os_time_get_pass(&(Alpprotocol_action_status->timeval_action_start));
             if (pass.tv_sec > P2P_FUNC_CLIENT_ACTION_WAIT_SEC) {
-                gettimeofday(&Alpsetting_action->timeval_action_start, NULL);
+                gettimeofday(&Alpprotocol_action_status->timeval_action_start, NULL);
                 rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
             }
         }
@@ -299,38 +299,32 @@ void p2p_nas_ipcamera_command_common_send_action(int32_t Aarray_index) {
     }
     libpiziot_os_mutex_plock_unlock(&p2p_nas_main_viewer_channel_mutex);
     if (rval == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
-        if (p2p_nas_ipcamera_command_common_check_time_to_resend_action(&(lpprotocol_command->action_common_get_model.action)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
+        if (p2p_nas_ipcamera_command_common_check_time_to_resend_action(&(lpprotocol_command->action_common_model.action_get)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
             p2p_nas_ipcamera_command_common_send_get_model_req(Aarray_index, P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_GET_MODEL_REQ);
         }
-        if (p2p_nas_ipcamera_command_common_check_time_to_resend_action(&(lpprotocol_command->action_common_get_fwverp2p.action)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
+        if (p2p_nas_ipcamera_command_common_check_time_to_resend_action(&(lpprotocol_command->action_common_fwverp2p.action_get)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
             p2p_nas_ipcamera_command_common_send_get_fwverp2p_req(Aarray_index, P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_GET_FWVERP2P_REQ);
         }
-        if (p2p_nas_ipcamera_command_common_check_time_to_resend_action(&(lpprotocol_command->action_common_set_reboot.action)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
+        if (p2p_nas_ipcamera_command_common_check_time_to_resend_action(&(lpprotocol_command->action_common_reboot.action_set)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
             p2p_nas_ipcamera_command_common_send_set_reboot_req(Aarray_index, P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_SET_REBOOT_REQ);
         }
-        if (p2p_nas_ipcamera_command_common_check_time_to_resend_action(&(lpprotocol_command->action_common_set_timezone.action)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
-            p2p_nas_ipcamera_command_common_send_set_timezone_req(Aarray_index, P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_SET_TIMEZONE_REQ, lpprotocol_command->action_common_set_timezone.option_timezone);
+        if (p2p_nas_ipcamera_command_common_check_time_to_resend_action(&(lpprotocol_command->action_common_timezone.action_set)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
+            p2p_nas_ipcamera_command_common_send_set_timezone_req(Aarray_index, P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_SET_TIMEZONE_REQ, lpprotocol_command->action_common_timezone.option_timezone_set);
         }
-        if (p2p_nas_ipcamera_command_common_check_time_to_resend_action(&(lpprotocol_command->action_common_get_timezone.action)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
+        if (p2p_nas_ipcamera_command_common_check_time_to_resend_action(&(lpprotocol_command->action_common_timezone.action_get)) == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
             p2p_nas_ipcamera_command_common_send_get_timezone_req(Aarray_index, P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON_GET_TIMEZONE_REQ);
         }
     }
 }
 
-void p2p_nas_ipcamera_command_common_init_action(int32_t Aarray_index) {
-    libpiziot_os_mutex_plock_lock(&p2p_nas_main_viewer_channel_mutex);
-    do {
-        p2p_nas_ipcamera_main_protocol_command_t *lpprotocol_command;
-        if (libpiziot_core_p2p_nas_viewer_get_protocol_command(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND, &lpprotocol_command) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
-            break;
-        }
-        memset(&(lpprotocol_command->action_common_get_model), 0, sizeof(p2p_nas_ipcamera_main_common_action_general_t));
-        memset(&(lpprotocol_command->action_common_get_fwverp2p), 0, sizeof(p2p_nas_ipcamera_main_common_action_general_t));
-        memset(&(lpprotocol_command->action_common_set_reboot), 0, sizeof(p2p_nas_ipcamera_main_common_action_general_t));
-        memset(&(lpprotocol_command->action_common_set_timezone), 0, sizeof(p2p_nas_ipcamera_main_common_action_general_t));
-        memset(&(lpprotocol_command->action_common_get_timezone), 0, sizeof(p2p_nas_ipcamera_main_common_action_general_t));
-    } while (0);
-    libpiziot_os_mutex_plock_unlock(&p2p_nas_main_viewer_channel_mutex);
+void p2p_nas_ipcamera_command_common_init_action(p2p_nas_ipcamera_main_protocol_command_t *Alpprotocol_command) {
+    memset(&(Alpprotocol_command->action_common_model), 0, sizeof(Alpprotocol_command->action_common_model));
+    memset(&(Alpprotocol_command->action_common_fwverp2p), 0, sizeof(Alpprotocol_command->action_common_fwverp2p));
+    memset(&(Alpprotocol_command->action_common_reboot), 0, sizeof(Alpprotocol_command->action_common_reboot));
+    {
+        memset(&(Alpprotocol_command->action_common_timezone), 0, sizeof(Alpprotocol_command->action_common_timezone));
+        Alpprotocol_command->action_common_timezone.option_timezone_current = LIBPIZIOT_CORE_P2P_PROTOCOL_OPTION_TIMEZONE_UNKNOWN;
+    }
 }
 
 libpiziot_os_type_func_result_e libpiziot_core_p2p_nas_viewer_channel_common_get_model(int32_t Aarray_index) {
@@ -341,7 +335,7 @@ libpiziot_os_type_func_result_e libpiziot_core_p2p_nas_viewer_channel_common_get
         if (libpiziot_core_p2p_nas_viewer_get_protocol_command(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND, &lpprotocol_command) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
             break;
         }
-        p2p_nas_ipcamera_command_common_set_action(&(lpprotocol_command->action_common_get_model.action));
+        p2p_nas_ipcamera_command_common_set_action(&(lpprotocol_command->action_common_model.action_get));
         rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
     } while (0);
     libpiziot_os_mutex_plock_unlock(&p2p_nas_main_viewer_channel_mutex);
@@ -356,7 +350,7 @@ libpiziot_os_type_func_result_e libpiziot_core_p2p_nas_viewer_channel_common_get
         if (libpiziot_core_p2p_nas_viewer_get_protocol_command(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND, &lpprotocol_command) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
             break;
         }
-        p2p_nas_ipcamera_command_common_set_action(&(lpprotocol_command->action_common_get_fwverp2p.action));
+        p2p_nas_ipcamera_command_common_set_action(&(lpprotocol_command->action_common_fwverp2p.action_get));
         rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
     } while (0);
     libpiziot_os_mutex_plock_unlock(&p2p_nas_main_viewer_channel_mutex);
@@ -370,7 +364,7 @@ libpiziot_os_type_func_result_e libpiziot_core_p2p_nas_viewer_channel_common_set
         if (libpiziot_core_p2p_nas_viewer_get_protocol_command(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND, &lpprotocol_command) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
             break;
         }
-        p2p_nas_ipcamera_command_common_set_action(&(lpprotocol_command->action_common_set_reboot.action));
+        p2p_nas_ipcamera_command_common_set_action(&(lpprotocol_command->action_common_reboot.action_set));
         rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
     } while (0);
     libpiziot_os_mutex_plock_unlock(&p2p_nas_main_viewer_channel_mutex);
@@ -385,8 +379,8 @@ libpiziot_os_type_func_result_e libpiziot_core_p2p_nas_viewer_channel_common_set
         if (libpiziot_core_p2p_nas_viewer_get_protocol_command(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND, &lpprotocol_command) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
             break;
         }
-        p2p_nas_ipcamera_command_common_set_action(&(lpprotocol_command->action_common_set_timezone.action));
-        lpprotocol_command->action_common_set_timezone.option_timezone = Aoption_timezone;
+        p2p_nas_ipcamera_command_common_set_action(&(lpprotocol_command->action_common_timezone.action_set));
+        lpprotocol_command->action_common_timezone.option_timezone_set = Aoption_timezone;
         rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
     } while (0);
     libpiziot_os_mutex_plock_unlock(&p2p_nas_main_viewer_channel_mutex);
@@ -401,7 +395,7 @@ libpiziot_os_type_func_result_e libpiziot_core_p2p_nas_viewer_channel_common_get
         if (libpiziot_core_p2p_nas_viewer_get_protocol_command(Aarray_index, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND, &lpprotocol_command) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
             break;
         }
-        p2p_nas_ipcamera_command_common_set_action(&(lpprotocol_command->action_common_get_timezone.action));
+        p2p_nas_ipcamera_command_common_set_action(&(lpprotocol_command->action_common_timezone.action_get));
         rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
     } while (0);
     libpiziot_os_mutex_plock_unlock(&p2p_nas_main_viewer_channel_mutex);

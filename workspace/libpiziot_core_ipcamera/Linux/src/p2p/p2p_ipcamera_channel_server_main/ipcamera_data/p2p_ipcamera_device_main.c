@@ -239,13 +239,6 @@ static libpiziot_os_type_func_result_e p2p_ipcamera_device_main_malloc(p2p_ipcam
                     }
                 }
             }
-#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
-#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)
-            {
-                p2p_ipcamera_device_command_common_init_action(Athread_info_index);
-            }
-#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)
-#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
         }
         rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
     } while (0);

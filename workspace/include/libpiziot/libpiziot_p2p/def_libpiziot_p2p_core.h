@@ -32,6 +32,7 @@ typedef struct libpiziot_core_p2p_data_from_client_head_s {
 } libpiziot_core_p2p_data_from_client_head_t;
 
 typedef enum libpiziot_core_p2p_protocol_optoin_timezone_enum {
+    LIBPIZIOT_CORE_P2P_PROTOCOL_OPTION_TIMEZONE_UNKNOWN = -9999,
     LIBPIZIOT_CORE_P2P_PROTOCOL_OPTION_TIMEZONE_TAIPEI = 8,
 } libpiziot_core_p2p_protocol_optoin_timezone_e;
 
@@ -75,7 +76,7 @@ extern "C"
 
     extern void libpiziot_core_p2p_ipcamera_disable_device_channel(int32_t Aarray_index, int32_t Achannel_id);
 
-    extern libpiziot_os_type_func_result_e libpiziot_core_p2p_ipcamera_device_channel_send(int32_t Aarray_index, int32_t Achannel_id, unsigned char *Alpdata_send, int32_t Adata_size);
+    extern libpiziot_os_type_func_result_e libpiziot_core_p2p_ipcamera_main_device_channel_send(int32_t Aarray_index, int32_t Achannel_id, unsigned char *Alpdata_send, int32_t Adata_size);
 
     //#define LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_01_LIVE_VIDEO_TO_APP 1001
     //#define LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_01_LIVE_AUDIO_TO_APP 1002
@@ -112,7 +113,7 @@ extern "C"
 
     extern void libpiziot_core_p2p_nas_disable_device_channel(int32_t Aarray_index, int32_t Achannel_id);
 
-    extern libpiziot_os_type_func_result_e libpiziot_core_p2p_nas_device_channel_send(int32_t Aarray_index, int32_t Achannel_id, unsigned char *Alpdata_send, int32_t Adata_size);
+    extern libpiziot_os_type_func_result_e libpiziot_core_p2p_nas_main_device_channel_send(int32_t Aarray_index, int32_t Achannel_id, unsigned char *Alpdata_send, int32_t Adata_size);
 
     //NPIZNas viewer
     extern int32_t libpiziot_core_p2p_nas_connect_ipcamera(const char *AlpUID);
@@ -123,7 +124,7 @@ extern "C"
 
     extern void libpiziot_core_p2p_nas_disable_viewer_channel(int32_t Aarray_index, int32_t Achannel_id);
 
-    extern libpiziot_os_type_func_result_e libpiziot_core_p2p_nas_viewer_channel_send(int32_t Aarray_index, int32_t Achannel_id, unsigned char *Alpdata_send, int32_t Adata_size);
+    extern libpiziot_os_type_func_result_e libpiziot_core_p2p_nas_main_viewer_channel_send(int32_t Aarray_index, int32_t Achannel_id, unsigned char *Alpdata_send, int32_t Adata_size);
 
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)
     extern libpiziot_os_type_func_result_e libpiziot_core_p2p_nas_viewer_channel_common_get_model(int32_t Aarray_index);
@@ -142,7 +143,7 @@ extern "C"
 
     extern void libpiziot_core_p2p_cms_disable_ipcamera_channel(int32_t Aarray_index, int32_t Achannel_id);
 
-    extern libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_ipcamera_channel_send(int32_t Aarray_index, int32_t Achannel_id, unsigned char *Alpdata_send, int32_t Adata_size);
+    extern libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_main_ipcamera_channel_send(int32_t Aarray_index, int32_t Achannel_id, unsigned char *Alpdata_send, int32_t Adata_size);
 
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)
     extern libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_ipcamera_channel_common_get_model(int32_t Aarray_index);
@@ -161,7 +162,7 @@ extern "C"
 
     extern void libpiziot_core_p2p_cms_disable_nas_channel(int32_t Aarray_index, int32_t Achannel_id);
 
-    extern libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_nas_channel_send(int32_t Aarray_index, int32_t Achannel_id, unsigned char *Alpdata_send, int32_t Adata_size);
+    extern libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_main_nas_channel_send(int32_t Aarray_index, int32_t Achannel_id, unsigned char *Alpdata_send, int32_t Adata_size);
 
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_COMMON)
     extern libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_nas_channel_common_get_model(int32_t Aarray_index);
@@ -197,7 +198,7 @@ extern "C"
 
     extern void libpiziot_core_p2p_gserver_disable_device_channel(int32_t Aarray_index, int32_t Achannel_id);
 
-    extern libpiziot_os_type_func_result_e libpiziot_core_p2p_gserver_device_channel_send(int32_t Aarray_index, int32_t Achannel_id, unsigned char *Alpdata_send, int32_t Adata_size);
+    extern libpiziot_os_type_func_result_e libpiziot_core_p2p_gserver_main_device_channel_send(int32_t Aarray_index, int32_t Achannel_id, unsigned char *Alpdata_send, int32_t Adata_size);
 
     //PIZGclient
     //PIZGclient gserver
@@ -209,7 +210,7 @@ extern "C"
 
     extern void libpiziot_core_p2p_gclient_disable_gserver_channel(int32_t Aarray_index, int32_t Achannel_id);
 
-    extern libpiziot_os_type_func_result_e libpiziot_core_p2p_gclient_gserver_channel_send(int32_t Aarray_index, int32_t Achannel_id, unsigned char *Alpdata_send, int32_t Adata_size);
+    extern libpiziot_os_type_func_result_e libpiziot_core_p2p_gclient_main_gserver_channel_send(int32_t Aarray_index, int32_t Achannel_id, unsigned char *Alpdata_send, int32_t Adata_size);
 
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_GSERVER_COMMAND_COMMON)
     extern libpiziot_os_type_func_result_e libpiziot_core_p2p_gclient_gserver_channel_common_get_model(int32_t Aarray_index);

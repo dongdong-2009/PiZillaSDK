@@ -270,19 +270,12 @@ static libpiziot_os_type_func_result_e p2p_nas_ipcamera_main_malloc(p2p_nas_main
                         }
                     }
                     {
-                        lpthread_info->data_recv_from_server_size = protocol_head_len + Arecv_data_max_size;;
+                        lpthread_info->data_recv_from_server_size = protocol_head_len + Arecv_data_max_size;
                         lpthread_info->lpdata_recv_from_server = malloc(lpthread_info->data_recv_from_server_size);
                         if (lpthread_info->lpdata_recv_from_server == 0) break;
                     }
                 }
             }
-#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
-#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)
-            {
-                p2p_nas_ipcamera_command_common_init_action(Athread_info_index);
-            }
-#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)
-#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
         }
         rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
     } while (0);
