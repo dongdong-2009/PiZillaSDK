@@ -61,31 +61,31 @@
     <ClCompile Include="..\..\Linux\src\zigbee\zigbee_sdk\zigbee_sdk_xxx.c">
       <Filter>libpiziot\src\zigbee\zigbee_sdk</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Linux\src\p2p\p2p_nas_channel_client_main\ipcamera_data\p2p_nas_ipcamera_command.c">
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_nas_channel_client_main\ipcamera_data\p2p_nas_ipcamera_channel_command.c">
       <Filter>libpiziot\src\p2p\p2p_nas_channel_client_main\ipcamera_data</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Linux\src\p2p\p2p_nas_channel_client_main\ipcamera_data\p2p_nas_ipcamera_main.c">
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_nas_channel_client_main\ipcamera_data\p2p_nas_ipcamera_channel_main.c">
       <Filter>libpiziot\src\p2p\p2p_nas_channel_client_main\ipcamera_data</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Linux\src\p2p\p2p_nas_channel_client_main\ipcamera_data\p2p_nas_ipcamera_other.c">
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_nas_channel_client_main\ipcamera_data\p2p_nas_ipcamera_channel_other.c">
       <Filter>libpiziot\src\p2p\p2p_nas_channel_client_main\ipcamera_data</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Linux\src\p2p\p2p_nas_channel_server_main\nas_data\p2p_nas_device_command.c">
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_nas_channel_server_main\nas_data\p2p_nas_device_channel_command.c">
       <Filter>libpiziot\src\p2p\p2p_nas_channel_server_main\nas_data</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Linux\src\p2p\p2p_nas_channel_server_main\nas_data\p2p_nas_device_main.c">
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_nas_channel_server_main\nas_data\p2p_nas_device_channel_main.c">
       <Filter>libpiziot\src\p2p\p2p_nas_channel_server_main\nas_data</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Linux\src\p2p\p2p_nas_channel_server_main\nas_data\p2p_nas_device_other.c">
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_nas_channel_server_main\nas_data\p2p_nas_device_channel_other.c">
       <Filter>libpiziot\src\p2p\p2p_nas_channel_server_main\nas_data</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Linux\src\p2p\p2p_nas_channel_client_main\ipcamera_data\command\p2p_nas_ipcamera_command_common.c">
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_nas_channel_client_main\ipcamera_data\command\p2p_nas_ipcamera_channel_command_common.c">
       <Filter>libpiziot\src\p2p\p2p_nas_channel_client_main\ipcamera_data\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Linux\src\p2p\p2p_nas_channel_server_main\nas_data\command\p2p_nas_device_command_common.c">
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_nas_channel_server_main\nas_data\command\p2p_nas_device_channel_command_common.c">
       <Filter>libpiziot\src\p2p\p2p_nas_channel_server_main\nas_data\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Linux\src\p2p\p2p_nas_channel_server_main\nas_data\command\p2p_nas_device_command_security_system.c">
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_nas_channel_server_main\nas_data\command\p2p_nas_device_channel_command_security_system.c">
       <Filter>libpiziot\src\p2p\p2p_nas_channel_server_main\nas_data\command</Filter>
     </ClCompile>
   </ItemGroup>
@@ -159,31 +159,31 @@
     <ClInclude Include="..\..\Linux\src\zigbee\zigbee_sdk\zigbee_sdk_xxx.h">
       <Filter>libpiziot\src\zigbee\zigbee_sdk</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Linux\src\p2p\p2p_nas_channel_client_main\ipcamera_data\p2p_nas_ipcamera_command.h">
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_nas_channel_client_main\ipcamera_data\p2p_nas_ipcamera_channel_command.h">
       <Filter>libpiziot\src\p2p\p2p_nas_channel_client_main\ipcamera_data</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Linux\src\p2p\p2p_nas_channel_client_main\ipcamera_data\p2p_nas_ipcamera_main.h">
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_nas_channel_client_main\ipcamera_data\p2p_nas_ipcamera_channel_main.h">
       <Filter>libpiziot\src\p2p\p2p_nas_channel_client_main\ipcamera_data</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Linux\src\p2p\p2p_nas_channel_client_main\ipcamera_data\p2p_nas_ipcamera_other.h">
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_nas_channel_client_main\ipcamera_data\p2p_nas_ipcamera_channel_other.h">
       <Filter>libpiziot\src\p2p\p2p_nas_channel_client_main\ipcamera_data</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Linux\src\p2p\p2p_nas_channel_server_main\nas_data\p2p_nas_device_command.h">
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_nas_channel_server_main\nas_data\p2p_nas_device_channel_command.h">
       <Filter>libpiziot\src\p2p\p2p_nas_channel_server_main\nas_data</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Linux\src\p2p\p2p_nas_channel_server_main\nas_data\p2p_nas_device_main.h">
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_nas_channel_server_main\nas_data\p2p_nas_device_channel_main.h">
       <Filter>libpiziot\src\p2p\p2p_nas_channel_server_main\nas_data</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Linux\src\p2p\p2p_nas_channel_server_main\nas_data\p2p_nas_device_other.h">
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_nas_channel_server_main\nas_data\p2p_nas_device_channel_other.h">
       <Filter>libpiziot\src\p2p\p2p_nas_channel_server_main\nas_data</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Linux\src\p2p\p2p_nas_channel_client_main\ipcamera_data\command\p2p_nas_ipcamera_command_common.h">
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_nas_channel_client_main\ipcamera_data\command\p2p_nas_ipcamera_channel_command_common.h">
       <Filter>libpiziot\src\p2p\p2p_nas_channel_client_main\ipcamera_data\command</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Linux\src\p2p\p2p_nas_channel_server_main\nas_data\command\p2p_nas_device_command_common.h">
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_nas_channel_server_main\nas_data\command\p2p_nas_device_channel_command_common.h">
       <Filter>libpiziot\src\p2p\p2p_nas_channel_server_main\nas_data\command</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Linux\src\p2p\p2p_nas_channel_server_main\nas_data\command\p2p_nas_device_command_security_system.h">
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_nas_channel_server_main\nas_data\command\p2p_nas_device_channel_command_security_system.h">
       <Filter>libpiziot\src\p2p\p2p_nas_channel_server_main\nas_data\command</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Linux\include\config_android.h">

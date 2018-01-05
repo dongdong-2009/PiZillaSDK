@@ -23,7 +23,7 @@
 typedef struct p2p_ipcamera_main_device_thread_info_s p2p_ipcamera_main_device_thread_info_t;
 
 #include "p2p_ipcamera_main.h"
-#include "../p2p_ipcamera_channel_server_main/ipcamera_data/p2p_ipcamera_device_main.h"
+#include "../p2p_ipcamera_channel_server_main/ipcamera_data/p2p_ipcamera_device_channel_main.h"
 
 struct p2p_ipcamera_main_device_thread_info_s {
     libpiziot_os_mutex_struct_plock_t instance_mutex;
@@ -33,13 +33,13 @@ struct p2p_ipcamera_main_device_thread_info_s {
     int32_t p2p_ipcamera_main_device_handle;
     libpiziot_os_aes_cbc_t login_aes;
 #define P2P_IPCAMERA_CHANNEL_SERVER_IPCAMERA_DATA_MAIN_THREAD_MAX P2P_PROTOCOL_IPCAMERA_CHANNEL_COUNT
-    p2p_ipcamera_device_main_thread_info_t *lpp2p_ipcamera_device_main_thread_info[P2P_IPCAMERA_CHANNEL_SERVER_IPCAMERA_DATA_MAIN_THREAD_MAX];
+    p2p_ipcamera_device_channel_main_thread_info_t *lpp2p_ipcamera_device_channel_main_thread_info[P2P_IPCAMERA_CHANNEL_SERVER_IPCAMERA_DATA_MAIN_THREAD_MAX];
     int32_t update_thread_info_index;
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
-    p2p_ipcamera_device_main_protocol_command_t protocol_command;
+    p2p_ipcamera_device_channel_main_protocol_command_t protocol_command;
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_OTHER)
-    p2p_ipcamera_device_main_protocol_command_t protocol_other;
+    p2p_ipcamera_device_channel_main_protocol_command_t protocol_other;
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_OTHER)
 };
 

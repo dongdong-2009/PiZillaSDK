@@ -30,10 +30,10 @@
 
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_COMMON)
-#include "../p2p_nas_channel_server_main/nas_data/command/p2p_nas_device_command_common.h"
+#include "../p2p_nas_channel_server_main/nas_data/command/p2p_nas_device_channel_command_common.h"
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_COMMON)
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM)
-#include "../p2p_nas_channel_server_main/nas_data/command/p2p_nas_device_command_security_system.h"
+#include "../p2p_nas_channel_server_main/nas_data/command/p2p_nas_device_channel_command_security_system.h"
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM)
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
 
@@ -45,9 +45,9 @@
 #include "../p2p_func_client.h"
 
 #include "../p2p_protocol_nas.h"
-#include "../p2p_nas_channel_server_main/nas_data/p2p_nas_device_main.h"
-#include "../p2p_nas_channel_server_main/nas_data/p2p_nas_device_command.h"
-#include "../p2p_nas_channel_server_main/nas_data/p2p_nas_device_other.h"
+#include "../p2p_nas_channel_server_main/nas_data/p2p_nas_device_channel_main.h"
+#include "../p2p_nas_channel_server_main/nas_data/p2p_nas_device_channel_command.h"
+#include "../p2p_nas_channel_server_main/nas_data/p2p_nas_device_channel_other.h"
 
 //Define Common Library
 
@@ -165,7 +165,7 @@ static void p2p_nas_main_device_delete_p2p_device_exist_checker(void) {
 
 #endif //defined(SAMPLE_CODE_ENABLE_DEVICE_EXIST_CHECKER)
 
-static void p2p_nas_main_device_channel_update_mode(p2p_nas_main_device_thread_info_t *Alpthread_info, int32_t Adevice_handle, int32_t Achannel_id, libpiziot_os_pthread_routine_p Alppthread_routine, libpiziot_p2p_common_channel_data_in_p Alpdata_in_callback, int32_t Asend_data_max_size, int32_t Asend_buffer_size, int32_t Arecv_data_max_size, p2p_func_client_channel_aes_e Aenable_channel_aes, p2p_nas_device_main_protocol_command_t *Alpprotocol_command) {
+static void p2p_nas_main_device_channel_update_mode(p2p_nas_main_device_thread_info_t *Alpthread_info, int32_t Adevice_handle, int32_t Achannel_id, libpiziot_os_pthread_routine_p Alppthread_routine, libpiziot_p2p_common_channel_data_in_p Alpdata_in_callback, int32_t Asend_data_max_size, int32_t Asend_buffer_size, int32_t Arecv_data_max_size, p2p_func_client_channel_aes_e Aenable_channel_aes, p2p_nas_device_channel_main_protocol_command_t *Alpprotocol_command) {
     p2p_func_client_channel_enable_e mode;
     if (Alpthread_info->update_thread_info_index >= P2P_PROTOCOL_NAS_CHANNEL_COUNT) return;
     libpiziot_os_mutex_plock_lock(&p2p_nas_main_device_channel_mutex);
@@ -174,20 +174,20 @@ static void p2p_nas_main_device_channel_update_mode(p2p_nas_main_device_thread_i
     }
     libpiziot_os_mutex_plock_unlock(&p2p_nas_main_device_channel_mutex);
     if (mode == P2P_FUNC_CLIENT_CHANNEL_ENABLE_YES) {
-        p2p_nas_device_main_start_thread(Alpthread_info, Adevice_handle, Alpthread_info->update_thread_info_index, Achannel_id, Alppthread_routine, Alpdata_in_callback, Asend_data_max_size, Asend_buffer_size, Arecv_data_max_size, Aenable_channel_aes);
+        p2p_nas_device_channel_main_start_thread(Alpthread_info, Adevice_handle, Alpthread_info->update_thread_info_index, Achannel_id, Alppthread_routine, Alpdata_in_callback, Asend_data_max_size, Asend_buffer_size, Arecv_data_max_size, Aenable_channel_aes);
         {
             libpiziot_os_mutex_plock_lock(&p2p_nas_main_device_channel_mutex);
             {
-                Alpprotocol_command->lpthread_info = Alpthread_info->lpp2p_nas_device_main_thread_info[Alpthread_info->update_thread_info_index];
+                Alpprotocol_command->lpthread_info = Alpthread_info->lpp2p_nas_device_channel_main_thread_info[Alpthread_info->update_thread_info_index];
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_COMMON)
                 {
-                    p2p_nas_device_command_common_init_action(Alpprotocol_command);
+                    p2p_nas_device_channel_command_common_init_action(Alpprotocol_command);
                 }
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_COMMON)
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM)
                 {
-                    p2p_nas_device_command_security_system_init_action(Alpprotocol_command);
+                    p2p_nas_device_channel_command_security_system_init_action(Alpprotocol_command);
                 }
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND_SECURITY_SYSTEM)
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
@@ -201,7 +201,7 @@ static void p2p_nas_main_device_channel_update_mode(p2p_nas_main_device_thread_i
             Alpprotocol_command->lpthread_info = 0;
         }
         libpiziot_os_mutex_plock_unlock(&p2p_nas_main_device_channel_mutex);
-        p2p_nas_device_main_stop_thread(Alpthread_info, Alpthread_info->update_thread_info_index);
+        p2p_nas_device_channel_main_stop_thread(Alpthread_info, Alpthread_info->update_thread_info_index);
     }
     Alpthread_info->update_thread_info_index++;
 }
@@ -210,7 +210,7 @@ static void p2p_nas_main_device_start_channel_thread(p2p_nas_main_device_thread_
     if (Alpthread_info) {
         Alpthread_info->update_thread_info_index = 0;
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
-        p2p_nas_main_device_channel_update_mode(Alpthread_info, Alpthread_info->p2p_nas_main_device_handle, LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND, p2p_nas_device_command_thread_instance_routine, p2p_nas_device_command_data_in_callback, p2p_protocol_nas_command_device_send_data_max_size, p2p_protocol_nas_command_device_send_data_max_size, p2p_protocol_nas_command_device_recv_data_max_size, P2P_FUNC_CLIENT_CHANNEL_AES_ENABLE, &(Alpthread_info->protocol_command));
+        p2p_nas_main_device_channel_update_mode(Alpthread_info, Alpthread_info->p2p_nas_main_device_handle, LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND, p2p_nas_device_channel_command_thread_instance_routine, p2p_nas_device_channel_command_data_in_callback, p2p_protocol_nas_command_device_send_data_max_size, p2p_protocol_nas_command_device_send_data_max_size, p2p_protocol_nas_command_device_recv_data_max_size, P2P_FUNC_CLIENT_CHANNEL_AES_ENABLE, &(Alpthread_info->protocol_command));
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
 #if defined(LIBPIZIOT_CORE_P2P_NAS_CHANNEL_01_LIVE_VIDEO_TO_APP)
         //1, LIBPIZIOT_CORE_P2P_NAS_CHANNEL_01_LIVE_VIDEO_TO_APP
@@ -277,13 +277,13 @@ static void p2p_nas_main_device_start_channel_thread(p2p_nas_main_device_thread_
 #endif //defined(LIBPIZIOT_CORE_P2P_NAS_CHANNEL_04_PLAYBACK_AUDIO_TO_APP)
 
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_OTHER)
-        p2p_nas_main_device_channel_update_mode(Alpthread_info, Alpthread_info->p2p_nas_main_device_handle, LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_OTHER, p2p_nas_device_other_thread_instance_routine, p2p_nas_device_other_data_in_callback, P2P_PROTOCOL_NAS_OTHER_DEVICE_SEND_DATA_MAX_SIZE, P2P_PROTOCOL_NAS_OTHER_DEVICE_SEND_DATA_MAX_SIZE * 2, P2P_PROTOCOL_NAS_OTHER_DEVICE_RECV_DATA_MAX_SIZE, P2P_FUNC_CLIENT_CHANNEL_AES_ENABLE, &(Alpthread_info->protocol_other));
+        p2p_nas_main_device_channel_update_mode(Alpthread_info, Alpthread_info->p2p_nas_main_device_handle, LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_OTHER, p2p_nas_device_channel_other_thread_instance_routine, p2p_nas_device_channel_other_data_in_callback, p2p_protocol_nas_other_device_send_data_max_size, p2p_protocol_nas_other_device_send_data_max_size * 2, p2p_protocol_nas_other_device_recv_data_max_size, P2P_FUNC_CLIENT_CHANNEL_AES_ENABLE, &(Alpthread_info->protocol_other));
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_OTHER)
     }
 }
 
 static void p2p_nas_main_device_stop_channel_thread(p2p_nas_main_device_thread_info_t *Alpthread_info) {
-    p2p_nas_device_main_stop_thread_all(Alpthread_info);
+    p2p_nas_device_channel_main_stop_thread_all(Alpthread_info);
 }
 
 static void p2p_nas_main_device_create_p2p_nas(p2p_nas_main_device_thread_info_t *Alpthread_info, const char *AlpUID) {
@@ -522,7 +522,7 @@ libpiziot_os_type_func_result_e p2p_nas_main_device_finalize(p2p_nas_main_device
         if (lpthread_info->instance_mutex.init != LIBPIZIOT_OS_MUTEX_STUCT_INIT_CHECK_VALUE) break;
         {
             // Finalize channel server thread.
-            p2p_nas_device_main_finalize(lpthread_info);
+            p2p_nas_device_channel_main_finalize(lpthread_info);
         }
         {
 #if defined(SAMPLE_CODE_P2P_DEVICE_LOGIN_CB)
@@ -605,7 +605,7 @@ libpiziot_os_type_func_result_e p2p_nas_main_device_initialize(p2p_nas_main_devi
 #endif //defined(SAMPLE_CODE_P2P_DEVICE_LOGIN_CB)
                 }
                 {
-                    if (p2p_nas_device_main_initialize(lpthread_info) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
+                    if (p2p_nas_device_channel_main_initialize(lpthread_info) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
                         break;
                     }
                 }

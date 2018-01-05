@@ -54,12 +54,27 @@ static char THIS_FILE[] = __FILE__;
 #define TRACEB(...) {LIBPIZIOT_FIX_ANDROID_COMPILE_MIPS_ERROR(0);} //TRACEA
 #endif
 
+#if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_OTHER)
+#define PROTOCOL_P2P_NAS_OTHER_DEVICE_SEND_DATA_MAX_SIZE (256 * 1024) //LIBPIZIOT_P2P_COMMON_SEND_DATA_MAX_SIZE
+#define PROTOCOL_P2P_NAS_OTHER_VIEWER_RECV_DATA_MAX_SIZE PROTOCOL_P2P_NAS_OTHER_DEVICE_SEND_DATA_MAX_SIZE
+int32_t p2p_protocol_nas_other_device_send_data_max_size = PROTOCOL_P2P_NAS_OTHER_DEVICE_SEND_DATA_MAX_SIZE;
+int32_t p2p_protocol_nas_other_viewer_recv_data_max_size = PROTOCOL_P2P_NAS_OTHER_VIEWER_RECV_DATA_MAX_SIZE;
+
+#define PROTOCOL_P2P_NAS_OTHER_VIEWER_SEND_DATA_MAX_SIZE 0 //(512 * 1024) //LIBPIZIOT_P2P_COMMON_SEND_DATA_MAX_SIZE
+#define PROTOCOL_P2P_NAS_OTHER_DEVICE_RECV_DATA_MAX_SIZE PROTOCOL_P2P_NAS_OTHER_VIEWER_SEND_DATA_MAX_SIZE
+int32_t p2p_protocol_nas_other_viewer_send_data_max_size = PROTOCOL_P2P_NAS_OTHER_VIEWER_SEND_DATA_MAX_SIZE;
+int32_t p2p_protocol_nas_other_device_recv_data_max_size = PROTOCOL_P2P_NAS_OTHER_DEVICE_RECV_DATA_MAX_SIZE;
+#endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_OTHER)
+
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
 int32_t p2p_protocol_nas_command_device_send_data_max_size = 0;
 int32_t p2p_protocol_nas_command_viewer_recv_data_max_size = 0;
 int32_t p2p_protocol_nas_command_viewer_send_data_max_size = 0;
 int32_t p2p_protocol_nas_command_device_recv_data_max_size = 0;
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
+
+#define PROTOCOL_P2P_NAS_MAX_SEND_BYTES_PER_SECOND (512 * 1024)
+uint32_t p2p_protocol_nas_max_send_bytes_per_second = PROTOCOL_P2P_NAS_MAX_SEND_BYTES_PER_SECOND;
 
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
 #if defined(__ESP8266X__)

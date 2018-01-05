@@ -39,13 +39,13 @@
 #include "../p2p_func_client.h"
 
 #include "../p2p_protocol_ipcamera.h"
-#include "../p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_main.h"
-#include "../p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_command.h"
-#include "../p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_other.h"
+#include "../p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_channel_main.h"
+#include "../p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_channel_command.h"
+#include "../p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_channel_other.h"
 
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)
-#include "../p2p_cms_channel_client_main/ipcamera_data/command/p2p_cms_ipcamera_command_common.h"
+#include "../p2p_cms_channel_client_main/ipcamera_data/command/p2p_cms_ipcamera_channel_command_common.h"
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
 
@@ -108,7 +108,7 @@ static libpiziot_os_type_func_result_e p2p_cms_main_ipcamera_get_net_status(int3
     return rval;
 }
 
-static void p2p_cms_main_ipcamera_channel_update_mode(p2p_cms_main_ipcamera_thread_info_t *Alpthread_info, int32_t Aviewer_handle, int32_t Achannel_id, libpiziot_os_pthread_routine_p Alppthread_routine, libpiziot_p2p_common_channel_data_in_p Alpdata_in_callback, int32_t Asend_data_max_size, int32_t Arecv_data_max_size, p2p_func_client_channel_aes_e Aenable_channel_aes, libpiziot_p2p_common_relay_data_type_e Adata_type, p2p_cms_ipcamera_main_protocol_command_t *Alpprotocol_command) {
+static void p2p_cms_main_ipcamera_channel_update_mode(p2p_cms_main_ipcamera_thread_info_t *Alpthread_info, int32_t Aviewer_handle, int32_t Achannel_id, libpiziot_os_pthread_routine_p Alppthread_routine, libpiziot_p2p_common_channel_data_in_p Alpdata_in_callback, int32_t Asend_data_max_size, int32_t Arecv_data_max_size, p2p_func_client_channel_aes_e Aenable_channel_aes, libpiziot_p2p_common_relay_data_type_e Adata_type, p2p_cms_ipcamera_channel_main_protocol_command_t *Alpprotocol_command) {
     p2p_func_client_channel_enable_e mode;
     if (Alpthread_info->update_thread_info_index >= P2P_PROTOCOL_IPCAMERA_CHANNEL_COUNT) return;
     libpiziot_os_mutex_plock_lock(&p2p_cms_main_ipcamera_channel_mutex);
@@ -117,15 +117,15 @@ static void p2p_cms_main_ipcamera_channel_update_mode(p2p_cms_main_ipcamera_thre
     }
     libpiziot_os_mutex_plock_unlock(&p2p_cms_main_ipcamera_channel_mutex);
     if (mode == P2P_FUNC_CLIENT_CHANNEL_ENABLE_YES) {
-        p2p_cms_ipcamera_main_start_thread(Alpthread_info, Aviewer_handle, Alpthread_info->update_thread_info_index, Achannel_id, Alppthread_routine, Alpdata_in_callback, Asend_data_max_size, Arecv_data_max_size, Aenable_channel_aes, Adata_type);
+        p2p_cms_ipcamera_channel_main_start_thread(Alpthread_info, Aviewer_handle, Alpthread_info->update_thread_info_index, Achannel_id, Alppthread_routine, Alpdata_in_callback, Asend_data_max_size, Arecv_data_max_size, Aenable_channel_aes, Adata_type);
         {
             libpiziot_os_mutex_plock_lock(&p2p_cms_main_ipcamera_channel_mutex);
             {
-                Alpprotocol_command->lpthread_info = Alpthread_info->lpp2p_cms_ipcamera_main_thread_info[Alpthread_info->update_thread_info_index];
+                Alpprotocol_command->lpthread_info = Alpthread_info->lpp2p_cms_ipcamera_channel_main_thread_info[Alpthread_info->update_thread_info_index];
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)
                 {
-                    p2p_cms_ipcamera_command_common_init_action(Alpprotocol_command);
+                    p2p_cms_ipcamera_channel_command_common_init_action(Alpprotocol_command);
                 }
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND_COMMON)
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
@@ -139,7 +139,7 @@ static void p2p_cms_main_ipcamera_channel_update_mode(p2p_cms_main_ipcamera_thre
             Alpprotocol_command->lpthread_info = 0;
         }
         libpiziot_os_mutex_plock_unlock(&p2p_cms_main_ipcamera_channel_mutex);
-        p2p_cms_ipcamera_main_stop_thread(Alpthread_info, Alpthread_info->update_thread_info_index);
+        p2p_cms_ipcamera_channel_main_stop_thread(Alpthread_info, Alpthread_info->update_thread_info_index);
     }
     Alpthread_info->update_thread_info_index++;
 }
@@ -148,7 +148,7 @@ static void p2p_cms_main_ipcamera_start_channel_thread(p2p_cms_main_ipcamera_thr
     if (Alpthread_info) {
         Alpthread_info->update_thread_info_index = 0;
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
-        p2p_cms_main_ipcamera_channel_update_mode(Alpthread_info, Alpthread_info->p2p_cms_main_ipcamera_handle, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND, p2p_cms_ipcamera_command_thread_instance_routine, p2p_cms_ipcamera_command_data_in_callback, p2p_protocol_ipcamera_command_viewer_send_data_max_size, p2p_protocol_ipcamera_command_viewer_recv_data_max_size, P2P_FUNC_CLIENT_CHANNEL_AES_ENABLE, LIBPIZIOT_P2P_COMMON_RELAY_DATA_TYPE_DATA, &(Alpthread_info->protocol_command));
+        p2p_cms_main_ipcamera_channel_update_mode(Alpthread_info, Alpthread_info->p2p_cms_main_ipcamera_handle, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND, p2p_cms_ipcamera_channel_command_thread_instance_routine, p2p_cms_ipcamera_channel_command_data_in_callback, p2p_protocol_ipcamera_command_viewer_send_data_max_size, p2p_protocol_ipcamera_command_viewer_recv_data_max_size, P2P_FUNC_CLIENT_CHANNEL_AES_ENABLE, LIBPIZIOT_P2P_COMMON_RELAY_DATA_TYPE_DATA, &(Alpthread_info->protocol_command));
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
 #if defined(LIBPIZIOT_CORE_P2P_IPCAMERA_CHANNEL_01_LIVE_VIDEO_TO_APP)
         //1, LIBPIZIOT_CORE_P2P_IPCAMERA_CHANNEL_01_LIVE_VIDEO_TO_APP
@@ -215,13 +215,13 @@ static void p2p_cms_main_ipcamera_start_channel_thread(p2p_cms_main_ipcamera_thr
 #endif //defined(LIBPIZIOT_CORE_P2P_IPCAMERA_CHANNEL_04_PLAYBACK_AUDIO_TO_APP)
 
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_OTHER)
-        p2p_cms_main_ipcamera_channel_update_mode(Alpthread_info, Alpthread_info->p2p_cms_main_ipcamera_handle, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_OTHER, p2p_cms_ipcamera_other_thread_instance_routine, p2p_cms_ipcamera_other_data_in_callback, P2P_PROTOCOL_IPCAMERA_OTHER_VIEWER_SEND_DATA_MAX_SIZE, P2P_PROTOCOL_IPCAMERA_OTHER_VIEWER_RECV_DATA_MAX_SIZE, P2P_FUNC_CLIENT_CHANNEL_AES_ENABLE, LIBPIZIOT_P2P_COMMON_RELAY_DATA_TYPE_DATA, &(Alpthread_info->protocol_other));
+        p2p_cms_main_ipcamera_channel_update_mode(Alpthread_info, Alpthread_info->p2p_cms_main_ipcamera_handle, LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_OTHER, p2p_cms_ipcamera_channel_other_thread_instance_routine, p2p_cms_ipcamera_channel_other_data_in_callback, p2p_protocol_ipcamera_other_viewer_send_data_max_size, p2p_protocol_ipcamera_other_viewer_recv_data_max_size, P2P_FUNC_CLIENT_CHANNEL_AES_ENABLE, LIBPIZIOT_P2P_COMMON_RELAY_DATA_TYPE_DATA, &(Alpthread_info->protocol_other));
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_OTHER)
     }
 }
 
 static void p2p_cms_main_ipcamera_stop_channel_thread(p2p_cms_main_ipcamera_thread_info_t *Alpthread_info) {
-    p2p_cms_ipcamera_main_stop_thread_all(Alpthread_info);
+    p2p_cms_ipcamera_channel_main_stop_thread_all(Alpthread_info);
 }
 
 static void p2p_cms_main_ipcamera_create_p2p_viewer(p2p_cms_main_ipcamera_thread_info_t *Alpthread_info, const char *AlpUID) {
@@ -375,7 +375,7 @@ libpiziot_os_type_func_result_e p2p_cms_main_ipcamera_finalize(p2p_cms_main_ipca
         if (lpthread_info == 0) break;
         if (lpthread_info->instance_mutex.init != LIBPIZIOT_OS_MUTEX_STUCT_INIT_CHECK_VALUE) break;
         {
-            p2p_cms_ipcamera_main_finalize(lpthread_info);
+            p2p_cms_ipcamera_channel_main_finalize(lpthread_info);
         }
         {
 #if defined(SAMPLE_CODE_P2P_DEVICE_LOGIN_CB)
@@ -458,7 +458,7 @@ libpiziot_os_type_func_result_e p2p_cms_main_ipcamera_initialize(p2p_cms_main_ip
 #endif //defined(SAMPLE_CODE_P2P_DEVICE_LOGIN_CB)
                 }
                 {
-                    if (p2p_cms_ipcamera_main_initialize(lpthread_info) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
+                    if (p2p_cms_ipcamera_channel_main_initialize(lpthread_info) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
                         break;
                     }
                 }

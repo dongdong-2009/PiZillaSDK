@@ -20,8 +20,8 @@
 
 #include "../p2p_func.h"
 #include "../p2p_func_client.h"
-#include "../p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_main.h"
-#include "../p2p_cms_channel_client_main/nas_data/p2p_cms_nas_main.h"
+#include "../p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_channel_main.h"
+#include "../p2p_cms_channel_client_main/nas_data/p2p_cms_nas_channel_main.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -31,8 +31,8 @@ extern "C"
     extern libpiziot_os_mutex_struct_plock_t p2p_cms_main_ipcamera_channel_mutex;
     extern libpiziot_os_mutex_struct_plock_t p2p_cms_main_nas_channel_mutex;
 
-    extern libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_ipcamera_get_protocol_command(int32_t Aarray_index, int32_t Achannel_id, p2p_cms_ipcamera_main_protocol_command_t **Alppprotocol_command);
-    extern libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_nas_get_protocol_command(int32_t Aarray_index, int32_t Achannel_id, p2p_cms_nas_main_protocol_command_t **Alppprotocol_command);
+    extern libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_ipcamera_get_protocol_command(int32_t Aarray_index, int32_t Achannel_id, p2p_cms_ipcamera_channel_main_protocol_command_t **Alppprotocol_command);
+    extern libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_nas_get_protocol_command(int32_t Aarray_index, int32_t Achannel_id, p2p_cms_nas_channel_main_protocol_command_t **Alppprotocol_command);
 
     extern libpiziot_os_type_func_result_e p2p_cms_main_start_thread(void);
 

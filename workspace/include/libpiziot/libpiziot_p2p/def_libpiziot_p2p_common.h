@@ -232,7 +232,7 @@ typedef struct libpiziot_p2p_common_packet_link_s {
 } libpiziot_p2p_common_packet_link_t;
 
 typedef struct libpiziot_p2p_common_packet_send_speed_s {
-    int64_t bytes_per_second;
+    int32_t bytes_per_second;
     struct timeval packet_timer;
     int32_t packet_per_check;
 } libpiziot_p2p_common_packet_send_speed_t;

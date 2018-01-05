@@ -40,10 +40,10 @@
 
 #include "p2p_cms_main_ipcamera.h"
 #include "p2p_cms_main_nas.h"
-#include "../p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_command.h"
-#include "../p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_other.h"
-#include "../p2p_cms_channel_client_main/nas_data/p2p_cms_nas_command.h"
-#include "../p2p_cms_channel_client_main/nas_data/p2p_cms_nas_other.h"
+#include "../p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_channel_command.h"
+#include "../p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_channel_other.h"
+#include "../p2p_cms_channel_client_main/nas_data/p2p_cms_nas_channel_command.h"
+#include "../p2p_cms_channel_client_main/nas_data/p2p_cms_nas_channel_other.h"
 
 //Define Common Library
 
@@ -77,7 +77,7 @@ static p2p_cms_main_nas_thread_info_t *lpp2p_cms_main_nas_thread_info[P2P_CMS_MA
 static int32_t p2p_cms_main_nas_channel_mutex_flag = 0;
 libpiziot_os_mutex_struct_plock_t p2p_cms_main_nas_channel_mutex;
 
-libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_ipcamera_get_protocol_command(int32_t Aarray_index, int32_t Achannel_id, p2p_cms_ipcamera_main_protocol_command_t **Alppprotocol_command) {
+libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_ipcamera_get_protocol_command(int32_t Aarray_index, int32_t Achannel_id, p2p_cms_ipcamera_channel_main_protocol_command_t **Alppprotocol_command) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND) || defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_OTHER)
     do {
@@ -88,7 +88,7 @@ libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_ipcamera_get_protocol_com
             switch (Achannel_id) {
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
             case LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND: {
-                p2p_cms_ipcamera_main_protocol_command_t *lpprotocol_command = &(lpthread_info->protocol_command);
+                p2p_cms_ipcamera_channel_main_protocol_command_t *lpprotocol_command = &(lpthread_info->protocol_command);
                 if (lpprotocol_command->lpthread_info != 0) {
                     (*Alppprotocol_command) = lpprotocol_command;
                     rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
@@ -98,7 +98,7 @@ libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_ipcamera_get_protocol_com
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_OTHER)
             case LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_OTHER: {
-                p2p_cms_ipcamera_main_protocol_command_t *lpprotocol_command = &(lpthread_info->protocol_other);
+                p2p_cms_ipcamera_channel_main_protocol_command_t *lpprotocol_command = &(lpthread_info->protocol_other);
                 if (lpprotocol_command->lpthread_info != 0) {
                     (*Alppprotocol_command) = lpprotocol_command;
                     rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
@@ -128,24 +128,24 @@ libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_main_ipcamera_channel_sen
         switch (Achannel_id) {
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
         case LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND: {
-            p2p_cms_ipcamera_main_protocol_command_t *lpprotocol_command;
+            p2p_cms_ipcamera_channel_main_protocol_command_t *lpprotocol_command;
             if (libpiziot_core_p2p_cms_ipcamera_get_protocol_command(Aarray_index, Achannel_id, &lpprotocol_command) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
                 break;
             }
             if (lpprotocol_command->lpthread_info != 0) {
-                rval = p2p_cms_ipcamera_command_send_to_channel_server(lpprotocol_command->lpthread_info, Alpdata_send, Adata_size);
+                rval = p2p_cms_ipcamera_channel_command_send_to_channel_server(lpprotocol_command->lpthread_info, Alpdata_send, Adata_size);
             }
         }
                                                                  break;
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_COMMAND)
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_OTHER)
         case LIBPIZIOT_CORE_P2P_PROTOCOL_IPCAMERA_OTHER: {
-            p2p_cms_ipcamera_main_protocol_command_t *lpprotocol_command;
+            p2p_cms_ipcamera_channel_main_protocol_command_t *lpprotocol_command;
             if (libpiziot_core_p2p_cms_ipcamera_get_protocol_command(Aarray_index, Achannel_id, &lpprotocol_command) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
                 break;
             }
             if (lpprotocol_command->lpthread_info != 0) {
-                rval = p2p_cms_ipcamera_other_send_to_channel_server(lpprotocol_command->lpthread_info, Alpdata_send, Adata_size);
+                rval = p2p_cms_ipcamera_channel_other_send_to_channel_server(lpprotocol_command->lpthread_info, Alpdata_send, Adata_size);
             }
         }
                                                                break;
@@ -265,7 +265,7 @@ static void p2p_cms_main_disconnect_ipcamera_all(void) {
     }
 }
 
-libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_nas_get_protocol_command(int32_t Aarray_index, int32_t Achannel_id, p2p_cms_nas_main_protocol_command_t **Alppprotocol_command) {
+libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_nas_get_protocol_command(int32_t Aarray_index, int32_t Achannel_id, p2p_cms_nas_channel_main_protocol_command_t **Alppprotocol_command) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND) || defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_OTHER)
     do {
@@ -276,7 +276,7 @@ libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_nas_get_protocol_command(
             switch (Achannel_id) {
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
             case LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND: {
-                p2p_cms_nas_main_protocol_command_t *lpprotocol_command = &(lpthread_info->protocol_command);
+                p2p_cms_nas_channel_main_protocol_command_t *lpprotocol_command = &(lpthread_info->protocol_command);
                 if (lpprotocol_command->lpthread_info != 0) {
                     (*Alppprotocol_command) = lpprotocol_command;
                     rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
@@ -286,7 +286,7 @@ libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_nas_get_protocol_command(
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_OTHER)
             case LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_OTHER: {
-                p2p_cms_nas_main_protocol_command_t *lpprotocol_command = &(lpthread_info->protocol_other);
+                p2p_cms_nas_channel_main_protocol_command_t *lpprotocol_command = &(lpthread_info->protocol_other);
                 if (lpprotocol_command->lpthread_info != 0) {
                     (*Alppprotocol_command) = lpprotocol_command;
                     rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;
@@ -316,24 +316,24 @@ libpiziot_os_type_func_result_e libpiziot_core_p2p_cms_main_nas_channel_send(int
         switch (Achannel_id) {
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
         case LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND: {
-            p2p_cms_nas_main_protocol_command_t *lpprotocol_command;
+            p2p_cms_nas_channel_main_protocol_command_t *lpprotocol_command;
             if (libpiziot_core_p2p_cms_nas_get_protocol_command(Aarray_index, Achannel_id, &lpprotocol_command) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
                 break;
             }
             if (lpprotocol_command->lpthread_info != 0) {
-                rval = p2p_cms_nas_command_send_to_channel_server(lpprotocol_command->lpthread_info, Alpdata_send, Adata_size);
+                rval = p2p_cms_nas_channel_command_send_to_channel_server(lpprotocol_command->lpthread_info, Alpdata_send, Adata_size);
             }
         }
                                                             break;
 #endif //defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_COMMAND)
 #if defined(LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_OTHER)
         case LIBPIZIOT_CORE_P2P_PROTOCOL_NAS_OTHER: {
-            p2p_cms_nas_main_protocol_command_t *lpprotocol_command;
+            p2p_cms_nas_channel_main_protocol_command_t *lpprotocol_command;
             if (libpiziot_core_p2p_cms_nas_get_protocol_command(Aarray_index, Achannel_id, &lpprotocol_command) != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
                 break;
             }
             if (lpprotocol_command->lpthread_info != 0) {
-                rval = p2p_cms_nas_other_send_to_channel_server(lpprotocol_command->lpthread_info, Alpdata_send, Adata_size);
+                rval = p2p_cms_nas_channel_other_send_to_channel_server(lpprotocol_command->lpthread_info, Alpdata_send, Adata_size);
             }
         }
                                                           break;

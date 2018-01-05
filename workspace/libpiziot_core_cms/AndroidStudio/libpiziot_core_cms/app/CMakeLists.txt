@@ -31,15 +31,15 @@ add_library( # Sets the name of the library.
     ../../../Linux/src/p2p/p2p_cms_main/p2p_cms_main.c
     ../../../Linux/src/p2p/p2p_cms_main/p2p_cms_main_ipcamera.c
     ../../../Linux/src/p2p/p2p_cms_main/p2p_cms_main_nas.c
-    ../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_main.c
-    ../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_command.c
-    ../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/command/p2p_cms_ipcamera_command_common.c
-    ../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_other.c
-    ../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_main.c
-    ../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_command.c
-    ../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/command/p2p_cms_nas_command_common.c
-    ../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/command/p2p_cms_nas_command_security_system.c
-    ../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_other.c
+    ../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_channel_main.c
+    ../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_channel_command.c
+    ../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/command/p2p_cms_ipcamera_channel_command_common.c
+    ../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_channel_other.c
+    ../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_channel_main.c
+    ../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_channel_command.c
+    ../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/command/p2p_cms_nas_channel_command_common.c
+    ../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/command/p2p_cms_nas_channel_command_security_system.c
+    ../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_channel_other.c
 )
 
 # Sets distribution_DIR to the path of the desired output directory.

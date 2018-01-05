@@ -4,19 +4,19 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/p2p/p2p_nas_channel_client_main/ipcamera_data/p2p_nas_ipcamera_command.c \
-../src/p2p/p2p_nas_channel_client_main/ipcamera_data/p2p_nas_ipcamera_main.c \
-../src/p2p/p2p_nas_channel_client_main/ipcamera_data/p2p_nas_ipcamera_other.c 
+../src/p2p/p2p_nas_channel_client_main/ipcamera_data/p2p_nas_ipcamera_channel_command.c \
+../src/p2p/p2p_nas_channel_client_main/ipcamera_data/p2p_nas_ipcamera_channel_main.c \
+../src/p2p/p2p_nas_channel_client_main/ipcamera_data/p2p_nas_ipcamera_channel_other.c 
 
 OBJS += \
-./src/p2p/p2p_nas_channel_client_main/ipcamera_data/p2p_nas_ipcamera_command.o \
-./src/p2p/p2p_nas_channel_client_main/ipcamera_data/p2p_nas_ipcamera_main.o \
-./src/p2p/p2p_nas_channel_client_main/ipcamera_data/p2p_nas_ipcamera_other.o 
+./src/p2p/p2p_nas_channel_client_main/ipcamera_data/p2p_nas_ipcamera_channel_command.o \
+./src/p2p/p2p_nas_channel_client_main/ipcamera_data/p2p_nas_ipcamera_channel_main.o \
+./src/p2p/p2p_nas_channel_client_main/ipcamera_data/p2p_nas_ipcamera_channel_other.o 
 
 C_DEPS += \
-./src/p2p/p2p_nas_channel_client_main/ipcamera_data/p2p_nas_ipcamera_command.d \
-./src/p2p/p2p_nas_channel_client_main/ipcamera_data/p2p_nas_ipcamera_main.d \
-./src/p2p/p2p_nas_channel_client_main/ipcamera_data/p2p_nas_ipcamera_other.d 
+./src/p2p/p2p_nas_channel_client_main/ipcamera_data/p2p_nas_ipcamera_channel_command.d \
+./src/p2p/p2p_nas_channel_client_main/ipcamera_data/p2p_nas_ipcamera_channel_main.d \
+./src/p2p/p2p_nas_channel_client_main/ipcamera_data/p2p_nas_ipcamera_channel_other.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

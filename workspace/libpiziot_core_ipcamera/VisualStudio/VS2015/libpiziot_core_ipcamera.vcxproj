@@ -227,10 +227,10 @@
   <ItemGroup>
     <ClCompile Include="..\..\Linux\src\piziot_core_ipcamera\piziot_core_ipcamera.c" />
     <ClCompile Include="..\..\Linux\src\misc\misc_setting.c" />
-    <ClCompile Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\command\p2p_ipcamera_device_command_common.c" />
-    <ClCompile Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\p2p_ipcamera_device_command.c" />
-    <ClCompile Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\p2p_ipcamera_device_main.c" />
-    <ClCompile Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\p2p_ipcamera_device_other.c" />
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\command\p2p_ipcamera_device_channel_command_common.c" />
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\p2p_ipcamera_device_channel_command.c" />
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\p2p_ipcamera_device_channel_main.c" />
+    <ClCompile Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\p2p_ipcamera_device_channel_other.c" />
     <ClCompile Include="..\..\Linux\src\p2p\p2p_ipcamera_main\p2p_ipcamera_main.c" />
     <ClCompile Include="..\..\Linux\src\p2p\p2p_func.c" />
     <ClCompile Include="..\..\Linux\src\p2p\p2p_func_client.c" />
@@ -269,10 +269,10 @@
     <ClInclude Include="..\..\Linux\include\menu_config.h" />
     <ClInclude Include="..\..\Linux\src\piziot_core_ipcamera\piziot_core_ipcamera.h" />
     <ClInclude Include="..\..\Linux\src\misc\misc_setting.h" />
-    <ClInclude Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\command\p2p_ipcamera_device_command_common.h" />
-    <ClInclude Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\p2p_ipcamera_device_command.h" />
-    <ClInclude Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\p2p_ipcamera_device_main.h" />
-    <ClInclude Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\p2p_ipcamera_device_other.h" />
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\command\p2p_ipcamera_device_channel_command_common.h" />
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\p2p_ipcamera_device_channel_command.h" />
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\p2p_ipcamera_device_channel_main.h" />
+    <ClInclude Include="..\..\Linux\src\p2p\p2p_ipcamera_channel_server_main\ipcamera_data\p2p_ipcamera_device_channel_other.h" />
     <ClInclude Include="..\..\Linux\src\p2p\p2p_ipcamera_main\p2p_ipcamera_main.h" />
     <ClInclude Include="..\..\Linux\src\p2p\p2p_func.h" />
     <ClInclude Include="..\..\Linux\src\p2p\p2p_func_client.h" />

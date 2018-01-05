@@ -4,13 +4,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/p2p/p2p_ipcamera_channel_server_main/ipcamera_data/command/p2p_ipcamera_device_command_common.c 
+../src/p2p/p2p_ipcamera_channel_server_main/ipcamera_data/command/p2p_ipcamera_device_channel_command_common.c 
 
 OBJS += \
-./src/p2p/p2p_ipcamera_channel_server_main/ipcamera_data/command/p2p_ipcamera_device_command_common.o 
+./src/p2p/p2p_ipcamera_channel_server_main/ipcamera_data/command/p2p_ipcamera_device_channel_command_common.o 
 
 C_DEPS += \
-./src/p2p/p2p_ipcamera_channel_server_main/ipcamera_data/command/p2p_ipcamera_device_command_common.d 
+./src/p2p/p2p_ipcamera_channel_server_main/ipcamera_data/command/p2p_ipcamera_device_channel_command_common.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

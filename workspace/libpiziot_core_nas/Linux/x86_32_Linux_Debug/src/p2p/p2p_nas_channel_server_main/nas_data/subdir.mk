@@ -4,19 +4,19 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/p2p/p2p_nas_channel_server_main/nas_data/p2p_nas_device_command.c \
-../src/p2p/p2p_nas_channel_server_main/nas_data/p2p_nas_device_main.c \
-../src/p2p/p2p_nas_channel_server_main/nas_data/p2p_nas_device_other.c 
+../src/p2p/p2p_nas_channel_server_main/nas_data/p2p_nas_device_channel_command.c \
+../src/p2p/p2p_nas_channel_server_main/nas_data/p2p_nas_device_channel_main.c \
+../src/p2p/p2p_nas_channel_server_main/nas_data/p2p_nas_device_channel_other.c 
 
 OBJS += \
-./src/p2p/p2p_nas_channel_server_main/nas_data/p2p_nas_device_command.o \
-./src/p2p/p2p_nas_channel_server_main/nas_data/p2p_nas_device_main.o \
-./src/p2p/p2p_nas_channel_server_main/nas_data/p2p_nas_device_other.o 
+./src/p2p/p2p_nas_channel_server_main/nas_data/p2p_nas_device_channel_command.o \
+./src/p2p/p2p_nas_channel_server_main/nas_data/p2p_nas_device_channel_main.o \
+./src/p2p/p2p_nas_channel_server_main/nas_data/p2p_nas_device_channel_other.o 
 
 C_DEPS += \
-./src/p2p/p2p_nas_channel_server_main/nas_data/p2p_nas_device_command.d \
-./src/p2p/p2p_nas_channel_server_main/nas_data/p2p_nas_device_main.d \
-./src/p2p/p2p_nas_channel_server_main/nas_data/p2p_nas_device_other.d 
+./src/p2p/p2p_nas_channel_server_main/nas_data/p2p_nas_device_channel_command.d \
+./src/p2p/p2p_nas_channel_server_main/nas_data/p2p_nas_device_channel_main.d \
+./src/p2p/p2p_nas_channel_server_main/nas_data/p2p_nas_device_channel_other.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

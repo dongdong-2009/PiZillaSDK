@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A30A155C1FB16D3F004FCF91 /* p2p_cms_nas_command_security_system.c in Sources */ = {isa = PBXBuildFile; fileRef = A30A155A1FB16D3F004FCF91 /* p2p_cms_nas_command_security_system.c */; };
+		A30A155C1FB16D3F004FCF91 /* p2p_cms_nas_channel_command_security_system.c in Sources */ = {isa = PBXBuildFile; fileRef = A30A155A1FB16D3F004FCF91 /* p2p_cms_nas_channel_command_security_system.c */; };
 		A3A113211F9DBE3D00ED0E1C /* libpiziot_core_cms.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A113201F9DBE3D00ED0E1C /* libpiziot_core_cms.m */; };
 		A3A113221F9DBE3D00ED0E1C /* libpiziot_core_cms.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A3A1131F1F9DBE3D00ED0E1C /* libpiziot_core_cms.h */; };
 		A3A113321F9DBF7500ED0E1C /* piziot_core_cms.c in Sources */ = {isa = PBXBuildFile; fileRef = A3A113301F9DBF7500ED0E1C /* piziot_core_cms.c */; };
@@ -19,14 +19,14 @@
 		A3A113491F9DBFF000ED0E1C /* p2p_cms_main_ipcamera.c in Sources */ = {isa = PBXBuildFile; fileRef = A3A113431F9DBFF000ED0E1C /* p2p_cms_main_ipcamera.c */; };
 		A3A1134A1F9DBFF000ED0E1C /* p2p_cms_main.c in Sources */ = {isa = PBXBuildFile; fileRef = A3A113441F9DBFF000ED0E1C /* p2p_cms_main.c */; };
 		A3A1134B1F9DBFF000ED0E1C /* p2p_cms_main_nas.c in Sources */ = {isa = PBXBuildFile; fileRef = A3A113481F9DBFF000ED0E1C /* p2p_cms_main_nas.c */; };
-		A3A113511F9DC03000ED0E1C /* p2p_cms_nas_main.c in Sources */ = {isa = PBXBuildFile; fileRef = A3A1134F1F9DC03000ED0E1C /* p2p_cms_nas_main.c */; };
-		A3A113541F9DC04600ED0E1C /* p2p_cms_ipcamera_main.c in Sources */ = {isa = PBXBuildFile; fileRef = A3A113531F9DC04600ED0E1C /* p2p_cms_ipcamera_main.c */; };
-		A3DDD5C91FA4E66800E47725 /* p2p_cms_ipcamera_other.c in Sources */ = {isa = PBXBuildFile; fileRef = A3DDD5C51FA4E66700E47725 /* p2p_cms_ipcamera_other.c */; };
-		A3DDD5CA1FA4E66800E47725 /* p2p_cms_ipcamera_command.c in Sources */ = {isa = PBXBuildFile; fileRef = A3DDD5C71FA4E66700E47725 /* p2p_cms_ipcamera_command.c */; };
-		A3DDD5CF1FA4E69100E47725 /* p2p_cms_nas_command.c in Sources */ = {isa = PBXBuildFile; fileRef = A3DDD5CB1FA4E69100E47725 /* p2p_cms_nas_command.c */; };
-		A3DDD5D01FA4E69100E47725 /* p2p_cms_nas_other.c in Sources */ = {isa = PBXBuildFile; fileRef = A3DDD5CC1FA4E69100E47725 /* p2p_cms_nas_other.c */; };
-		A3F510F11FB2D313006C22BD /* p2p_cms_ipcamera_command_common.c in Sources */ = {isa = PBXBuildFile; fileRef = A3F510EF1FB2D313006C22BD /* p2p_cms_ipcamera_command_common.c */; };
-		A3F510F41FB2D337006C22BD /* p2p_cms_nas_command_common.c in Sources */ = {isa = PBXBuildFile; fileRef = A3F510F21FB2D337006C22BD /* p2p_cms_nas_command_common.c */; };
+		A3A113511F9DC03000ED0E1C /* p2p_cms_nas_channel_main.c in Sources */ = {isa = PBXBuildFile; fileRef = A3A1134F1F9DC03000ED0E1C /* p2p_cms_nas_channel_main.c */; };
+		A3A113541F9DC04600ED0E1C /* p2p_cms_ipcamera_channel_main.c in Sources */ = {isa = PBXBuildFile; fileRef = A3A113531F9DC04600ED0E1C /* p2p_cms_ipcamera_channel_main.c */; };
+		A3DDD5C91FA4E66800E47725 /* p2p_cms_ipcamera_channel_other.c in Sources */ = {isa = PBXBuildFile; fileRef = A3DDD5C51FA4E66700E47725 /* p2p_cms_ipcamera_channel_other.c */; };
+		A3DDD5CA1FA4E66800E47725 /* p2p_cms_ipcamera_channel_command.c in Sources */ = {isa = PBXBuildFile; fileRef = A3DDD5C71FA4E66700E47725 /* p2p_cms_ipcamera_channel_command.c */; };
+		A3DDD5CF1FA4E69100E47725 /* p2p_cms_nas_channel_command.c in Sources */ = {isa = PBXBuildFile; fileRef = A3DDD5CB1FA4E69100E47725 /* p2p_cms_nas_channel_command.c */; };
+		A3DDD5D01FA4E69100E47725 /* p2p_cms_nas_channel_other.c in Sources */ = {isa = PBXBuildFile; fileRef = A3DDD5CC1FA4E69100E47725 /* p2p_cms_nas_channel_other.c */; };
+		A3F510F11FB2D313006C22BD /* p2p_cms_ipcamera_channel_command_common.c in Sources */ = {isa = PBXBuildFile; fileRef = A3F510EF1FB2D313006C22BD /* p2p_cms_ipcamera_channel_command_common.c */; };
+		A3F510F41FB2D337006C22BD /* p2p_cms_nas_channel_command_common.c in Sources */ = {isa = PBXBuildFile; fileRef = A3F510F21FB2D337006C22BD /* p2p_cms_nas_channel_command_common.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,8 +43,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A30A155A1FB16D3F004FCF91 /* p2p_cms_nas_command_security_system.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_nas_command_security_system.c; path = ../../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/command/p2p_cms_nas_command_security_system.c; sourceTree = "<group>"; };
-		A30A155B1FB16D3F004FCF91 /* p2p_cms_nas_command_security_system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_nas_command_security_system.h; path = ../../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/command/p2p_cms_nas_command_security_system.h; sourceTree = "<group>"; };
+		A30A155A1FB16D3F004FCF91 /* p2p_cms_nas_channel_command_security_system.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_nas_channel_command_security_system.c; path = ../../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/command/p2p_cms_nas_channel_command_security_system.c; sourceTree = "<group>"; };
+		A30A155B1FB16D3F004FCF91 /* p2p_cms_nas_channel_command_security_system.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_nas_channel_command_security_system.h; path = ../../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/command/p2p_cms_nas_channel_command_security_system.h; sourceTree = "<group>"; };
 		A3A1131C1F9DBE3D00ED0E1C /* libpiziot_core_cms.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpiziot_core_cms.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3A1131F1F9DBE3D00ED0E1C /* libpiziot_core_cms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libpiziot_core_cms.h; sourceTree = "<group>"; };
 		A3A113201F9DBE3D00ED0E1C /* libpiziot_core_cms.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libpiziot_core_cms.m; sourceTree = "<group>"; };
@@ -68,22 +68,22 @@
 		A3A113461F9DBFF000ED0E1C /* p2p_cms_main_ipcamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_main_ipcamera.h; path = ../../../../../../../Linux/src/p2p/p2p_cms_main/p2p_cms_main_ipcamera.h; sourceTree = "<group>"; };
 		A3A113471F9DBFF000ED0E1C /* p2p_cms_main_nas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_main_nas.h; path = ../../../../../../../Linux/src/p2p/p2p_cms_main/p2p_cms_main_nas.h; sourceTree = "<group>"; };
 		A3A113481F9DBFF000ED0E1C /* p2p_cms_main_nas.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_main_nas.c; path = ../../../../../../../Linux/src/p2p/p2p_cms_main/p2p_cms_main_nas.c; sourceTree = "<group>"; };
-		A3A1134F1F9DC03000ED0E1C /* p2p_cms_nas_main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_nas_main.c; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_main.c; sourceTree = "<group>"; };
-		A3A113501F9DC03000ED0E1C /* p2p_cms_nas_main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_nas_main.h; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_main.h; sourceTree = "<group>"; };
-		A3A113521F9DC04600ED0E1C /* p2p_cms_ipcamera_main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_ipcamera_main.h; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_main.h; sourceTree = "<group>"; };
-		A3A113531F9DC04600ED0E1C /* p2p_cms_ipcamera_main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_ipcamera_main.c; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_main.c; sourceTree = "<group>"; };
-		A3DDD5C51FA4E66700E47725 /* p2p_cms_ipcamera_other.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_ipcamera_other.c; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_other.c; sourceTree = "<group>"; };
-		A3DDD5C61FA4E66700E47725 /* p2p_cms_ipcamera_other.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_ipcamera_other.h; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_other.h; sourceTree = "<group>"; };
-		A3DDD5C71FA4E66700E47725 /* p2p_cms_ipcamera_command.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_ipcamera_command.c; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_command.c; sourceTree = "<group>"; };
-		A3DDD5C81FA4E66700E47725 /* p2p_cms_ipcamera_command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_ipcamera_command.h; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_command.h; sourceTree = "<group>"; };
-		A3DDD5CB1FA4E69100E47725 /* p2p_cms_nas_command.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_nas_command.c; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_command.c; sourceTree = "<group>"; };
-		A3DDD5CC1FA4E69100E47725 /* p2p_cms_nas_other.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_nas_other.c; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_other.c; sourceTree = "<group>"; };
-		A3DDD5CD1FA4E69100E47725 /* p2p_cms_nas_command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_nas_command.h; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_command.h; sourceTree = "<group>"; };
-		A3DDD5CE1FA4E69100E47725 /* p2p_cms_nas_other.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_nas_other.h; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_other.h; sourceTree = "<group>"; };
-		A3F510EF1FB2D313006C22BD /* p2p_cms_ipcamera_command_common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_ipcamera_command_common.c; path = ../../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/command/p2p_cms_ipcamera_command_common.c; sourceTree = "<group>"; };
-		A3F510F01FB2D313006C22BD /* p2p_cms_ipcamera_command_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_ipcamera_command_common.h; path = ../../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/command/p2p_cms_ipcamera_command_common.h; sourceTree = "<group>"; };
-		A3F510F21FB2D337006C22BD /* p2p_cms_nas_command_common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_nas_command_common.c; path = ../../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/command/p2p_cms_nas_command_common.c; sourceTree = "<group>"; };
-		A3F510F31FB2D337006C22BD /* p2p_cms_nas_command_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_nas_command_common.h; path = ../../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/command/p2p_cms_nas_command_common.h; sourceTree = "<group>"; };
+		A3A1134F1F9DC03000ED0E1C /* p2p_cms_nas_channel_main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_nas_channel_main.c; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_channel_main.c; sourceTree = "<group>"; };
+		A3A113501F9DC03000ED0E1C /* p2p_cms_nas_channel_main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_nas_channel_main.h; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_channel_main.h; sourceTree = "<group>"; };
+		A3A113521F9DC04600ED0E1C /* p2p_cms_ipcamera_channel_main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_ipcamera_channel_main.h; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_channel_main.h; sourceTree = "<group>"; };
+		A3A113531F9DC04600ED0E1C /* p2p_cms_ipcamera_channel_main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_ipcamera_channel_main.c; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_channel_main.c; sourceTree = "<group>"; };
+		A3DDD5C51FA4E66700E47725 /* p2p_cms_ipcamera_channel_other.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_ipcamera_channel_other.c; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_channel_other.c; sourceTree = "<group>"; };
+		A3DDD5C61FA4E66700E47725 /* p2p_cms_ipcamera_channel_other.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_ipcamera_channel_other.h; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_channel_other.h; sourceTree = "<group>"; };
+		A3DDD5C71FA4E66700E47725 /* p2p_cms_ipcamera_channel_command.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_ipcamera_channel_command.c; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_channel_command.c; sourceTree = "<group>"; };
+		A3DDD5C81FA4E66700E47725 /* p2p_cms_ipcamera_channel_command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_ipcamera_channel_command.h; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/p2p_cms_ipcamera_channel_command.h; sourceTree = "<group>"; };
+		A3DDD5CB1FA4E69100E47725 /* p2p_cms_nas_channel_command.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_nas_channel_command.c; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_channel_command.c; sourceTree = "<group>"; };
+		A3DDD5CC1FA4E69100E47725 /* p2p_cms_nas_channel_other.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_nas_channel_other.c; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_channel_other.c; sourceTree = "<group>"; };
+		A3DDD5CD1FA4E69100E47725 /* p2p_cms_nas_channel_command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_nas_channel_command.h; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_channel_command.h; sourceTree = "<group>"; };
+		A3DDD5CE1FA4E69100E47725 /* p2p_cms_nas_channel_other.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_nas_channel_other.h; path = ../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/p2p_cms_nas_channel_other.h; sourceTree = "<group>"; };
+		A3F510EF1FB2D313006C22BD /* p2p_cms_ipcamera_channel_command_common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_ipcamera_channel_command_common.c; path = ../../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/command/p2p_cms_ipcamera_channel_command_common.c; sourceTree = "<group>"; };
+		A3F510F01FB2D313006C22BD /* p2p_cms_ipcamera_channel_command_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_ipcamera_channel_command_common.h; path = ../../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/ipcamera_data/command/p2p_cms_ipcamera_channel_command_common.h; sourceTree = "<group>"; };
+		A3F510F21FB2D337006C22BD /* p2p_cms_nas_channel_command_common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = p2p_cms_nas_channel_command_common.c; path = ../../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/command/p2p_cms_nas_channel_command_common.c; sourceTree = "<group>"; };
+		A3F510F31FB2D337006C22BD /* p2p_cms_nas_channel_command_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = p2p_cms_nas_channel_command_common.h; path = ../../../../../../../../../Linux/src/p2p/p2p_cms_channel_client_main/nas_data/command/p2p_cms_nas_channel_command_common.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,10 +100,10 @@
 		A30A15591FB16D28004FCF91 /* command */ = {
 			isa = PBXGroup;
 			children = (
-				A3F510F21FB2D337006C22BD /* p2p_cms_nas_command_common.c */,
-				A3F510F31FB2D337006C22BD /* p2p_cms_nas_command_common.h */,
-				A30A155A1FB16D3F004FCF91 /* p2p_cms_nas_command_security_system.c */,
-				A30A155B1FB16D3F004FCF91 /* p2p_cms_nas_command_security_system.h */,
+				A3F510F21FB2D337006C22BD /* p2p_cms_nas_channel_command_common.c */,
+				A3F510F31FB2D337006C22BD /* p2p_cms_nas_channel_command_common.h */,
+				A30A155A1FB16D3F004FCF91 /* p2p_cms_nas_channel_command_security_system.c */,
+				A30A155B1FB16D3F004FCF91 /* p2p_cms_nas_channel_command_security_system.h */,
 			);
 			path = command;
 			sourceTree = "<group>";
@@ -223,12 +223,12 @@
 			isa = PBXGroup;
 			children = (
 				A30A15591FB16D28004FCF91 /* command */,
-				A3DDD5CB1FA4E69100E47725 /* p2p_cms_nas_command.c */,
-				A3DDD5CD1FA4E69100E47725 /* p2p_cms_nas_command.h */,
-				A3DDD5CC1FA4E69100E47725 /* p2p_cms_nas_other.c */,
-				A3DDD5CE1FA4E69100E47725 /* p2p_cms_nas_other.h */,
-				A3A1134F1F9DC03000ED0E1C /* p2p_cms_nas_main.c */,
-				A3A113501F9DC03000ED0E1C /* p2p_cms_nas_main.h */,
+				A3DDD5CB1FA4E69100E47725 /* p2p_cms_nas_channel_command.c */,
+				A3DDD5CD1FA4E69100E47725 /* p2p_cms_nas_channel_command.h */,
+				A3DDD5CC1FA4E69100E47725 /* p2p_cms_nas_channel_other.c */,
+				A3DDD5CE1FA4E69100E47725 /* p2p_cms_nas_channel_other.h */,
+				A3A1134F1F9DC03000ED0E1C /* p2p_cms_nas_channel_main.c */,
+				A3A113501F9DC03000ED0E1C /* p2p_cms_nas_channel_main.h */,
 			);
 			path = nas_data;
 			sourceTree = "<group>";
@@ -237,12 +237,12 @@
 			isa = PBXGroup;
 			children = (
 				A3F510EE1FB2D2C7006C22BD /* command */,
-				A3DDD5C71FA4E66700E47725 /* p2p_cms_ipcamera_command.c */,
-				A3DDD5C81FA4E66700E47725 /* p2p_cms_ipcamera_command.h */,
-				A3DDD5C51FA4E66700E47725 /* p2p_cms_ipcamera_other.c */,
-				A3DDD5C61FA4E66700E47725 /* p2p_cms_ipcamera_other.h */,
-				A3A113531F9DC04600ED0E1C /* p2p_cms_ipcamera_main.c */,
-				A3A113521F9DC04600ED0E1C /* p2p_cms_ipcamera_main.h */,
+				A3DDD5C71FA4E66700E47725 /* p2p_cms_ipcamera_channel_command.c */,
+				A3DDD5C81FA4E66700E47725 /* p2p_cms_ipcamera_channel_command.h */,
+				A3DDD5C51FA4E66700E47725 /* p2p_cms_ipcamera_channel_other.c */,
+				A3DDD5C61FA4E66700E47725 /* p2p_cms_ipcamera_channel_other.h */,
+				A3A113531F9DC04600ED0E1C /* p2p_cms_ipcamera_channel_main.c */,
+				A3A113521F9DC04600ED0E1C /* p2p_cms_ipcamera_channel_main.h */,
 			);
 			path = ipcamera_data;
 			sourceTree = "<group>";
@@ -250,8 +250,8 @@
 		A3F510EE1FB2D2C7006C22BD /* command */ = {
 			isa = PBXGroup;
 			children = (
-				A3F510EF1FB2D313006C22BD /* p2p_cms_ipcamera_command_common.c */,
-				A3F510F01FB2D313006C22BD /* p2p_cms_ipcamera_command_common.h */,
+				A3F510EF1FB2D313006C22BD /* p2p_cms_ipcamera_channel_command_common.c */,
+				A3F510F01FB2D313006C22BD /* p2p_cms_ipcamera_channel_command_common.h */,
 			);
 			path = command;
 			sourceTree = "<group>";
@@ -313,23 +313,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3A113541F9DC04600ED0E1C /* p2p_cms_ipcamera_main.c in Sources */,
-				A3A113511F9DC03000ED0E1C /* p2p_cms_nas_main.c in Sources */,
+				A3A113541F9DC04600ED0E1C /* p2p_cms_ipcamera_channel_main.c in Sources */,
+				A3A113511F9DC03000ED0E1C /* p2p_cms_nas_channel_main.c in Sources */,
 				A3A113401F9DBF9E00ED0E1C /* p2p_protocol_ipcamera.c in Sources */,
-				A3DDD5C91FA4E66800E47725 /* p2p_cms_ipcamera_other.c in Sources */,
+				A3DDD5C91FA4E66800E47725 /* p2p_cms_ipcamera_channel_other.c in Sources */,
 				A3A113491F9DBFF000ED0E1C /* p2p_cms_main_ipcamera.c in Sources */,
-				A3DDD5CF1FA4E69100E47725 /* p2p_cms_nas_command.c in Sources */,
+				A3DDD5CF1FA4E69100E47725 /* p2p_cms_nas_channel_command.c in Sources */,
 				A3A1134A1F9DBFF000ED0E1C /* p2p_cms_main.c in Sources */,
-				A30A155C1FB16D3F004FCF91 /* p2p_cms_nas_command_security_system.c in Sources */,
-				A3F510F41FB2D337006C22BD /* p2p_cms_nas_command_common.c in Sources */,
+				A30A155C1FB16D3F004FCF91 /* p2p_cms_nas_channel_command_security_system.c in Sources */,
+				A3F510F41FB2D337006C22BD /* p2p_cms_nas_channel_command_common.c in Sources */,
 				A3A1133F1F9DBF9E00ED0E1C /* p2p_func_client.c in Sources */,
-				A3DDD5CA1FA4E66800E47725 /* p2p_cms_ipcamera_command.c in Sources */,
-				A3F510F11FB2D313006C22BD /* p2p_cms_ipcamera_command_common.c in Sources */,
+				A3DDD5CA1FA4E66800E47725 /* p2p_cms_ipcamera_channel_command.c in Sources */,
+				A3F510F11FB2D313006C22BD /* p2p_cms_ipcamera_channel_command_common.c in Sources */,
 				A3A113211F9DBE3D00ED0E1C /* libpiziot_core_cms.m in Sources */,
 				A3A113351F9DBF8C00ED0E1C /* misc_setting.c in Sources */,
 				A3A1134B1F9DBFF000ED0E1C /* p2p_cms_main_nas.c in Sources */,
 				A3A113411F9DBF9E00ED0E1C /* p2p_func.c in Sources */,
-				A3DDD5D01FA4E69100E47725 /* p2p_cms_nas_other.c in Sources */,
+				A3DDD5D01FA4E69100E47725 /* p2p_cms_nas_channel_other.c in Sources */,
 				A3A113321F9DBF7500ED0E1C /* piziot_core_cms.c in Sources */,
 				A3A1133E1F9DBF9E00ED0E1C /* p2p_protocol_nas.c in Sources */,
 			);

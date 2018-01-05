@@ -319,46 +319,46 @@
 							Name="nas_data"
 							>
 							<File
-								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\p2p_cms_nas_command.c"
+								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\p2p_cms_nas_channel_command.c"
 								>
 							</File>
 							<File
-								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\p2p_cms_nas_command.h"
+								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\p2p_cms_nas_channel_command.h"
 								>
 							</File>
 							<File
-								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\p2p_cms_nas_main.c"
+								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\p2p_cms_nas_channel_main.c"
 								>
 							</File>
 							<File
-								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\p2p_cms_nas_main.h"
+								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\p2p_cms_nas_channel_main.h"
 								>
 							</File>
 							<File
-								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\p2p_cms_nas_other.c"
+								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\p2p_cms_nas_channel_other.c"
 								>
 							</File>
 							<File
-								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\p2p_cms_nas_other.h"
+								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\p2p_cms_nas_channel_other.h"
 								>
 							</File>
 							<Filter
 								Name="command"
 								>
 								<File
-									RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\command\p2p_cms_nas_command_common.c"
+									RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\command\p2p_cms_nas_channel_command_common.c"
 									>
 								</File>
 								<File
-									RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\command\p2p_cms_nas_command_common.h"
+									RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\command\p2p_cms_nas_channel_command_common.h"
 									>
 								</File>
 								<File
-									RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\command\p2p_cms_nas_command_security_system.c"
+									RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\command\p2p_cms_nas_channel_command_security_system.c"
 									>
 								</File>
 								<File
-									RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\command\p2p_cms_nas_command_security_system.h"
+									RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\nas_data\command\p2p_cms_nas_channel_command_security_system.h"
 									>
 								</File>
 							</Filter>
@@ -367,38 +367,38 @@
 							Name="ipcamera_data"
 							>
 							<File
-								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\p2p_cms_ipcamera_command.c"
+								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\p2p_cms_ipcamera_channel_command.c"
 								>
 							</File>
 							<File
-								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\p2p_cms_ipcamera_command.h"
+								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\p2p_cms_ipcamera_channel_command.h"
 								>
 							</File>
 							<File
-								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\p2p_cms_ipcamera_main.c"
+								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\p2p_cms_ipcamera_channel_main.c"
 								>
 							</File>
 							<File
-								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\p2p_cms_ipcamera_main.h"
+								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\p2p_cms_ipcamera_channel_main.h"
 								>
 							</File>
 							<File
-								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\p2p_cms_ipcamera_other.c"
+								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\p2p_cms_ipcamera_channel_other.c"
 								>
 							</File>
 							<File
-								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\p2p_cms_ipcamera_other.h"
+								RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\p2p_cms_ipcamera_channel_other.h"
 								>
 							</File>
 							<Filter
 								Name="command"
 								>
 								<File
-									RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\command\p2p_cms_ipcamera_command_common.c"
+									RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\command\p2p_cms_ipcamera_channel_command_common.c"
 									>
 								</File>
 								<File
-									RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\command\p2p_cms_ipcamera_command_common.h"
+									RelativePath="..\..\Linux\src\p2p\p2p_cms_channel_client_main\ipcamera_data\command\p2p_cms_ipcamera_channel_command_common.h"
 									>
 								</File>
 							</Filter>
