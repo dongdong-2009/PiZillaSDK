@@ -8,6 +8,10 @@
 
 #include "def_libpiziot_os_platform.h"
 
+#if defined(__LIBPIZIOT_OS_PLATFORM_MFC__)
+#include <tchar.h>
+#endif //defined(__LIBPIZIOT_OS_PLATFORM_MFC__)
+
 #include "def_libpiziot_os_type.h"
 #include "def_libpiziot_os_mutex.h"
 
@@ -33,20 +37,25 @@ extern "C"
 #define libpiziot_os_debug_usleep_1sec() usleep(LIBPIZIOT_ICE_DEBUG_USLEEP_1_SECCOND)
 #endif //defined(__LIBPIZIOT_OS_PLATFORM_MFC__) || defined(__LIBPIZIOT_OS_FREERTOS__)
 
-//#define TRACEA libpiziot_os_debug_thread_safe_printf("%s:%d\n", LIBPIZIOT_OS__FUNCTION__, __LINE__);libpiziot_os_debug_thread_safe_printf
+//#define TRACEA libpiziot_os_debug_thread_safe_printfA("%s:%d\n", LIBPIZIOT_OS__FUNCTION__, __LINE__);libpiziot_os_debug_thread_safe_printfA
+//#define TRACEA libpiziot_os_debug_thread_safe_printfW("%s:%d\n", LIBPIZIOT_OS__FUNCTION__, __LINE__);libpiziot_os_debug_thread_safe_printfW
 #if defined(__LIBPIZIOT_OS_FREERTOS__)
-#define TRACEA libpiziot_os_debug_thread_safe_printf
+#define TRACEA libpiziot_os_debug_thread_safe_printfA
 #define TRACEN libpiziot_os_debug_thread_non_safe_printf
-#define TRACE_ERROR libpiziot_os_debug_thread_safe_printf
-#define TRACE_SUCCEED libpiziot_os_debug_thread_safe_printf
-#define FTRACEA libpiziot_os_debug_thread_safe_printf
+#define TRACE_ERROR libpiziot_os_debug_thread_safe_printfA
+#define TRACE_SUCCEED libpiziot_os_debug_thread_safe_printfA
+#define FTRACEA libpiziot_os_debug_thread_safe_printfA
 #define FTRACEN libpiziot_os_debug_thread_non_safe_printf
 #else
-#define TRACEA libpiziot_os_debug_thread_safe_printf
+#define TRACEA libpiziot_os_debug_thread_safe_printfA
 #define TRACEN libpiziot_os_debug_thread_non_safe_printf
-#define TRACE_ERROR libpiziot_os_debug_thread_safe_printf
-#define TRACE_SUCCEED libpiziot_os_debug_thread_safe_printf
-#define FTRACEA libpiziot_os_debug_thread_safe_printf
+#if defined(__LIBPIZIOT_OS_PLATFORM_MFC__)
+#define TRACEW libpiziot_os_debug_thread_safe_printfW
+#endif //defined(__LIBPIZIOT_OS_PLATFORM_MFC__)
+
+#define TRACE_ERROR libpiziot_os_debug_thread_safe_printfA
+#define TRACE_SUCCEED libpiziot_os_debug_thread_safe_printfA
+#define FTRACEA libpiziot_os_debug_thread_safe_printfA
 #define FTRACEN libpiziot_os_debug_thread_non_safe_printf
 #endif //defined(__LIBPIZIOT_OS_FREERTOS__)
 
@@ -74,8 +83,12 @@ extern "C"
 #endif
     extern libpiziot_os_mutex_struct_plock_t libpiziot_os_debug_mx;
 
-    extern void libpiziot_os_debug_thread_safe_printf(const char *format, ...);
+    extern void libpiziot_os_debug_thread_safe_printfA(const char *format, ...);
     extern void libpiziot_os_debug_thread_non_safe_printf(const char *format, ...);
+
+#if defined(__LIBPIZIOT_OS_PLATFORM_MFC__)
+    extern void libpiziot_os_debug_thread_safe_printfW(const TCHAR *format, ...);
+#endif //defined(__LIBPIZIOT_OS_PLATFORM_MFC__)
 
 #ifdef __cplusplus
 }

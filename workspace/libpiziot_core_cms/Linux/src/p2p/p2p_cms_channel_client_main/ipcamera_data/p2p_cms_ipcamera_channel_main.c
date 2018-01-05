@@ -135,7 +135,7 @@ static libpiziot_os_type_func_result_e p2p_cms_ipcamera_channel_main_free(p2p_cm
             }
             {
                 if (lpthread_info->lpdata_send_to_server != 0) {
-                    free(lpthread_info->lpdata_send_to_server);
+                    libpiziot_os_free(lpthread_info->lpdata_send_to_server);
                     lpthread_info->lpdata_send_to_server = 0;
                 }
                 {
@@ -145,11 +145,11 @@ static libpiziot_os_type_func_result_e p2p_cms_ipcamera_channel_main_free(p2p_cm
                     libpiziot_os_fifo_free_mutex(lp_fifo_send_to_server, LIBPIZIOT_OS__FUNCTION__, __LINE__);
                 }
                 if (lpthread_info->lpdata_enc_to_server != 0) {
-                    free(lpthread_info->lpdata_enc_to_server);
+                    libpiziot_os_free(lpthread_info->lpdata_enc_to_server);
                     lpthread_info->lpdata_enc_to_server = 0;
                 }
                 if (lpthread_info->lpdata_dec_from_server != 0) {
-                    free(lpthread_info->lpdata_dec_from_server);
+                    libpiziot_os_free(lpthread_info->lpdata_dec_from_server);
                     lpthread_info->lpdata_dec_from_server = 0;
                 }
                 {
@@ -159,13 +159,13 @@ static libpiziot_os_type_func_result_e p2p_cms_ipcamera_channel_main_free(p2p_cm
                     libpiziot_os_fifo_free_mutex(lp_fifo_recv_from_server, LIBPIZIOT_OS__FUNCTION__, __LINE__);
                 }
                 if (lpthread_info->lpdata_recv_from_server != 0) {
-                    free(lpthread_info->lpdata_recv_from_server);
+                    libpiziot_os_free(lpthread_info->lpdata_recv_from_server);
                     lpthread_info->lpdata_recv_from_server = 0;
                 }
             }
         }
         {
-            free(lpthread_info);
+            libpiziot_os_free(lpthread_info);
             Alpp2p_cms_main_ipcamera_thread_info->lpp2p_cms_ipcamera_channel_main_thread_info[Athread_info_index] = 0;
         }
     } while (0);
@@ -202,7 +202,7 @@ static libpiziot_os_type_func_result_e p2p_cms_ipcamera_channel_main_malloc(p2p_
             }
         }
 #endif //(defined(__LIBPIZIOT_OS_PLATFORM_XCODE_IOS__) || defined(__LIBPIZIOT_OS_PLATFORM_XCODE_MACOS__))
-        lpthread_info = (p2p_cms_ipcamera_channel_main_thread_info_t *)malloc(sizeof(p2p_cms_ipcamera_channel_main_thread_info_t));
+        lpthread_info = (p2p_cms_ipcamera_channel_main_thread_info_t *)libpiziot_os_malloc(sizeof(p2p_cms_ipcamera_channel_main_thread_info_t));
         if (lpthread_info == 0) {
             TRACEA("%s:out of memory,error !!\n", LIBPIZIOT_OS__FUNCTION__);
             break;
@@ -236,7 +236,7 @@ static libpiziot_os_type_func_result_e p2p_cms_ipcamera_channel_main_malloc(p2p_
                 {
                     lpthread_info->data_send_to_server_max_size = protocol_head_len + Asend_data_max_size;
                     {
-                        lpthread_info->lpdata_send_to_server = malloc(lpthread_info->data_send_to_server_max_size);
+                        lpthread_info->lpdata_send_to_server = libpiziot_os_malloc(lpthread_info->data_send_to_server_max_size);
                         if (lpthread_info->lpdata_send_to_server == 0) break;
                     }
                     {
@@ -249,7 +249,7 @@ static libpiziot_os_type_func_result_e p2p_cms_ipcamera_channel_main_malloc(p2p_
                         }
                     }
                     {
-                        lpthread_info->lpdata_enc_to_server = malloc(lpthread_info->data_send_to_server_max_size);
+                        lpthread_info->lpdata_enc_to_server = libpiziot_os_malloc(lpthread_info->data_send_to_server_max_size);
                         if (lpthread_info->lpdata_enc_to_server == 0) break;
                     }
                 }
@@ -258,7 +258,7 @@ static libpiziot_os_type_func_result_e p2p_cms_ipcamera_channel_main_malloc(p2p_
                         lpthread_info->data_dec_from_server_size = 0;
                         if (Arecv_data_max_size > 0) {
                             lpthread_info->data_dec_from_server_size = protocol_head_len + Arecv_data_max_size;
-                            lpthread_info->lpdata_dec_from_server = malloc(lpthread_info->data_dec_from_server_size);
+                            lpthread_info->lpdata_dec_from_server = libpiziot_os_malloc(lpthread_info->data_dec_from_server_size);
                             if (lpthread_info->lpdata_dec_from_server == 0) break;
                         }
                     }
@@ -275,7 +275,7 @@ static libpiziot_os_type_func_result_e p2p_cms_ipcamera_channel_main_malloc(p2p_
                         lpthread_info->data_recv_from_server_size = 0;
                         if (Arecv_data_max_size > 0) {
                             lpthread_info->data_recv_from_server_size = protocol_head_len + Arecv_data_max_size;
-                            lpthread_info->lpdata_recv_from_server = malloc(lpthread_info->data_recv_from_server_size);
+                            lpthread_info->lpdata_recv_from_server = libpiziot_os_malloc(lpthread_info->data_recv_from_server_size);
                             if (lpthread_info->lpdata_recv_from_server == 0) break;
                         }
                     }

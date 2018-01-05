@@ -93,7 +93,7 @@ static libpiziot_os_type_func_result_e p2p_ipcamera_device_channel_main_free(p2p
             }
             {
                 if (lpthread_info->lpdata_send_to_client != 0) {
-                    free(lpthread_info->lpdata_send_to_client);
+                    libpiziot_os_free(lpthread_info->lpdata_send_to_client);
                     lpthread_info->lpdata_send_to_client = 0;
                 }
                 {
@@ -103,7 +103,7 @@ static libpiziot_os_type_func_result_e p2p_ipcamera_device_channel_main_free(p2p
                     libpiziot_os_fifo_free_mutex(lp_fifo_send_to_client, LIBPIZIOT_OS__FUNCTION__, __LINE__);
                 }
                 if (lpthread_info->lpdata_dec_from_client != 0) {
-                    free(lpthread_info->lpdata_from_client_head);
+                    libpiziot_os_free(lpthread_info->lpdata_from_client_head);
                     lpthread_info->lpdata_from_client_head = 0;
                     lpthread_info->lpdata_dec_from_client = 0;
                 }
@@ -114,14 +114,14 @@ static libpiziot_os_type_func_result_e p2p_ipcamera_device_channel_main_free(p2p
                     libpiziot_os_fifo_free_mutex(lp_fifo_recv_from_client, LIBPIZIOT_OS__FUNCTION__, __LINE__);
                 }
                 if (lpthread_info->lpdata_recv_from_client_head != 0) {
-                    free(lpthread_info->lpdata_recv_from_client_head);
+                    libpiziot_os_free(lpthread_info->lpdata_recv_from_client_head);
                     lpthread_info->lpdata_recv_from_client_head = 0;
                     lpthread_info->lpdata_recv_from_client = 0;
                 }
             }
         }
         {
-            free(lpthread_info);
+            libpiziot_os_free(lpthread_info);
             Alpp2p_ipcamera_main_device_thread_info->lpp2p_ipcamera_device_channel_main_thread_info[Athread_info_index] = 0;
         }
     } while (0);
@@ -157,7 +157,7 @@ static libpiziot_os_type_func_result_e p2p_ipcamera_device_channel_main_malloc(p
             }
         }
 #endif //(defined(__LIBPIZIOT_OS_PLATFORM_XCODE_IOS__) || defined(__LIBPIZIOT_OS_PLATFORM_XCODE_MACOS__))
-        lpthread_info = (p2p_ipcamera_device_channel_main_thread_info_t *)malloc(sizeof(p2p_ipcamera_device_channel_main_thread_info_t));
+        lpthread_info = (p2p_ipcamera_device_channel_main_thread_info_t *)libpiziot_os_malloc(sizeof(p2p_ipcamera_device_channel_main_thread_info_t));
         if (lpthread_info == 0) {
             TRACEA("%s:out of memory,error !!\n", LIBPIZIOT_OS__FUNCTION__);
             break;
@@ -200,7 +200,7 @@ static libpiziot_os_type_func_result_e p2p_ipcamera_device_channel_main_malloc(p
                 {
                     {
                         lpthread_info->data_send_to_client_max_size = protocol_head_len + Asend_data_max_size;
-                        lpthread_info->lpdata_send_to_client = malloc(lpthread_info->data_send_to_client_max_size);
+                        lpthread_info->lpdata_send_to_client = libpiziot_os_malloc(lpthread_info->data_send_to_client_max_size);
                         if (lpthread_info->lpdata_send_to_client == 0) break;
                     }
                     {
@@ -216,7 +216,7 @@ static libpiziot_os_type_func_result_e p2p_ipcamera_device_channel_main_malloc(p
                 {
                     {
                         lpthread_info->data_dec_from_client_size = protocol_head_len + Arecv_data_max_size;
-                        lpthread_info->lpdata_from_client_head = malloc(sizeof(libpiziot_core_p2p_data_from_client_head_t) + lpthread_info->data_dec_from_client_size);
+                        lpthread_info->lpdata_from_client_head = libpiziot_os_malloc(sizeof(libpiziot_core_p2p_data_from_client_head_t) + lpthread_info->data_dec_from_client_size);
                         if (lpthread_info->lpdata_from_client_head == 0) break;
                         lpthread_info->lpdata_dec_from_client = lpthread_info->lpdata_from_client_head + sizeof(libpiziot_core_p2p_data_from_client_head_t);
                     }
@@ -231,7 +231,7 @@ static libpiziot_os_type_func_result_e p2p_ipcamera_device_channel_main_malloc(p
                     }
                     {
                         lpthread_info->data_recv_from_client_head_size = sizeof(libpiziot_core_p2p_data_from_client_head_t) + lpthread_info->data_dec_from_client_size;
-                        lpthread_info->lpdata_recv_from_client_head = malloc(lpthread_info->data_recv_from_client_head_size);
+                        lpthread_info->lpdata_recv_from_client_head = libpiziot_os_malloc(lpthread_info->data_recv_from_client_head_size);
                         if (lpthread_info->lpdata_recv_from_client_head == 0) break;
                         memset_addr(libpiziot_core_p2p_data_from_client_head_t, (libpiziot_core_p2p_data_from_client_head_t *)(lpthread_info->lpdata_recv_from_client_head), 0, sizeof(libpiziot_core_p2p_data_from_client_head_t));
                         lpthread_info->lpdata_recv_from_client = lpthread_info->lpdata_recv_from_client_head + sizeof(libpiziot_core_p2p_data_from_client_head_t);

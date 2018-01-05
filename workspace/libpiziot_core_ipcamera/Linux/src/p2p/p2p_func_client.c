@@ -111,9 +111,9 @@ int32_t p2p_func_client_lan_server_handle = -1;
 
 #if defined(ENABLE_P2P_IPCAMERA) || defined(ENABLE_P2P_NAS) || defined(ENABLE_P2P_GSERVER)
 
+#if defined(LIBPIZIOT_P2P_COMMON_ENABLE_LAN_MODE)
 libpiziot_os_type_func_result_e p2p_func_client_lan_server_start_thread(void) {
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
-#if defined(LIBPIZIOT_P2P_COMMON_ENABLE_LAN_MODE)
     if (p2p_func_client_lan_server_handle == -1) {
         rval = libpiziot_p2p_clientsdk_create_lan_server(SAMPLE_CODE_P2P_LAN_SERVER_PORT_DEFAULT, &p2p_func_client_lan_server_handle);
         if (rval == LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
@@ -123,18 +123,18 @@ libpiziot_os_type_func_result_e p2p_func_client_lan_server_start_thread(void) {
             TRACEA("PIZCam:create_lan_server,error !!\n");
         }
     }
-#endif //defined(LIBPIZIOT_P2P_COMMON_ENABLE_LAN_MODE)
     return rval;
 }
+#endif //defined(LIBPIZIOT_P2P_COMMON_ENABLE_LAN_MODE)
 
-void p2p_func_client_lan_server_stop_thread(void) {
 #if defined(LIBPIZIOT_P2P_COMMON_ENABLE_LAN_MODE)
+void p2p_func_client_lan_server_stop_thread(void) {
     if (p2p_func_client_lan_server_handle >= 0) {
         libpiziot_p2p_clientsdk_delete_lan_server(p2p_func_client_lan_server_handle);
         p2p_func_client_lan_server_handle = -1;
     }
-#endif //defined(LIBPIZIOT_P2P_COMMON_ENABLE_LAN_MODE)
 }
+#endif //defined(LIBPIZIOT_P2P_COMMON_ENABLE_LAN_MODE)
 
 #endif //defined(ENABLE_P2P_IPCAMERA) || defined(ENABLE_P2P_NAS) || defined(ENABLE_P2P_GSERVER)
 
@@ -1352,7 +1352,9 @@ libpiziot_os_type_func_result_e p2p_func_client_start_thread(void) {
     do {
 #if defined(ENABLE_P2P_IPCAMERA) || defined(ENABLE_P2P_NAS) || defined(ENABLE_P2P_CMS) || defined(ENABLE_P2P_GSERVER) || defined(ENABLE_P2P_GCLIENT)
 #if defined(ENABLE_P2P_IPCAMERA) || defined(ENABLE_P2P_NAS) || defined(ENABLE_P2P_GSERVER)
+#if defined(LIBPIZIOT_P2P_COMMON_ENABLE_LAN_MODE)
         if (p2p_func_client_lan_server_start_thread() != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) break;
+#endif //defined(LIBPIZIOT_P2P_COMMON_ENABLE_LAN_MODE)
 #endif //defined(ENABLE_P2P_IPCAMERA) || defined(ENABLE_P2P_NAS) || defined(ENABLE_P2P_GSERVER)
 #if defined(ENABLE_P2P_IPCAMERA)
         p2p_ipcamera_main_start_thread();
@@ -1395,7 +1397,9 @@ libpiziot_os_type_func_result_e p2p_func_client_stop_thread(void) {
         p2p_ipcamera_main_stop_thread();
 #endif //defined(ENABLE_P2P_IPCAMERA)
 #if defined(ENABLE_P2P_IPCAMERA) || defined(ENABLE_P2P_NAS) || defined(ENABLE_P2P_GSERVER)
+#if defined(LIBPIZIOT_P2P_COMMON_ENABLE_LAN_MODE)
         p2p_func_client_lan_server_stop_thread();
+#endif //defined(LIBPIZIOT_P2P_COMMON_ENABLE_LAN_MODE)
 #endif //defined(ENABLE_P2P_IPCAMERA) || defined(ENABLE_P2P_NAS) || defined(ENABLE_P2P_GSERVER)
 #endif //defined(ENABLE_P2P_IPCAMERA) || defined(ENABLE_P2P_NAS) || defined(ENABLE_P2P_CMS) || defined(ENABLE_P2P_GSERVER) || defined(ENABLE_P2P_GCLIENT)
         rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;

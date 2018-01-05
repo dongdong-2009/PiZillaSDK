@@ -158,7 +158,7 @@ static libpiziot_os_type_func_result_e stream_in_emulator_open_test_file(libpizi
         stream_in_emulator_read_bytes[Avenc_index] = 0;
         stream_in_emulator_buffer_len[Avenc_index] = 0;
         {
-            stream_in_emulator_lpMem[Avenc_index] = malloc(stream_in_emulator_fileSize_ch[Avenc_index]);
+            stream_in_emulator_lpMem[Avenc_index] = libpiziot_os_malloc(stream_in_emulator_fileSize_ch[Avenc_index]);
             if (stream_in_emulator_lpMem[Avenc_index] == 0) {
                 break;
             }
@@ -187,7 +187,7 @@ libpiziot_os_type_func_result_e stream_in_emulator_close_test_file(int32_t Avenc
     libpiziot_os_type_func_result_e rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;
     do {
         if (stream_in_emulator_lpMem[Avenc_index] != 0) {
-            free(stream_in_emulator_lpMem[Avenc_index]);
+            libpiziot_os_free(stream_in_emulator_lpMem[Avenc_index]);
             stream_in_emulator_lpMem[Avenc_index] = 0;
         }
         rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS;

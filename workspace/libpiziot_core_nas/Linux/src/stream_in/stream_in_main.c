@@ -468,7 +468,7 @@ static void stream_in_main_deinit_fifo_buffer(libpiziot_stream_in_source_list_t 
 
         {
             if (Alpstream_in_info->source_list[stream_in_index].lpsend_buff != 0) {
-                free(Alpstream_in_info->source_list[stream_in_index].lpsend_buff);
+                libpiziot_os_free(Alpstream_in_info->source_list[stream_in_index].lpsend_buff);
                 Alpstream_in_info->source_list[stream_in_index].lpsend_buff = 0;
             }
         }
@@ -516,7 +516,7 @@ static libpiziot_os_type_func_result_e stream_in_main_init_fifo_buffer(libpiziot
         {
             Alpstream_in_info->source_list[stream_in_index].send_buff_size = buffer_size;
             if (buffer_size != 0) {
-                Alpstream_in_info->source_list[stream_in_index].lpsend_buff = (char *)malloc(buffer_size);
+                Alpstream_in_info->source_list[stream_in_index].lpsend_buff = (char *)libpiziot_os_malloc(buffer_size);
                 if (Alpstream_in_info->source_list[stream_in_index].lpsend_buff == 0) {
                     TRACEA("%s,malloc lpsend_buff = 0,error !!\n", LIBPIZIOT_OS__FUNCTION__);
                     rval = LIBPIZIOT_OS_TYPE_FUNC_RESULT_FAILURE;

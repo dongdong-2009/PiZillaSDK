@@ -539,7 +539,7 @@ libpiziot_os_type_func_result_e p2p_nas_main_device_finalize(p2p_nas_main_device
             }
         }
         {
-            free(lpthread_info);
+            libpiziot_os_free(lpthread_info);
             (*Alpp_thread_info) = 0;
         }
         TRACEB("%s ...\n", LIBPIZIOT_OS__FUNCTION__);
@@ -569,7 +569,7 @@ libpiziot_os_type_func_result_e p2p_nas_main_device_initialize(p2p_nas_main_devi
             }
         }
 #endif //(defined(__LIBPIZIOT_OS_PLATFORM_XCODE_IOS__) || defined(__LIBPIZIOT_OS_PLATFORM_XCODE_MACOS__))
-        lpthread_info = (p2p_nas_main_device_thread_info_t *)malloc(sizeof(p2p_nas_main_device_thread_info_t));
+        lpthread_info = (p2p_nas_main_device_thread_info_t *)libpiziot_os_malloc(sizeof(p2p_nas_main_device_thread_info_t));
         if (lpthread_info == 0) {
             TRACEA("%s:out of memory,error !!\n", LIBPIZIOT_OS__FUNCTION__);
             break;

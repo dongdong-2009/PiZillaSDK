@@ -427,7 +427,7 @@ libpiziot_os_type_func_result_e libpiziot_stream_out_main_add_target(libpiziot_s
             break;
         }
 
-        lpstream_out_target_new = (libpiziot_stream_out_target_t *)calloc(1, sizeof(libpiziot_stream_out_target_t));
+        lpstream_out_target_new = (libpiziot_stream_out_target_t *)libpiziot_os_calloc(1, sizeof(libpiziot_stream_out_target_t));
         (*Alppstream_out_target_new) = lpstream_out_target_new;
         if (lpstream_out_target_new == 0) {
             TRACEA("alloc libpiziot_stream_out_target_t error %s,%i\n", __FILE__, __LINE__);
@@ -466,7 +466,7 @@ libpiziot_os_type_func_result_e libpiziot_stream_out_main_add_target(libpiziot_s
     } while (0);
     if (rval != LIBPIZIOT_OS_TYPE_FUNC_RESULT_SUCCESS) {
         if (lpstream_out_target_new != 0) {
-            free(lpstream_out_target_new);
+            libpiziot_os_free(lpstream_out_target_new);
             (*Alppstream_out_target_new) = 0;
         }
     }
@@ -479,7 +479,7 @@ void libpiziot_stream_out_main_remove_target(libpiziot_stream_out_target_t **Alp
 
     if (Alpstream_out_target == *Alppstream_out_target_list) {
         *Alppstream_out_target_list = Alpstream_out_target->next;
-        free(Alpstream_out_target);
+        libpiziot_os_free(Alpstream_out_target);
         {
             (*Alppstream_out_target_next) = *Alppstream_out_target_list;
         }
@@ -490,7 +490,7 @@ void libpiziot_stream_out_main_remove_target(libpiziot_stream_out_target_t **Alp
         for (p = (*Alppstream_out_target_list); p != NULL; p = p->next) {
             if (p == Alpstream_out_target) {
                 libpiziot_stream_out_target_t *reindex = p->next;
-                free(p);
+                libpiziot_os_free(p);
                 p = reindex;
                 (*Alppstream_out_target_next) = reindex;
                 if (p_last != NULL) {

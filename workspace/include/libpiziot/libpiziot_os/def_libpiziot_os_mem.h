@@ -24,18 +24,22 @@
         #undef os_zalloc
     #endif //defined(__LIBPIZIOT_OS_FREERTOS__)
 
-    #define malloc(size) libpiziot_os_mem_malloc(size,__FILE__,__LINE__)
-    #define calloc(count, size) libpiziot_os_mem_calloc(count,size,__FILE__,__LINE__)
-    #define free(mem_ref) libpiziot_os_mem_free(mem_ref)
-    #define kzalloc(size, mode) libpiziot_os_mem_malloc(size,__FILE__,__LINE__)
-    #define kmalloc(size, flag) libpiziot_os_mem_malloc(size,__FILE__,__LINE__)
-    #define kfree(mem_ref) libpiziot_os_mem_free(mem_ref)
-    #define kfifoalloc(size, flag, lock) libpiziot_os_mem_malloc(size,__FILE__,__LINE__)
-    #define kfifo_free(mem_ref) libpiziot_os_mem_free(mem_ref)
+    #define std_c_malloc(size) malloc(size)
+    #define std_c_calloc(count, size) calloc(count, size)
+    #define std_c_free(mem_ref) free(mem_ref)
 
-    #define os_malloc(size) libpiziot_os_mem_malloc(size,__FILE__,__LINE__)
-    #define os_calloc(count, size) libpiziot_os_mem_calloc(count,size,__FILE__,__LINE__)
-    #define os_free(mem_ref) libpiziot_os_mem_free(mem_ref)
+    #define malloc(size) USElibpiziot_os_malloc
+    #define calloc(count, size) USElibpiziot_os_calloc
+    #define free(mem_ref) USElibpiziot_os_free
+    //#define kzalloc(size, mode) libpiziot_os_mem_malloc(size,__FILE__,__LINE__)
+    //#define kmalloc(size, flag) libpiziot_os_mem_malloc(size,__FILE__,__LINE__)
+    //#define kfree(mem_ref) libpiziot_os_mem_free(mem_ref)
+    //#define kfifoalloc(size, flag, lock) libpiziot_os_mem_malloc(size,__FILE__,__LINE__)
+    //#define kfifo_free(mem_ref) libpiziot_os_mem_free(mem_ref)
+
+    #define libpiziot_os_malloc(size) libpiziot_os_mem_malloc(size,__FILE__,__LINE__)
+    #define libpiziot_os_calloc(count, size) libpiziot_os_mem_calloc(count,size,__FILE__,__LINE__)
+    #define libpiziot_os_free(mem_ref) libpiziot_os_mem_free(mem_ref)
 #endif //defined(LIBPIZIOT_ENABLE_OS_MEM)
 
 #define memset_addr(type_p,var,value,size) {type_p *lpaddrxxx = (var);memset((void*)lpaddrxxx, (value), size);}
